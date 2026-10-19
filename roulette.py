@@ -5,8 +5,8 @@ from gun import Gun
 if __name__ == "__main__":
 
     pistol = Gun(n_slots=6)
-    players = [Player(name='Гроканат', n_rotations=3),
-               Player(name='Чучундра', n_rotations=3)]
+    players = [Player(name='Гроканат', n_rotations=3)]
+               # Player(name='Чучундра', n_rotations=3)]
 
     winner = None
 

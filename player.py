@@ -54,7 +54,7 @@ class Player:
         self.__blocked_slots.append(str(s))
 
     def __rotate(self, gun) -> bool:
-        if self.__n_rotations > 0:
+        if self.__n_rotations > 1:
             gun.rotate()
             self.__blocked_slots = []
             self.__n_rotations -= 1
@@ -62,6 +62,7 @@ class Player:
                   f"Экономьте вращения, {self.__name}: их осталось лишь {self.__n_rotations}.")
             return True
         else:
+            self.__n_rotations -= 1
             print("Вращений больше нет - закончились. Теперь только стрелять!")
             return False
 
