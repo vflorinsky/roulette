@@ -47,3 +47,6 @@ class RandomBot:
     @property
     def name(self):
         return self.__name
+
+
+

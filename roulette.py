@@ -50,9 +50,9 @@ def set_options(n_rotations: int, bot_name: str = BOT_NAME):
     del var[x]
     print(f"Бросаю монету!")
     m = randint(0, 1)
-    sleep(0.5)
-    print("Ииии...")
     sleep(1)
+    print("Ииии...")
+    sleep(2)
     print("Еще летит")
     sleep(1)
     print("Упала и покатилась")
@@ -65,7 +65,7 @@ def set_options(n_rotations: int, bot_name: str = BOT_NAME):
     sleep(3)
     if x == m:
         print("ТАДАААМ!")
-        print("Первый выстрел - Ваш. Поздравляю!")
+        print("Первый выстрел - Ваш. Поздравляю!\n")
         return [player_1, player_2]
     else:
         if x == 0:
