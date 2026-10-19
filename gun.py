@@ -22,3 +22,4 @@ class Gun:
     @property
     def n_slots(self):
         return self.__n_slots
+

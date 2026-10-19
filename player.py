@@ -20,9 +20,9 @@ class Player:
             self.__shot(gun)
         return gun
 
-    def __select_action(self) -> int:
+    @staticmethod
+    def __select_action() -> int:
         x = 0
-        print(f"Ваш ход, {self.__name}!")
         while x not in {1, 2}:
             try:
                 x = int(input(f"1 - выстрелить;\n"
