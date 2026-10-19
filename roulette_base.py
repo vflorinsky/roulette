@@ -12,8 +12,11 @@ if __name__ == "__main__":
 
     pistol = Gun(n_slots=N_SLOTS)
 
-    players = [Player(name='Зозонр', n_rotations=N_ROTATIONS),
+    players = [#Player(name='Зозондр', n_rotations=N_ROTATIONS),
                RandomBot(name=BOT_NAME, n_rotations=N_ROTATIONS)]
+
+    # for _ in range(5):
+    #     print(players[1]._select_action())
 
     winner = None
 

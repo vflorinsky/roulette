@@ -10,7 +10,8 @@ class Gun:
         self.__is_fired = True
 
     def rotate(self):
-        self.__loaded_slot = randint(1, self.__n_slots)
+        # self.__loaded_slot = randint(1, self.__n_slots)
+        self.__loaded_slot = 1
 
     def shot(self, n: int):
         self.__is_fired = self.__loaded_slot == n
