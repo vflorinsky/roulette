@@ -7,13 +7,15 @@ class Bot:
     def __init__(self, name: str, n_rotations: int):
         self.__name = name
         self._n_rotations = n_rotations
+        self._n_rotations_backup = n_rotations
         self._blocked_slots = []
+        self._win = False
 
     def action(self, gun):
         if self._n_rotations > 0:
             flag = True
             while flag:
-                act = self._select_action()
+                act = self._select_action(gun)
                 if act == 1:  # выстрелить
                     self._shot(gun)
                     return gun
@@ -24,8 +26,7 @@ class Bot:
             self._shot(gun)
         return gun
 
-    @staticmethod
-    def _select_action() -> int:
+    def _select_action(self, gun) -> int:
         pass
 
     def _shot(self, gun):
@@ -41,21 +42,52 @@ class Bot:
             self._n_rotations -= 1
             return False
 
+    def reset(self):
+        self._n_rotations = self._n_rotations_backup
+        self._blocked_slots = []
+        self._win = False
+
     @property
     def name(self):
         return self.__name
 
+    @property
+    def win(self):
+        return self._win
+
 
 class RandomBot(Bot):
 
-    @staticmethod
-    def _select_action() -> int:
-        return choice([1, 2])
+    def _select_action(self, gun) -> int:
+        if self._n_rotations > 0:
+            return choice([1, 2])
+        else:
+            return 1
 
     def _shot(self, gun):
-        s = randint(1, gun.n_slots)
-        while s in self._blocked_slots:
-            s = randint(1, gun.n_slots)
+        if len(self._blocked_slots) == gun.n_slots:
+            self._win = True
+            return None
+        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
+        s = choice(ttt)
+        self._blocked_slots.append(s)
+        gun.shot(s)
+
+
+class CleverBot(Bot):
+
+    def _select_action(self, gun) -> int:
+        if len(self._blocked_slots) >= gun.n_slots // 2 and self._n_rotations > 0:
+            return 2  # вращать
+        else:
+            return 1  # стрелять
+
+    def _shot(self, gun):
+        if len(self._blocked_slots) == gun.n_slots:
+            self._win = True
+            return None
+        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
+        s = choice(ttt)
         self._blocked_slots.append(s)
         gun.shot(s)
 
