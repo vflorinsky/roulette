@@ -1,4 +1,4 @@
-from random import randint, choice
+from random import randint, choice, sample
 from pathlib import Path
 from bot import ThresholdBot
 from gun import Gun
@@ -60,12 +60,15 @@ def selection(population: dict, pistol: Gun) -> dict:
 
 def crossing(population: dict, n_rotations: int) -> dict:
     gen = pair_generator(population)
-    new_population = deepcopy(population)
+    new_population = dict()
     for pair in gen:
         name = f"{pair[0].name}+{pair[1].name}"
+        # Значение __threshold у потомка
         thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
+        # Если нужно - потомок мутирует
         if MUTATION['use']:
             thrsh = mutation(thrsh)
+        # Инициализируем потомка
         new_population[name] = ThresholdBot(name=name,
                                             n_rotations=n_rotations,
                                             threshold=thrsh)
@@ -75,6 +78,11 @@ def crossing(population: dict, n_rotations: int) -> dict:
         # Установка нового значения порога происходит через сеттер,
         # чтобы избежать выхода порога за допустимый диапазон.
         new_population[name].threshold(value=thrsh)
+    # В новое поколение добавляем половину предков.
+    # Нужно для сохранения разнообразия и чтобы размер каждого поколения
+    # был степенью двойки.
+    for p in sample(list(population.values()), len(new_population)):
+        new_population[p.name] = p
     return new_population
 
 
@@ -92,9 +100,9 @@ if __name__ == "__main__":
     print(population)
     print(len(population))
 
-    # # Отбор
-    # population = selection(population=population, pistol=pistol)
-    # print(population)
-    # print(len(population))
+    # Отбор
+    population = selection(population=population, pistol=pistol)
+    print(population)
+    print(len(population))
 
 
