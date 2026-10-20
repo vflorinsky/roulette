@@ -67,6 +67,9 @@ def crossing(population: dict, n_rotations: int) -> dict:
         new_population[name] = ThresholdBot(name=name,
                                             n_rotations=n_rotations,
                                             threshold=thrsh)
+        # Устанавливаем максивальное число слотов как у первого родителя
+        # через сеттер, потому что в конструкторе оно None.
+        new_population[name].max_slots(value=pair[0].max_slots())
         # Установка нового значения порога происходит через сеттер,
         # чтобы избежать выхода порога за допустимый диапазон.
         new_population[name].threshold(value=thrsh)

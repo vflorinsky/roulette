@@ -47,6 +47,11 @@ class Bot:
             self._n_rotations -= 1
             return False
 
+    def max_slots(self, value: float = None) -> float or None:
+        if value is not None:
+            self._max_slots = value
+        return self._max_slots
+
     def reset(self):
         self._n_rotations = self._n_rotations_backup
         self._blocked_slots = []
