@@ -22,17 +22,19 @@ def game(gun: Gun, players: list) -> dict:
 
 if __name__ == "__main__":
 
+    # Инициализация
     pistol = Gun(n_slots=N_SLOTS)
-
     players = [ThresholdBot(name='Сепулька', n_rotations=N_ROTATIONS, threshold=3),
                RandomBot(name=BOT_NAME, n_rotations=N_ROTATIONS)]
-
+    # players = [RandomBot(name=BOT_NAME, n_rotations=N_ROTATIONS),
+    #            ThresholdBot(name='Сепулька', n_rotations=N_ROTATIONS, threshold=3)]
     total = {f"{players[0].name}_death": 0,
              f"{players[0].name}_moves": 0,
              f"{players[1].name}_death": 0,
              f"{players[1].name}_moves": 0
              }
 
+    # Симуляция
     for i in range(N_FIGHTS):
         result = game(gun=pistol, players=players)
 
@@ -42,6 +44,11 @@ if __name__ == "__main__":
         for p in players:
             p.reset()
 
+        # Во второй половине симуляции меняем порядок игроков, чтобы нивелировать эффект первого хода.
+        if i == N_FIGHTS // 2:
+            players = [players[1], players[0]]
+
+    # Вывод статистики
     for k in total.keys():
         if k.split('_')[-1] == 'moves':
             total[k] = round(total[k] / N_FIGHTS, 2)
