@@ -9,7 +9,6 @@ class Bot:
         self._n_rotations = n_rotations
         self._n_rotations_backup = n_rotations
         self._blocked_slots = []
-        self._win = False
 
     def action(self, gun):
         if self._n_rotations > 0:
@@ -45,15 +44,10 @@ class Bot:
     def reset(self):
         self._n_rotations = self._n_rotations_backup
         self._blocked_slots = []
-        self._win = False
 
     @property
     def name(self):
         return self.__name
-
-    @property
-    def win(self):
-        return self._win
 
 
 class RandomBot(Bot):
@@ -65,9 +59,6 @@ class RandomBot(Bot):
             return 1
 
     def _shot(self, gun):
-        if len(self._blocked_slots) == gun.n_slots:
-            self._win = True
-            return None
         ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
         s = choice(ttt)
         self._blocked_slots.append(s)
@@ -83,9 +74,6 @@ class CleverBot(Bot):
             return 1  # стрелять
 
     def _shot(self, gun):
-        if len(self._blocked_slots) == gun.n_slots:
-            self._win = True
-            return None
         ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
         s = choice(ttt)
         self._blocked_slots.append(s)

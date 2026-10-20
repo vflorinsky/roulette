@@ -9,18 +9,15 @@ N_FIGHTS = 10000
 
 
 def game(gun: Gun, players: list) -> dict:
-    dead, winner, n_moves = None, None, 0
+    dead, n_moves = None, 0
     while dead is None:
         n_moves += 1
         for p in players:
             p.action(gun=gun)
-            if p.win:
-                winner = p.name
-                break
             if pistol.is_fired:
                 dead = p.name
                 break
-    return {"dead": dead, "winner": winner, "n_moves": n_moves}
+    return {"dead": dead, "n_moves": n_moves}
 
 
 if __name__ == "__main__":
@@ -32,10 +29,8 @@ if __name__ == "__main__":
 
     total = {f"{players[0].name}_death": 0,
              f"{players[0].name}_moves": 0,
-             f"{players[0].name}_wins": 0,
              f"{players[1].name}_death": 0,
-             f"{players[1].name}_moves": 0,
-             f"{players[1].name}_wins": 0
+             f"{players[1].name}_moves": 0
              }
 
     for i in range(N_FIGHTS):
@@ -43,8 +38,6 @@ if __name__ == "__main__":
 
         total[f"{result['dead']}_death"] += 1
         total[f"{result['dead']}_moves"] += result['n_moves']
-        if result['winner'] is not None:
-            total[f"{result['winner']}_wins"] += 1
 
         for p in players:
             p.reset()
