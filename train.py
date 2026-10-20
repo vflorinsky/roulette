@@ -7,6 +7,7 @@ from copy import deepcopy
 
 START_VOLUME = 8
 N_ROTATIONS = 3
+N_SLOTS = 6
 
 
 def fight(gun: Gun, players: list) -> str:
@@ -31,27 +32,46 @@ def init_population(n_individuals: int,
     return population
 
 
+def pair_generator(d: dict):
+    iterator = iter(d.values())
+    for item in iterator:
+        yield item, next(iterator)
+
+
 def selection(population: dict, pistol: Gun) -> dict:
-    i, names = 0, list(population.keys())
+    gen = pair_generator(population)
     new_population = dict()
-    while i < len(names):
+    for pair in gen:
         winner = fight(gun=pistol,
-                       players=[population[names[i]],
-                                population[names[i + 1]]
-                                ]
+                       players=[pair[0], pair[1]]
                        )
-        i += 2
         new_population[winner] = deepcopy(population[winner])
     return new_population
 
 
+def crossing(population: dict, n_rotations: int) -> dict:
+    gen = pair_generator(population)
+    new_population = deepcopy(population)
+    for pair in gen:
+        name = f"{pair[0].name}+{pair[1].name}"
+        new_population[name] = ThresholdBot(name=name,
+                                            n_rotations=n_rotations,
+                                            threshold=0.5 * (pair[0].threshold() + pair[1].threshold()))
+    return new_population
+
+
 if __name__ == "__main__":
-    pistol = Gun(n_slots=6)
+    pistol = Gun(n_slots=N_SLOTS)
 
     # Начальная популяция
     population = init_population(n_individuals=START_VOLUME,
                                  n_rotations=N_ROTATIONS,
                                  threshold_interval=(0, pistol.n_slots))
+
     # Отбор
     population = selection(population=population, pistol=pistol)
+    print(population)
+
+    # Скрещивание
+    population = crossing(population=population, n_rotations=N_ROTATIONS)
     print(population)
