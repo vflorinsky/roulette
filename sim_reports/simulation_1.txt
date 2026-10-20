@@ -1,0 +1,2 @@
+OPTIONS = {'n_fights': 10000, 'gun': {'n_slots': 6}, 'bots': {'ThresholdBot': {'threshold': 3, 'n_rotations': 3}, 'RandomBot': {'n_rotations': 3}}}
+STATISTICS = {'ThresholdBot': {'death_probability': 0.46, 'moves': 1.16}, 'RandomBot': {'death_probability': 0.54, 'moves': 1.56}}

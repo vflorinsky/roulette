@@ -1,3 +1,4 @@
+from pathlib import Path
 from bot import RandomBot, ThresholdBot
 from gun import Gun
 
@@ -47,9 +48,25 @@ if __name__ == "__main__":
         if i == SIMULATION['n_fights'] // 2:
             players = [players[1], players[0]]
 
-    # Вывод статистики
+    # Расчет статистики
     for k in total.keys():
         for kk in total[k].keys():
             total[k][kk] = round(total[k][kk] / SIMULATION['n_fights'], 2)
+
+    # Сохраняем результат
+    folder_path = Path("sim_reports")
+
+    # Получить ТОЛЬКО файлы (исключая подпапки)
+    max_ind = 0
+    for file_name in [f.name for f in folder_path.iterdir() if f.is_file()]:
+        try:
+            ind = int(file_name.split('.')[0].split('_')[1])
+        except ValueError:
+            continue
+        max_ind = max(max_ind, ind)
+
+    with open(f'sim_reports/simulation_{max_ind + 1}.txt', 'w') as f:
+        f.write(f"OPTIONS = {SIMULATION.__str__()}\n")
+        f.write(f"STATISTICS = {total.__str__()}\n")
 
     print(total)
