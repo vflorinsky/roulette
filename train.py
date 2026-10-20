@@ -1,4 +1,4 @@
-from random import randint
+from random import randint, choice
 from pathlib import Path
 from bot import ThresholdBot
 from gun import Gun
@@ -8,6 +8,9 @@ from copy import deepcopy
 START_VOLUME = 8
 N_ROTATIONS = 3
 N_SLOTS = 6
+MUTATION = {'use': True,
+            'force': 15  # уровень шума в процентах от зашумляемого значения
+            }
 
 
 def fight(gun: Gun, players: list) -> str:
@@ -16,6 +19,10 @@ def fight(gun: Gun, players: list) -> str:
             p.action(gun=gun)
             if pistol.is_fired:
                 return p.name
+
+
+def mutation(x: float) -> float:
+    return choice([-1, 1]) * 0.01 * MUTATION['force'] * x
 
 
 def init_population(n_individuals: int,
@@ -54,9 +61,12 @@ def crossing(population: dict, n_rotations: int) -> dict:
     new_population = deepcopy(population)
     for pair in gen:
         name = f"{pair[0].name}+{pair[1].name}"
+        thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
+        if MUTATION['use']:
+            thrsh = mutation(thrsh)
         new_population[name] = ThresholdBot(name=name,
                                             n_rotations=n_rotations,
-                                            threshold=0.5 * (pair[0].threshold() + pair[1].threshold()))
+                                            threshold=thrsh)
     return new_population
 
 
