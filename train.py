@@ -27,7 +27,8 @@ def mutation(x: float) -> float:
 
 def init_population(n_individuals: int,
                     n_rotations: int,
-                    threshold_interval: tuple) -> dict:
+                    threshold_interval: tuple,
+                    max_slots: int) -> dict:
     """{имя_бота: бот}"""
     population = {}
     for i in range(n_individuals):
@@ -36,6 +37,7 @@ def init_population(n_individuals: int,
                                         n_rotations=n_rotations,
                                         threshold=randint(threshold_interval[0],
                                                           threshold_interval[1]))
+        population[name].max_slots(value=max_slots)
     return population
 
 
@@ -82,12 +84,17 @@ if __name__ == "__main__":
     # Начальная популяция
     population = init_population(n_individuals=START_VOLUME,
                                  n_rotations=N_ROTATIONS,
-                                 threshold_interval=(0, pistol.n_slots))
+                                 threshold_interval=(0, pistol.n_slots),
+                                 max_slots=pistol.n_slots)
 
-    # Отбор
-    population = selection(population=population, pistol=pistol)
-    print(population)
-
-    # Скрещивание
+    # Скрещивание, мутация и выбывание
     population = crossing(population=population, n_rotations=N_ROTATIONS)
     print(population)
+    print(len(population))
+
+    # # Отбор
+    # population = selection(population=population, pistol=pistol)
+    # print(population)
+    # print(len(population))
+
+
