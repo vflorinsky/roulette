@@ -5,6 +5,7 @@ from gun import Gun
 N_ROTATIONS = 3
 N_SLOTS = 6
 BOT_NAME = 'Электрический Мозг'
+N_FIGHTS = 10000
 
 
 def game(gun: Gun, players: list) -> dict:
@@ -37,16 +38,21 @@ if __name__ == "__main__":
              f"{players[1].name}_wins": 0
              }
 
-    for i in range(10):
+    for i in range(N_FIGHTS):
         result = game(gun=pistol, players=players)
 
         total[f"{result['dead']}_death"] += 1
-        total[f"{result['dead']}_moves"] += 1
+        total[f"{result['dead']}_moves"] += result['n_moves']
         if result['winner'] is not None:
             total[f"{result['winner']}_wins"] += 1
 
         for p in players:
             p.reset()
 
+    for k in total.keys():
+        if k.split('_')[-1] == 'moves':
+            total[k] = round(total[k] / N_FIGHTS, 2)
+        else:
+            total[k] = round(100 * total[k] / N_FIGHTS, 2)
 
-        print(i, total)
+    print(total)
