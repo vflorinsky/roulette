@@ -1,4 +1,4 @@
-from random import choice, randint
+from random import choice
 
 
 class Bot:
@@ -29,7 +29,10 @@ class Bot:
         pass
 
     def _shot(self, gun):
-        pass
+        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
+        s = choice(ttt)
+        self._blocked_slots.append(s)
+        gun.shot(s)
 
     def _rotate(self, gun) -> bool:
         if self._n_rotations > 1:
@@ -58,12 +61,6 @@ class RandomBot(Bot):
         else:
             return 1
 
-    def _shot(self, gun):
-        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
-        s = choice(ttt)
-        self._blocked_slots.append(s)
-        gun.shot(s)
-
 
 class CleverBot(Bot):
 
@@ -73,10 +70,5 @@ class CleverBot(Bot):
         else:
             return 1  # стрелять
 
-    def _shot(self, gun):
-        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
-        s = choice(ttt)
-        self._blocked_slots.append(s)
-        gun.shot(s)
 
 
