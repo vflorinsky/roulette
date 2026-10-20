@@ -4,11 +4,18 @@ from gun import Gun
 
 SIMULATION = {'n_fights': 10000,
               'gun': {'n_slots': 6},
-              'bots': {'ThresholdBot': {'threshold': 3, 'n_rotations': 3},
-                       'RandomBot': {'n_rotations': 3}
+              'bots': {# 'ThresholdBot': {'threshold': 3, 'n_rotations': 3},
+                       'ThresholdBot_1': {'threshold': 3, 'n_rotations': 3},
+                       'ThresholdBot_2': {'threshold': 3, 'n_rotations': 3},
                        }
               }
-BOTS = {'RandomBot': RandomBot, 'ThresholdBot': ThresholdBot}
+BOTS = {'RandomBot': RandomBot,
+        'RandomBot_1': RandomBot,
+        'RandomBot_2': RandomBot,
+        'ThresholdBot': ThresholdBot,
+        'ThresholdBot_1': ThresholdBot,
+        'ThresholdBot_2': ThresholdBot,
+        }
 
 
 def game(gun: Gun, players: list) -> dict:
@@ -56,7 +63,6 @@ if __name__ == "__main__":
     # Сохраняем результат
     folder_path = Path("sim_reports")
 
-    # Получить ТОЛЬКО файлы (исключая подпапки)
     max_ind = 0
     for file_name in [f.name for f in folder_path.iterdir() if f.is_file()]:
         try:
