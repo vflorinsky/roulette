@@ -5,7 +5,7 @@ from gun import Gun
 SIMULATION = {'n_fights': 10000,
               'gun': {'n_slots': 6},
               'bots': {# 'ThresholdBot': {'threshold': 3, 'n_rotations': 3},
-                       'ThresholdBot': {'threshold': 3, 'n_rotations': 3},
+                       'ThresholdBot': {'threshold': 0, 'n_rotations': 3},
                        'RandomBot': {'n_rotations': 3},
                        }
               }

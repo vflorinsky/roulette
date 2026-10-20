@@ -5,7 +5,8 @@ from gun import Gun
 from copy import deepcopy
 
 
-START_VOLUME = 8
+N_GENERATIONS = 50
+START_VOLUME = 1024
 N_ROTATIONS = 3
 N_SLOTS = 6
 MUTATION = {'use': True,
@@ -18,7 +19,11 @@ def fight(gun: Gun, players: list) -> str:
         for p in players:
             p.action(gun=gun)
             if pistol.is_fired:
-                return p.name
+                # Возвращаем имя первого выжившего бота.
+                # Для двух игроков победитель единственный.
+                for q in players:
+                    if q.name != p.name:
+                        return q.name
 
 
 def mutation(x: float) -> float:
@@ -52,7 +57,7 @@ def selection(population: dict, pistol: Gun) -> dict:
     new_population = dict()
     for pair in gen:
         winner = fight(gun=pistol,
-                       players=[pair[0], pair[1]]
+                       players=[deepcopy(pair[0]), deepcopy(pair[1])]
                        )
         new_population[winner] = deepcopy(population[winner])
     return new_population
@@ -95,14 +100,17 @@ if __name__ == "__main__":
                                  threshold_interval=(0, pistol.n_slots),
                                  max_slots=pistol.n_slots)
 
-    # Скрещивание, мутация и выбывание
-    population = crossing(population=population, n_rotations=N_ROTATIONS)
-    print(population)
-    print(len(population))
+    for generation in range(N_GENERATIONS):
+        # Скрещивание, мутация и выбывание
+        population = crossing(population=population, n_rotations=N_ROTATIONS)
 
-    # Отбор
-    population = selection(population=population, pistol=pistol)
-    print(population)
-    print(len(population))
+        # Отбор
+        population = selection(population=population, pistol=pistol)
+        print(generation, len(population))
+        if len(population) < 2:
+            break
 
-
+    print('-' * 50)
+    for k, v in population.items():
+        print(k)
+        print(v.threshold())
