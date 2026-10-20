@@ -48,4 +48,5 @@ if __name__ == "__main__":
         for p in players:
             p.reset()
 
+
         print(i, total)
