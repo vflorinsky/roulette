@@ -1,4 +1,4 @@
-from bot import RandomBot, CleverBot
+from bot import RandomBot, ThresholdBot
 from gun import Gun
 
 
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     pistol = Gun(n_slots=N_SLOTS)
 
-    players = [CleverBot(name='Сепулька', n_rotations=N_ROTATIONS),
+    players = [ThresholdBot(name='Сепулька', n_rotations=N_ROTATIONS, threshold=3),
                RandomBot(name=BOT_NAME, n_rotations=N_ROTATIONS)]
 
     total = {f"{players[0].name}_death": 0,

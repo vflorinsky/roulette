@@ -9,8 +9,11 @@ class Bot:
         self._n_rotations = n_rotations
         self._n_rotations_backup = n_rotations
         self._blocked_slots = []
+        self._max_slots = None
 
     def action(self, gun):
+        if self._max_slots is None:
+            self._max_slots = gun.n_slots
         if self._n_rotations > 0:
             flag = True
             while flag:
@@ -29,7 +32,7 @@ class Bot:
         pass
 
     def _shot(self, gun):
-        ttt = list(set([i + 1 for i in range(gun.n_slots)]).difference(set(self._blocked_slots)))
+        ttt = list(set([i + 1 for i in range(self._max_slots)]).difference(set(self._blocked_slots)))
         s = choice(ttt)
         self._blocked_slots.append(s)
         gun.shot(s)
@@ -62,13 +65,28 @@ class RandomBot(Bot):
             return 1
 
 
-class CleverBot(Bot):
+class ThresholdBot(Bot):
+
+    def __init__(self, name: str, n_rotations: int, threshold: float):
+        super().__init__(name=name, n_rotations=n_rotations)
+        self.__threshold = threshold
 
     def _select_action(self, gun) -> int:
-        if len(self._blocked_slots) >= gun.n_slots // 2 and self._n_rotations > 0:
+        if len(self._blocked_slots) >= self.__threshold and self._n_rotations > 0:
             return 2  # вращать
         else:
             return 1  # стрелять
+
+    def threshold(self, value: float = None) -> float or None:
+        if value is not None:
+            if value < 0:
+                x = 0
+            elif value > self._max_slots:
+                x = self._max_slots
+            else:
+                x = value
+            self.__threshold = x
+        return self.__threshold
 
 
 
