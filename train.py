@@ -9,13 +9,15 @@ from statistics import median
 
 
 TRAIN_SETTINGS = {'n_generations': 50,
-                  'start_volume': 512,
+                  'start_volume': 4,
                   'n_fights': 10000,
                   'mutation': {'use': False,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
                   'gun': {'n_slots': 6},
-                  'bot': {'n_rotations': 3}}
+                  'bot': {'n_rotations': 3,
+                          'threshold_interval': (3, 6)}
+                  }
 
 LOG_SETTINGS = {'path': Path('logs') / 'train',
                 'name': 'ThresholdBot',
@@ -127,7 +129,8 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         name = f"{generation}.{bid}"
         bid += 1
         # Значение __threshold у потомка
-        thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
+        # thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
+        thrsh = max(pair[0].threshold(), pair[1].threshold())
         # Если нужно - потомок мутирует
         if TRAIN_SETTINGS['mutation']['use']:
             thrsh = mutation(thrsh)
@@ -178,12 +181,12 @@ if __name__ == "__main__":
     # Начальная популяция
     population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
                                  n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
-                                 threshold_interval=(2, pistol.n_slots),
+                                 threshold_interval=TRAIN_SETTINGS['bot']['threshold_interval'],
                                  max_slots=pistol.n_slots)
 
     for generation in range(TRAIN_SETTINGS['n_generations']):
         logger.info(f"generation = {generation}")
-        logger.info(f"volume= {len(population)}")
+        logger.info(f"volume = {len(population)}")
 
         trsh = [v.threshold() for _, v in population.items()]
 
