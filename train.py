@@ -1,3 +1,5 @@
+import logging
+from logging.handlers import RotatingFileHandler
 from random import randint, choice, sample
 from pathlib import Path
 from bot import ThresholdBot, ShotIsImpossible
@@ -6,14 +8,20 @@ from copy import deepcopy
 from statistics import median
 
 
-N_GENERATIONS = 50
-START_VOLUME = 4
-N_ROTATIONS = 3
-N_SLOTS = 6
-N_FIGHTS = 10000
-MUTATION = {'use': False,
-            'force': 15  # уровень шума в процентах от зашумляемого значения
-            }
+TRAIN_SETTINGS = {'n_generations': 50,
+                  'start_volume': 512,
+                  'n_fights': 10000,
+                  'mutation': {'use': False,
+                               'force': 15  # уровень шума в процентах от зашумляемого значения
+                               },
+                  'gun': {'n_slots': 6},
+                  'bot': {'n_rotations': 3}}
+
+LOG_SETTINGS = {'path': Path('logs') / 'train',
+                'name': 'ThresholdBot',
+                'format': '%(asctime)s - %(name)s - %(message)s',
+                'maxBytes': 5 * 1024 * 1024,
+                'backupCount': 3}
 
 
 def del_from_players(players: list, names: list) -> list:
@@ -54,21 +62,21 @@ def fight(gun: Gun, players: list) -> dict:
     gun_, players_ = deepcopy(gun), deepcopy(players)
     for p in players_:
         result[p.name] = 0
-    for i in range(N_FIGHTS):
+    for i in range(TRAIN_SETTINGS['n_fights']):
         winner = duel(gun=gun_, players=players_)
         result[winner] += 1
         for player in players_:
             player.reset()
         pistol.reset()
-        if i == N_FIGHTS // 2:
+        if i == TRAIN_SETTINGS['n_fights'] // 2:
             players_ = [players_[1], players_[0]]
     for k in result.keys():
-        result[k] = result[k] / N_FIGHTS
+        result[k] = result[k] / TRAIN_SETTINGS['n_fights']
     return result
 
 
 def mutation(x: float) -> float:
-    return choice([-1, 1]) * 0.01 * MUTATION['force'] * x
+    return choice([-1, 1]) * 0.01 * TRAIN_SETTINGS['mutation']['force'] * x
 
 
 def init_population(n_individuals: int,
@@ -121,7 +129,7 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         # Значение __threshold у потомка
         thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
         # Если нужно - потомок мутирует
-        if MUTATION['use']:
+        if TRAIN_SETTINGS['mutation']['use']:
             thrsh = mutation(thrsh)
         # Инициализируем потомка
         new_population[name] = ThresholdBot(name=name,
@@ -144,40 +152,62 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
 
 
 if __name__ == "__main__":
-    pistol = Gun(n_slots=N_SLOTS)
+
+    logger = logging.getLogger(LOG_SETTINGS['name'])
+    logger.setLevel(logging.DEBUG)
+    formatter = logging.Formatter(LOG_SETTINGS['format'])
+    file_handler = RotatingFileHandler(
+        filename=f"{LOG_SETTINGS['path'] / LOG_SETTINGS['name']}.log",
+        maxBytes=LOG_SETTINGS['maxBytes'],
+        backupCount=LOG_SETTINGS['backupCount'],
+        encoding='utf-8'
+    )
+    file_handler.setLevel(logging.DEBUG)
+    file_handler.setFormatter(formatter)
+    console_handler = logging.StreamHandler()
+    console_handler.setLevel(logging.DEBUG)
+    console_handler.setFormatter(formatter)
+    logger.addHandler(file_handler)
+    logger.addHandler(console_handler)
+
+    logger.info("START")
+    logger.info(f"TRAIN_SETTINGS = {TRAIN_SETTINGS.__str__()}")
+
+    pistol = Gun(n_slots=TRAIN_SETTINGS['gun']['n_slots'])
 
     # Начальная популяция
-    population = init_population(n_individuals=START_VOLUME,
-                                 n_rotations=N_ROTATIONS,
-                                 threshold_interval=(0, pistol.n_slots),
+    population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
+                                 n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
+                                 threshold_interval=(2, pistol.n_slots),
                                  max_slots=pistol.n_slots)
 
-    for generation in range(N_GENERATIONS):
-        print(f"generation = {generation}")
-        print(f"volume= {len(population)}")
+    for generation in range(TRAIN_SETTINGS['n_generations']):
+        logger.info(f"generation = {generation}")
+        logger.info(f"volume= {len(population)}")
+
         trsh = [v.threshold() for _, v in population.items()]
-        print(f"trsh = {trsh}")
-        print(f"min = {min(trsh)}")
-        print(f"mean = {sum(trsh) / len(trsh)}")
-        print(f"median = {median(trsh)}")
-        print(f"max = {max(trsh)}")
+
+        logger.info(f"trsh min = {min(trsh)}")
+        logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
+        logger.info(f"trsh median = {median(trsh)}")
+        logger.info(f"trsh max = {max(trsh)}")
+
         # Скрещивание, мутация
         population = crossing(population=population,
-                              n_rotations=N_ROTATIONS,
+                              n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
                               generation=generation + 1)
-        print(f"volume after crossing = {len(population)}")
+        logger.info(f"volume after crossing = {len(population)}")
 
         # Отбор
         population = selection(population=population, pistol=pistol)
-        print(f"volume after selection = {len(population)}")
-        print('-' * 50)
+        logger.info(f"volume after selection = {len(population)}")
+        logger.info('-' * 50)
 
         if len(population) < 2:
             break
 
-    print(f"survive = {len(population)}")
-    print("Bot Winner:")
+    logger.info(f"survive = {len(population)}")
     for v in population.values():
         bot = v
-    print(bot.__dict__)
-
+    logger.info(f"winner = {bot.__dict__.__str__()}")
+    logger.info("END")
