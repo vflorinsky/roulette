@@ -6,6 +6,7 @@ class Player:
         self.__blocked_slots = []
 
     def action(self, gun):
+        print(f"Ходит {self.__name}:")
         if self.__n_rotations > 0:
             flag = True
             while flag:

@@ -1,8 +1,10 @@
-from player import Player
-from bot import RandomBot, ShotIsImpossible
+from core import RouletteCore
 from gun import Gun
+from player import Player
+from bot import RandomBot
 from time import sleep
 from random import randint
+
 
 N_ROTATIONS = 3
 N_SLOTS = 6
@@ -32,7 +34,7 @@ def set_options(n_rotations: int, bot_name: str = BOT_NAME):
         player_2 = Player(name=player_name, n_rotations=n_rotations)
     else:
         print(f"Вашим соперником будет {bot_name}.")
-        player_2 = RandomBot(name=bot_name, n_rotations=n_rotations)
+        player_2 = RandomBot(name=bot_name, n_rotations=n_rotations, verbose=True)
     print("\n")
     flag, x, var = True, 0, ['орёл', 'решка']
     while flag:
@@ -78,32 +80,22 @@ def set_options(n_rotations: int, bot_name: str = BOT_NAME):
 
 
 if __name__ == "__main__":
+    pistol = Gun(n_slots=N_SLOTS)
 
     players = set_options(n_rotations=N_ROTATIONS)
-    pistol = Gun(n_slots=N_SLOTS)
+    # players = [RandomBot(name='Кузьбар', n_rotations=3, verbose=True),
+    #            RandomBot(name='Шмартунг', n_rotations=3, verbose=True)]
+
     print("Приступим!\n")
+    game = RouletteCore(gun=pistol, players=players, n_fights=1)
+    result = game.fight()
 
-    loser, winner = None, None
+    print('-' * 50)
+    for name, res in result.items():
+        if res == 1:
+            print(f"{name} выжил в упорной схватке!")
+        else:
+            print(f"{name} успешно застрелился.")
 
-    while loser is None or winner is None:
-        for p in players:
-            print(f"Ваш ход, {p.name}!")
-            try:
-                p.action(gun=pistol)
-            except ShotIsImpossible:
-                winner = p.name
-                break
-            if pistol.is_fired:
-                loser = p.name
-                print("Ба-бах!\n")
-                break
-            else:
-                print("Щёлк... Осечка!")
-            print('-' * 50 + '\n')
+    print("Дуэль окончена.")
 
-    if loser is not None:
-        print(f"Поздравляю, {loser}! Вы застрелились...")
-    elif winner is not None:
-        print(f"Поздравляю, {winner}! Вы остались живым...")
-    else:
-        print(f"Победил {winner}, застрелился {loser}.")

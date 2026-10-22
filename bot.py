@@ -8,14 +8,17 @@ class ShotIsImpossible(Exception):
 class Bot:
     """Базовый класс"""
 
-    def __init__(self, name: str, n_rotations: int):
+    def __init__(self, name: str, n_rotations: int, verbose: bool = False):
         self.__name = name
         self._n_rotations = n_rotations
         self._n_rotations_backup = n_rotations
         self._blocked_slots = []
         self._max_slots = None
+        self._verbose = verbose
 
     def action(self, gun):
+        if self._verbose:
+            print(f"Ходит {self.__name}")
         if self._max_slots is None:
             self._max_slots = gun.n_slots
         try:
@@ -25,6 +28,8 @@ class Bot:
                     act = self._select_action(gun)
                     if act == 1:  # выстрелить
                         self._shot(gun)
+                        if self._verbose:
+                            print(f"{self.name} что-то сделал...\n")
                         return gun
                     elif act == 2:  # вращать
                         flag = self._rotate(gun)
@@ -32,7 +37,11 @@ class Bot:
             else:
                 self._shot(gun)
         except ShotIsImpossible:
+            if self._verbose:
+                print(f"{self.name} перебрал все слоты и остался жив!\n")
             raise ShotIsImpossible
+        if self._verbose:
+            print(f"{self.name} что-то сделал...\n")
         return gun
 
     def _select_action(self, gun) -> int:
