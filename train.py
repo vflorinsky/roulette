@@ -26,16 +26,6 @@ LOG_SETTINGS = {'path': Path('logs') / 'train',
                 'backupCount': 3}
 
 
-def del_from_players(players: list, names: list) -> list:
-    if names is None or len(names) == 0:
-        return players
-    rv = []
-    for p in players:
-        if p.name not in names:
-            rv.append(p)
-    return rv
-
-
 def get_duel_winner(players: list,  # только два игрока
                     loser: str) -> str:
     for p in players:
