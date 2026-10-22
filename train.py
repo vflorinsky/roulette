@@ -50,7 +50,7 @@ def duel(gun: Gun, players: list) -> str:
         for p in players_:
             try:
                 p.action(gun=gun_)
-                if pistol.is_fired:
+                if p.is_alive:
                     winner = get_duel_winner(players=players_, loser=p.name)
                     break
             except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
@@ -190,10 +190,8 @@ if __name__ == "__main__":
 
         trsh = [v.threshold() for _, v in population.items()]
 
-        logger.info(f"trsh min = {min(trsh)}")
         logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
         logger.info(f"trsh median = {median(trsh)}")
-        logger.info(f"trsh max = {max(trsh)}")
 
         # Скрещивание, мутация
         population = crossing(population=population,
