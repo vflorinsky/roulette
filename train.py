@@ -59,7 +59,7 @@ def fight(gun: Gun, players: list, n_fights: int) -> dict:
         result[winner] += 1
         for player in players_:
             player.reset()
-        pistol.reset()
+        gun_.reset()
         if i == n_fights // 2:
             players_ = [players_[1], players_[0]]
     for k in result.keys():
