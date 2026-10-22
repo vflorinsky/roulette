@@ -6,6 +6,7 @@ from bot import ThresholdBot, ShotIsImpossible
 from gun import Gun
 from copy import deepcopy
 from statistics import median
+from core import RouletteCore
 
 
 TRAIN_SETTINGS = {'n_generations': 50,
@@ -24,47 +25,6 @@ LOG_SETTINGS = {'path': Path('logs') / 'train',
                 'format': '%(asctime)s - %(name)s - %(message)s',
                 'maxBytes': 5 * 1024 * 1024,
                 'backupCount': 3}
-
-
-def get_duel_winner(players: list,  # только два игрока
-                    loser: str) -> str:
-    for p in players:
-        if p.name != loser:
-            return p.name
-
-
-def duel(gun: Gun, players: list) -> str:
-    gun_, players_ = deepcopy(gun), [deepcopy(p) for p in players]
-    winner = None
-    while winner is None:
-        for p in players_:
-            try:
-                p.action(gun=gun_)
-                if gun_.is_fired:
-                    winner = get_duel_winner(players=players_, loser=p.name)
-                    break
-            except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
-                winner = p.name
-                break
-    return winner
-
-
-def fight(gun: Gun, players: list, n_fights: int) -> dict:
-    result = dict()
-    gun_, players_ = deepcopy(gun), deepcopy(players)
-    for p in players_:
-        result[p.name] = 0
-    for i in range(n_fights):
-        winner = duel(gun=gun_, players=players_)
-        result[winner] += 1
-        for player in players_:
-            player.reset()
-        gun_.reset()
-        if i == n_fights // 2:
-            players_ = [players_[1], players_[0]]
-    for k in result.keys():
-        result[k] = result[k] / n_fights
-    return result
 
 
 def mutation(x: float) -> float:
@@ -97,10 +57,10 @@ def selection(population: dict, pistol: Gun) -> dict:
     gen = pair_generator(population)
     new_population = dict()
     for pair in gen:
-        result = fight(gun=pistol,
-                       players=[deepcopy(pair[0]), deepcopy(pair[1])],
-                       n_fights=TRAIN_SETTINGS['n_fights']
-                       )
+        sim = RouletteCore(gun=pistol,
+                           players=[deepcopy(pair[0]), deepcopy(pair[1])],
+                           n_fights=TRAIN_SETTINGS['n_fights'])
+        result = sim.fight()
         max_probability, winner = 0, None
         for k, v in result.items():
             if v > max_probability:
