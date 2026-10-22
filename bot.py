@@ -1,4 +1,4 @@
-from random import choice
+from random import choice, random
 
 
 class ShotIsImpossible(Exception):
@@ -84,6 +84,10 @@ class Bot:
 
 
 class RandomBot(Bot):
+    """
+    Решение вращать или стрелять принимается случайно.
+    Если вращения закончились - только стреляет.
+    """
 
     def _select_action(self, gun) -> int:
         if self._n_rotations > 0:
@@ -93,6 +97,10 @@ class RandomBot(Bot):
 
 
 class ThresholdBot(Bot):
+    """
+    Если число заблокированных слотов не меньше заданного порога - вращает;
+    иначе - стреляет.
+    """
 
     def __init__(self, name: str, n_rotations: int, threshold: float):
         super().__init__(name=name, n_rotations=n_rotations)
@@ -114,6 +122,40 @@ class ThresholdBot(Bot):
                 x = value
             self.__threshold = x
         return self.__threshold
+
+
+class ProbabilityBot(Bot):
+    """
+    Оценивает число раундов и для каждого устанавливает вероятность вращения.
+    """
+
+    def __init__(self, name: str, n_rotations: int, n_slots: int):
+        super().__init__(name=name, n_rotations=n_rotations)
+        self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
+        self.__current_round = 0
+        self.__rotation_probs = [random() for _ in range(self.__length)]
+        self.probabilites()
+
+    def _select_action(self, gun) -> int:
+        self.__current_round += 1
+        if self._n_rotations > 0:
+            if self.__rotation_probs[self.__current_round] >= 0.5:
+                return 2  # вращать
+            else:
+                return 1  # стрелять
+        else:
+            return 1
+
+    def probabilites(self, value: list = None) -> list or None:
+        if value is not None and len(value) == self.__length:
+            self.__rotation_probs = value
+        return self.__rotation_probs
+
+    def reset(self):
+        super().reset()
+        self.__current_round = 0
+
+
 
 
 

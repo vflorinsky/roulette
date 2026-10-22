@@ -1,15 +1,16 @@
 import logging
 from logging.handlers import RotatingFileHandler
 from pathlib import Path
-from bot import RandomBot, ThresholdBot
+from bot import RandomBot, ThresholdBot, ProbabilityBot
 from gun import Gun
 from core import RouletteCore
 
-TEST_SETTINGS = {'n_fights': 10000,
+TEST_SETTINGS = {'n_fights': 10,
                  'gun': {'n_slots': 6},
-                 'bots': {'ThresholdBot_1': {'threshold': 1, 'n_rotations': 3},
-                          'ThresholdBot_2': {'threshold': 0, 'n_rotations': 3},
-                          # 'RandomBot': {'n_rotations': 3},
+                 'bots': {# 'ThresholdBot_1': {'threshold': 1, 'n_rotations': 3},
+                          # 'ThresholdBot_2': {'threshold': 0, 'n_rotations': 3},
+                          'RandomBot': {'n_rotations': 3},
+                          'ProbabilityBot': {'n_rotations': 3, 'n_slots': 6},
                           }
                  }
 BOTS = {'RandomBot': RandomBot,
@@ -18,6 +19,9 @@ BOTS = {'RandomBot': RandomBot,
         'ThresholdBot': ThresholdBot,
         'ThresholdBot_1': ThresholdBot,
         'ThresholdBot_2': ThresholdBot,
+        'ProbabilityBot': ProbabilityBot,
+        'ProbabilityBot_1': ProbabilityBot,
+        'ProbabilityBot_2': ProbabilityBot,
         }
 
 LOG_SETTINGS = {'path': Path('logs') / 'test',

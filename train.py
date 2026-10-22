@@ -80,8 +80,8 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         name = f"{generation}.{bid}"
         bid += 1
         # Значение __threshold у потомка
-        # thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
-        thrsh = max(pair[0].threshold(), pair[1].threshold())
+        thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
+        # thrsh = max(pair[0].threshold(), pair[1].threshold())
         # Если нужно - потомок мутирует
         if TRAIN_SETTINGS['mutation']['use']:
             thrsh = mutation(thrsh)
