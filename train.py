@@ -50,7 +50,7 @@ def duel(gun: Gun, players: list) -> str:
         for p in players_:
             try:
                 p.action(gun=gun_)
-                if p.is_alive:
+                if gun_.is_fired:
                     winner = get_duel_winner(players=players_, loser=p.name)
                     break
             except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
@@ -59,21 +59,21 @@ def duel(gun: Gun, players: list) -> str:
     return winner
 
 
-def fight(gun: Gun, players: list) -> dict:
+def fight(gun: Gun, players: list, n_fights: int) -> dict:
     result = dict()
     gun_, players_ = deepcopy(gun), deepcopy(players)
     for p in players_:
         result[p.name] = 0
-    for i in range(TRAIN_SETTINGS['n_fights']):
+    for i in range(n_fights):
         winner = duel(gun=gun_, players=players_)
         result[winner] += 1
         for player in players_:
             player.reset()
         pistol.reset()
-        if i == TRAIN_SETTINGS['n_fights'] // 2:
+        if i == n_fights // 2:
             players_ = [players_[1], players_[0]]
     for k in result.keys():
-        result[k] = result[k] / TRAIN_SETTINGS['n_fights']
+        result[k] = result[k] / n_fights
     return result
 
 
@@ -108,7 +108,8 @@ def selection(population: dict, pistol: Gun) -> dict:
     new_population = dict()
     for pair in gen:
         result = fight(gun=pistol,
-                       players=[deepcopy(pair[0]), deepcopy(pair[1])]
+                       players=[deepcopy(pair[0]), deepcopy(pair[1])],
+                       n_fights=TRAIN_SETTINGS['n_fights']
                        )
         max_probability, winner = 0, None
         for k, v in result.items():

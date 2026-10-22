@@ -14,7 +14,6 @@ class Bot:
         self._n_rotations_backup = n_rotations
         self._blocked_slots = []
         self._max_slots = None
-        self._is_alive = True
 
     def action(self, gun):
         if self._max_slots is None:
@@ -74,15 +73,10 @@ class Bot:
     def n_rotations(self):
         return self._n_rotations
 
-    @property
-    def is_alive(self):
-        return self._is_alive
-
 
 class RandomBot(Bot):
 
     def _select_action(self, gun) -> int:
-        self._is_alive = not gun.is_fired
         if self._n_rotations > 0:
             return choice([1, 2])
         else:
@@ -96,7 +90,6 @@ class ThresholdBot(Bot):
         self.__threshold = threshold
 
     def _select_action(self, gun) -> int:
-        self._is_alive = not gun.is_fired
         if len(self._blocked_slots) >= self.__threshold and self._n_rotations > 0:
             return 2  # вращать
         else:
