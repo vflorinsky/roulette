@@ -3,10 +3,11 @@ from pathlib import Path
 from bot import ThresholdBot, ShotIsImpossible
 from gun import Gun
 from copy import deepcopy
+from statistics import median
 
 
 N_GENERATIONS = 50
-START_VOLUME = 512
+START_VOLUME = 4
 N_ROTATIONS = 3
 N_SLOTS = 6
 N_FIGHTS = 10000
@@ -15,26 +16,46 @@ MUTATION = {'use': False,
             }
 
 
+def del_from_players(players: list, names: list) -> list:
+    if names is None or len(names) == 0:
+        return players
+    rv = []
+    for p in players:
+        if p.name not in names:
+            rv.append(p)
+    return rv
+
+
+def get_duel_winner(players: list,  # только два игрока
+                    loser: str) -> str:
+    for p in players:
+        if p.name != loser:
+            return p.name
+
+
+def duel(gun: Gun, players: list) -> str:
+    gun_, players_ = deepcopy(gun), [deepcopy(p) for p in players]
+    winner = None
+    while winner is None:
+        for p in players_:
+            try:
+                p.action(gun=gun_)
+                if pistol.is_fired:
+                    winner = get_duel_winner(players=players_, loser=p.name)
+                    break
+            except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
+                winner = p.name
+                break
+    return winner
+
+
 def fight(gun: Gun, players: list) -> dict:
     result = dict()
-    players_ = deepcopy(players)
+    gun_, players_ = deepcopy(gun), deepcopy(players)
     for p in players_:
         result[p.name] = 0
     for i in range(N_FIGHTS):
-        winner = None
-        while winner is None:
-            for p in players_:
-                try:
-                    p.action(gun=gun)
-                    if pistol.is_fired:
-                        for q in players_:
-                            if q.name != p.name:
-                                winner = q.name
-                                break
-                        break
-                except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
-                    winner = p.name
-                    break
+        winner = duel(gun=gun_, players=players_)
         result[winner] += 1
         for player in players_:
             player.reset()
@@ -117,6 +138,8 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
     # был степенью двойки.
     for p in sample(list(population.values()), len(new_population)):
         new_population[p.name] = p
+    for name in new_population.keys():
+        new_population[name].reset()
     return new_population
 
 
@@ -130,24 +153,31 @@ if __name__ == "__main__":
                                  max_slots=pistol.n_slots)
 
     for generation in range(N_GENERATIONS):
-        print(generation, len(population))
+        print(f"generation = {generation}")
+        print(f"volume= {len(population)}")
         trsh = [v.threshold() for _, v in population.items()]
-        print(min(trsh), sum(trsh) / len(trsh), max(trsh), trsh)
+        print(f"trsh = {trsh}")
+        print(f"min = {min(trsh)}")
+        print(f"mean = {sum(trsh) / len(trsh)}")
+        print(f"median = {median(trsh)}")
+        print(f"max = {max(trsh)}")
         # Скрещивание, мутация
         population = crossing(population=population,
                               n_rotations=N_ROTATIONS,
                               generation=generation + 1)
-        print("crossing", len(population))
+        print(f"volume after crossing = {len(population)}")
 
         # Отбор
         population = selection(population=population, pistol=pistol)
-        print("selection", len(population))
+        print(f"volume after selection = {len(population)}")
         print('-' * 50)
 
         if len(population) < 2:
             break
 
-    print('-' * 50)
-    for k, v in population.items():
-        print(k)
-        print(v.threshold())
+    print(f"survive = {len(population)}")
+    print("Bot Winner:")
+    for v in population.values():
+        bot = v
+    print(bot.__dict__)
+

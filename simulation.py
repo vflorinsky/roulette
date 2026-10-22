@@ -88,8 +88,8 @@ if __name__ == "__main__":
             continue
         max_ind = max(max_ind, ind)
 
-    # with open(f'sim_reports/simulation_{max_ind + 1}.txt', 'w') as f:
-    #     f.write(f"OPTIONS = {SIMULATION.__str__()}\n")
-    #     f.write(f"STATISTICS = {total.__str__()}\n")
+    with open(f'sim_reports/simulation_{max_ind + 1}.txt', 'w') as f:
+        f.write(f"OPTIONS = {SIMULATION.__str__()}\n")
+        f.write(f"STATISTICS = {total.__str__()}\n")
 
     print(total)
