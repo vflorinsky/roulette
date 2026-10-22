@@ -1,6 +1,10 @@
 from random import choice
 
 
+class ShotIsImpossible(Exception):
+    pass
+
+
 class Bot:
     """Базовый класс"""
 
@@ -14,18 +18,21 @@ class Bot:
     def action(self, gun):
         if self._max_slots is None:
             self._max_slots = gun.n_slots
-        if self._n_rotations > 0:
-            flag = True
-            while flag:
-                act = self._select_action(gun)
-                if act == 1:  # выстрелить
-                    self._shot(gun)
-                    return gun
-                elif act == 2:  # вращать
-                    flag = self._rotate(gun)
-            self._shot(gun)
-        else:
-            self._shot(gun)
+        try:
+            if self._n_rotations > 0:
+                flag = True
+                while flag:
+                    act = self._select_action(gun)
+                    if act == 1:  # выстрелить
+                        self._shot(gun)
+                        return gun
+                    elif act == 2:  # вращать
+                        flag = self._rotate(gun)
+                self._shot(gun)
+            else:
+                self._shot(gun)
+        except ShotIsImpossible:
+            raise ShotIsImpossible
         return gun
 
     def _select_action(self, gun) -> int:
@@ -33,6 +40,8 @@ class Bot:
 
     def _shot(self, gun):
         ttt = list(set([i + 1 for i in range(self._max_slots)]).difference(set(self._blocked_slots)))
+        if len(ttt) == 0:
+            raise ShotIsImpossible
         s = choice(ttt)
         self._blocked_slots.append(s)
         gun.shot(s)
@@ -59,6 +68,10 @@ class Bot:
     @property
     def name(self):
         return self.__name
+
+    @property
+    def n_rotations(self):
+        return self._n_rotations
 
 
 class RandomBot(Bot):

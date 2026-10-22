@@ -1,2 +1,0 @@
-OPTIONS = {'n_fights': 10000, 'gun': {'n_slots': 6}, 'bots': {'RandomBot_1': {'n_rotations': 3}, 'RandomBot_2': {'n_rotations': 3}}}
-STATISTICS = {'RandomBot_1': {'death_probability': 0.5, 'moves': 1.37}, 'RandomBot_2': {'death_probability': 0.5, 'moves': 1.33}}

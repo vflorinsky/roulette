@@ -1,11 +1,12 @@
 from pathlib import Path
-from bot import RandomBot, ThresholdBot
+from bot import RandomBot, ThresholdBot, ShotIsImpossible
 from gun import Gun
+from copy import deepcopy
 
 SIMULATION = {'n_fights': 10000,
               'gun': {'n_slots': 6},
-              'bots': {# 'ThresholdBot': {'threshold': 3, 'n_rotations': 3},
-                       'ThresholdBot': {'threshold': 0, 'n_rotations': 3},
+              'bots': {'ThresholdBot_1': {'threshold': 0, 'n_rotations': 3},
+                       # 'ThresholdBot_2': {'threshold': 0, 'n_rotations': 3},
                        'RandomBot': {'n_rotations': 3},
                        }
               }
@@ -18,16 +19,33 @@ BOTS = {'RandomBot': RandomBot,
         }
 
 
-def game(gun: Gun, players: list) -> dict:
-    dead, n_moves = None, 0
-    while dead is None:
-        n_moves += 1
-        for p in players:
-            p.action(gun=gun)
-            if pistol.is_fired:
-                dead = p.name
+def del_from_players(players: list, names: list) -> list:
+    if names is None or len(names) == 0:
+        return players
+    rv = []
+    for p in players:
+        if p.name not in names:
+            rv.append(p)
+    return rv
+
+
+def game(gun: Gun, players: list) -> str:
+    gun_, players_ = deepcopy(gun), [deepcopy(p) for p in players]
+    loser, winner = None, None
+    while loser is None:
+        for p in players_:
+            try:
+                p.action(gun=gun_)
+                if pistol.is_fired:
+                    loser = p.name
+                    break
+            except ShotIsImpossible:  # p не смог выстрелить - все слоты заблокированы
+                winner = p.name
                 break
-    return {"dead": dead, "n_moves": n_moves}
+        players_ = del_from_players(players_, [loser, winner])
+        if len(players_) == 1:
+            loser = players_[0].name
+    return loser
 
 
 if __name__ == "__main__":
@@ -38,18 +56,17 @@ if __name__ == "__main__":
     total = {}
     for player in players:
         total[player.name] = {'death_probability': 0,  # Вероятность застрелиться, %
-                              'moves': 0  # Среднее число ходов
                               }
 
     # Симуляция
     for i in range(SIMULATION['n_fights']):
-        result = game(gun=pistol, players=players)
+        loser = game2(gun=pistol, players=players)
 
-        total[result['dead']]['death_probability'] += 1
-        total[result['dead']]['moves'] += result['n_moves']
+        total[loser]['death_probability'] += 1
 
         for player in players:
             player.reset()
+        pistol.reset()
 
         # Во второй половине симуляции меняем порядок игроков, чтобы нивелировать эффект первого хода.
         if i == SIMULATION['n_fights'] // 2:
@@ -71,8 +88,8 @@ if __name__ == "__main__":
             continue
         max_ind = max(max_ind, ind)
 
-    with open(f'sim_reports/simulation_{max_ind + 1}.txt', 'w') as f:
-        f.write(f"OPTIONS = {SIMULATION.__str__()}\n")
-        f.write(f"STATISTICS = {total.__str__()}\n")
+    # with open(f'sim_reports/simulation_{max_ind + 1}.txt', 'w') as f:
+    #     f.write(f"OPTIONS = {SIMULATION.__str__()}\n")
+    #     f.write(f"STATISTICS = {total.__str__()}\n")
 
     print(total)

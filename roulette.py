@@ -1,5 +1,5 @@
 from player import Player
-from bot import RandomBot
+from bot import RandomBot, ShotIsImpossible
 from gun import Gun
 from time import sleep
 from random import randint
@@ -83,18 +83,27 @@ if __name__ == "__main__":
     pistol = Gun(n_slots=N_SLOTS)
     print("Приступим!\n")
 
-    winner = None
+    loser, winner = None, None
 
-    while winner is None:
+    while loser is None or winner is None:
         for p in players:
             print(f"Ваш ход, {p.name}!")
-            p.action(gun=pistol)
-            if pistol.is_fired:
+            try:
+                p.action(gun=pistol)
+            except ShotIsImpossible:
                 winner = p.name
+                break
+            if pistol.is_fired:
+                loser = p.name
                 print("Ба-бах!\n")
                 break
             else:
                 print("Щёлк... Осечка!")
             print('-' * 50 + '\n')
 
-    print(f"Поздравляю, {winner}! Вы застрелились...")
+    if loser is not None:
+        print(f"Поздравляю, {loser}! Вы застрелились...")
+    elif winner is not None:
+        print(f"Поздравляю, {winner}! Вы остались живым...")
+    else:
+        print(f"Победил {winner}, застрелился {loser}.")
