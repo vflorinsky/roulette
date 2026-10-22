@@ -132,7 +132,7 @@ class ProbabilityBot(Bot):
     def __init__(self, name: str, n_rotations: int, n_slots: int):
         super().__init__(name=name, n_rotations=n_rotations)
         self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
-        self.__current_round = 0
+        self.__current_round = -1  # счетчик раундов включается после первого вызова _select_action
         self.__rotation_probs = [random() for _ in range(self.__length)]
         self.probabilites()
 

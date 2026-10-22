@@ -2,7 +2,7 @@ import logging
 from logging.handlers import RotatingFileHandler
 from random import randint, choice, sample
 from pathlib import Path
-from bot import ThresholdBot, ShotIsImpossible
+from bot import ThresholdBot
 from gun import Gun
 from copy import deepcopy
 from statistics import median
