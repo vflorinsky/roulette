@@ -78,10 +78,13 @@ def crossing(population: dict,
              n_rotations: int,
              generation: int,
              n_slots: int) -> dict:
-    new_population = dict()
-    bid = 0
+    new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
+        if k1 not in crossed:
+            crossed.append(k1)
         for k2 in population.keys():
+            if k2 in crossed:
+                continue
             spring_probs = [0.5 * (a + b) for a, b in zip(population[k1].probabilites(), population[k2].probabilites())]
             name = f"{generation}.{bid}"
             bid += 1
