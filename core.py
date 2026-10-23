@@ -34,6 +34,7 @@ class RouletteCore:
         return winner
 
     def fight(self) -> dict:
+        """{имя_бота: вероятность_выигрыша}"""
         result = dict()
         players_ = deepcopy(self._players)
         for p in players_:

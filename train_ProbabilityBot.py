@@ -29,11 +29,17 @@ LOG_SETTINGS = {'path': Path('logs') / 'train',
 def mutation(population: dict, force: float) -> dict:
     population_ = dict()
     for k, v in population.items():
-        population_[f"{k}.m"] = v
-        new_probs = population_[f"{k}.m"].probabilites()
+        population_[k] = v
+        new_probs = population_[k].probabilites()
         for i in range(len(new_probs)):
             new_probs[i] += uniform(-0.01 * force * new_probs[i], 0.01 * force * new_probs[i])
-        population_[f"{k}.m"].probabilites(value=new_probs)
+            if new_probs[i] > 1:
+                new_probs[i] = 1
+            elif new_probs[i] < 0:
+                new_probs[i] = 0
+            else:
+                pass
+        population_[k].probabilites(value=new_probs)
     return population_
 
 
@@ -50,27 +56,25 @@ def init_population(n_individuals: int,
     return population
 
 
-def pair_generator(d: dict):
-    iterator = iter(d.values())
-    for item in iterator:
-        yield item, next(iterator)
-
-
 def selection(population: dict, pistol: Gun) -> dict:
-    gen = pair_generator(population)
-    new_population = dict()
-    for pair in gen:
-        sim = RouletteCore(gun=pistol,
-                           players=[deepcopy(pair[0]), deepcopy(pair[1])],
-                           n_fights=TRAIN_SETTINGS['n_fights'])
-        result = sim.fight()
-        max_probability, winner = 0, None
-        for k, v in result.items():
-            if v > max_probability:
-                max_probability = v
-                winner = k
-        new_population[winner] = deepcopy(population[winner])
-        new_population[winner].reset()
+    new_population, survive_probs, fighted = dict(), dict(), []
+    for k1 in population.keys():
+        if k1 not in fighted:
+            fighted.append(k1)
+        for k2 in population.keys():
+            if k2 in fighted:
+                continue
+            sim = RouletteCore(gun=pistol,
+                               players=[deepcopy(population[k1]), deepcopy(population[k2])],
+                               n_fights=TRAIN_SETTINGS['n_fights'])
+            result = sim.fight()
+            max_probability, winner = 0, None
+            for k, v in result.items():
+                if v > max_probability:
+                    max_probability = v
+                    winner = k
+            new_population[winner] = deepcopy(population[winner])
+            new_population[winner].reset()
     return new_population
 
 
@@ -82,6 +86,8 @@ def crossing(population: dict,
     for k1 in population.keys():
         if k1 not in crossed:
             crossed.append(k1)
+            new_population[k1] = deepcopy(population[k1])
+            new_population[k1].reset()
         for k2 in population.keys():
             if k2 in crossed:
                 continue
@@ -93,10 +99,6 @@ def crossing(population: dict,
                                                   n_slots=n_slots)
             new_population[name].probabilites(value=spring_probs)
             new_population[name].reset()
-            for k in [k1, k2]:
-                if k not in new_population.keys():
-                    new_population[k] = deepcopy(population[k])
-                    new_population[k].reset()
     return new_population
 
 
@@ -146,13 +148,13 @@ if __name__ == "__main__":
                                   force=float(TRAIN_SETTINGS['mutation']['force']))
             logger.info(f"volume after mutation = {len(population)}")
 
-        # # Отбор
-        # population = selection(population=population, pistol=pistol)
-        # logger.info(f"volume after selection = {len(population)}")
+        # Отбор
+        population = selection(population=population, pistol=pistol)
+        logger.info(f"volume after selection = {len(population)}")
         logger.info('-' * 50)
-        #
-        # if len(population) < 2:
-        #     break
+
+        if len(population) < 2:
+            break
 
     logger.info(f"survive = {len(population)}")
     for v in population.values():
