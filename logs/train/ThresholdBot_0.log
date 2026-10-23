@@ -1,0 +1,906 @@
+2026-10-23 17:12:21,336 - ThresholdBot - START
+2026-10-23 17:12:21,336 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 2, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:12:21,336 - ThresholdBot - generation = 0
+2026-10-23 17:12:21,336 - ThresholdBot - volume = 3
+2026-10-23 17:12:21,336 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:12:21,336 - ThresholdBot - trsh mean = 6.0
+2026-10-23 17:12:21,336 - ThresholdBot - trsh median = 6
+2026-10-23 17:12:21,336 - ThresholdBot - volume after crossing = 6
+2026-10-23 17:12:21,337 - ThresholdBot - volume after mutation = 6
+2026-10-23 17:12:21,552 - ThresholdBot - volume after selection = 6
+2026-10-23 17:12:21,552 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:12:21,552 - ThresholdBot - generation = 1
+2026-10-23 17:12:21,552 - ThresholdBot - volume = 6
+2026-10-23 17:12:21,552 - ThresholdBot - survive threshold = 0.5128
+2026-10-23 17:12:21,553 - ThresholdBot - trsh mean = 5.614952660328343
+2026-10-23 17:12:21,553 - ThresholdBot - trsh median = 5.824732076370365
+2026-10-23 17:12:21,553 - ThresholdBot - volume after crossing = 21
+2026-10-23 17:12:21,553 - ThresholdBot - volume after mutation = 21
+2026-10-23 17:12:37,788 - ThresholdBot - START
+2026-10-23 17:12:37,788 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.5, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:12:37,788 - ThresholdBot - generation = 0
+2026-10-23 17:12:37,788 - ThresholdBot - volume = 3
+2026-10-23 17:12:37,788 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:12:37,788 - ThresholdBot - trsh mean = 2.6666666666666665
+2026-10-23 17:12:37,788 - ThresholdBot - trsh median = 2
+2026-10-23 17:12:37,788 - ThresholdBot - volume after crossing = 6
+2026-10-23 17:12:37,788 - ThresholdBot - volume after mutation = 6
+2026-10-23 17:12:38,030 - ThresholdBot - volume after selection = 5
+2026-10-23 17:12:38,030 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:12:38,030 - ThresholdBot - generation = 1
+2026-10-23 17:12:38,030 - ThresholdBot - volume = 5
+2026-10-23 17:12:38,030 - ThresholdBot - survive threshold = 0.5207333333333334
+2026-10-23 17:12:38,030 - ThresholdBot - trsh mean = 1.5610184609616868
+2026-10-23 17:12:38,030 - ThresholdBot - trsh median = 1.8545196636645709
+2026-10-23 17:12:38,030 - ThresholdBot - volume after crossing = 15
+2026-10-23 17:12:38,030 - ThresholdBot - volume after mutation = 15
+2026-10-23 17:15:34,648 - ThresholdBot - START
+2026-10-23 17:15:34,648 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.5, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:15:34,648 - ThresholdBot - generation = 0
+2026-10-23 17:15:34,648 - ThresholdBot - volume = 3
+2026-10-23 17:15:34,649 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:15:34,649 - ThresholdBot - trsh mean = 4.0
+2026-10-23 17:15:34,649 - ThresholdBot - trsh median = 3
+2026-10-23 17:15:34,649 - ThresholdBot - volume after crossing = 6
+2026-10-23 17:15:34,649 - ThresholdBot - volume after mutation = 6
+2026-10-23 17:15:34,873 - ThresholdBot - volume after selection = 6
+2026-10-23 17:15:34,873 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:15:34,873 - ThresholdBot - generation = 1
+2026-10-23 17:15:34,873 - ThresholdBot - volume = 6
+2026-10-23 17:15:34,873 - ThresholdBot - survive threshold = 0.5178
+2026-10-23 17:15:34,873 - ThresholdBot - trsh mean = 4.3677340545475225
+2026-10-23 17:15:34,873 - ThresholdBot - trsh median = 4.574978663832501
+2026-10-23 17:15:34,873 - ThresholdBot - volume after crossing = 21
+2026-10-23 17:15:34,874 - ThresholdBot - volume after mutation = 21
+2026-10-23 17:15:38,027 - ThresholdBot - volume after selection = 0
+2026-10-23 17:15:38,027 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:15:38,027 - ThresholdBot - stop reason = популяция сократилась до одной особи
+2026-10-23 17:15:38,027 - ThresholdBot - number of survived = 0
+2026-10-23 17:15:38,027 - ThresholdBot - survive threshold = 0.7767000000000001
+2026-10-23 17:15:38,027 - ThresholdBot - survived bots:
+2026-10-23 17:15:38,027 - ThresholdBot - END
+2026-10-23 17:16:44,111 - ThresholdBot - START
+2026-10-23 17:16:44,111 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:16:44,111 - ThresholdBot - generation = 0
+2026-10-23 17:16:44,111 - ThresholdBot - volume = 3
+2026-10-23 17:16:44,111 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:16:44,111 - ThresholdBot - trsh mean = 0.3333333333333333
+2026-10-23 17:16:44,111 - ThresholdBot - trsh median = 0
+2026-10-23 17:16:44,111 - ThresholdBot - volume after crossing = 6
+2026-10-23 17:16:44,112 - ThresholdBot - volume after mutation = 6
+2026-10-23 17:16:44,356 - ThresholdBot - volume after selection = 5
+2026-10-23 17:16:44,356 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:16:44,357 - ThresholdBot - generation = 1
+2026-10-23 17:16:44,357 - ThresholdBot - volume = 5
+2026-10-23 17:16:44,357 - ThresholdBot - survive threshold = 0.5164000000000001
+2026-10-23 17:16:44,357 - ThresholdBot - trsh mean = 0.0
+2026-10-23 17:16:44,357 - ThresholdBot - trsh median = 0.0
+2026-10-23 17:16:44,357 - ThresholdBot - volume after crossing = 15
+2026-10-23 17:16:44,357 - ThresholdBot - volume after mutation = 15
+2026-10-23 17:16:46,058 - ThresholdBot - volume after selection = 13
+2026-10-23 17:16:46,059 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:16:46,059 - ThresholdBot - generation = 2
+2026-10-23 17:16:46,059 - ThresholdBot - volume = 13
+2026-10-23 17:16:46,059 - ThresholdBot - survive threshold = 0.5246538461538461
+2026-10-23 17:16:46,059 - ThresholdBot - trsh mean = 0.0
+2026-10-23 17:16:46,059 - ThresholdBot - trsh median = 0.0
+2026-10-23 17:16:46,059 - ThresholdBot - volume after crossing = 91
+2026-10-23 17:16:46,060 - ThresholdBot - volume after mutation = 91
+2026-10-23 17:17:52,111 - ThresholdBot - volume after selection = 91
+2026-10-23 17:17:52,111 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:17:52,111 - ThresholdBot - generation = 3
+2026-10-23 17:17:52,111 - ThresholdBot - volume = 91
+2026-10-23 17:17:52,111 - ThresholdBot - survive threshold = 0.5312284069097889
+2026-10-23 17:17:52,111 - ThresholdBot - trsh mean = 0.0
+2026-10-23 17:17:52,111 - ThresholdBot - trsh median = 0.0
+2026-10-23 17:17:52,116 - ThresholdBot - volume after crossing = 4186
+2026-10-23 17:17:52,117 - ThresholdBot - volume after mutation = 4186
+2026-10-23 17:18:12,493 - ThresholdBot - START
+2026-10-23 17:18:12,493 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:18:12,493 - ThresholdBot - generation = 0
+2026-10-23 17:18:12,493 - ThresholdBot - volume = 3
+2026-10-23 17:18:12,493 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:18:12,493 - ThresholdBot - trsh mean = 2.6666666666666665
+2026-10-23 17:18:12,493 - ThresholdBot - trsh median = 2
+2026-10-23 17:18:12,494 - ThresholdBot - volume after crossing = 6
+2026-10-23 17:18:12,494 - ThresholdBot - volume after mutation = 6
+2026-10-23 17:18:12,736 - ThresholdBot - volume after selection = 6
+2026-10-23 17:18:12,736 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:18:12,736 - ThresholdBot - generation = 1
+2026-10-23 17:18:12,736 - ThresholdBot - volume = 6
+2026-10-23 17:18:12,736 - ThresholdBot - survive threshold = 0.5319333333333334
+2026-10-23 17:18:12,736 - ThresholdBot - trsh mean = 3.2580227697602773
+2026-10-23 17:18:12,736 - ThresholdBot - trsh median = 3.7740683092808327
+2026-10-23 17:18:12,736 - ThresholdBot - volume after crossing = 21
+2026-10-23 17:18:12,737 - ThresholdBot - volume after mutation = 21
+2026-10-23 17:18:16,065 - ThresholdBot - volume after selection = 0
+2026-10-23 17:18:16,065 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:18:16,065 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:18:16,065 - ThresholdBot - number of survived = 0
+2026-10-23 17:18:16,065 - ThresholdBot - survive threshold = 0.5851266666666668
+2026-10-23 17:18:16,065 - ThresholdBot - survived bots:
+2026-10-23 17:18:16,065 - ThresholdBot - END
+2026-10-23 17:20:04,631 - ThresholdBot - START
+2026-10-23 17:20:04,631 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 3, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:20:04,631 - ThresholdBot - generation = 0
+2026-10-23 17:20:04,631 - ThresholdBot - volume = 3
+2026-10-23 17:20:04,632 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:20:04,632 - ThresholdBot - trsh mean = 0.3333333333333333
+2026-10-23 17:20:04,632 - ThresholdBot - trsh median = 0
+2026-10-23 17:20:04,680 - ThresholdBot - volume after selection = 2
+2026-10-23 17:20:04,680 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:20:04,681 - ThresholdBot - volume after crossing = 3
+2026-10-23 17:20:04,681 - ThresholdBot - volume after mutation = 3
+2026-10-23 17:20:04,681 - ThresholdBot - generation = 1
+2026-10-23 17:20:04,681 - ThresholdBot - volume = 3
+2026-10-23 17:20:04,681 - ThresholdBot - survive threshold = 0.5283333333333333
+2026-10-23 17:20:04,681 - ThresholdBot - trsh mean = 0.0
+2026-10-23 17:20:04,681 - ThresholdBot - trsh median = 0.0
+2026-10-23 17:20:04,731 - ThresholdBot - volume after selection = 0
+2026-10-23 17:20:04,731 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:20:04,731 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:20:04,731 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:20:04,731 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:20:04,731 - ThresholdBot - number of survived = 0
+2026-10-23 17:20:04,731 - ThresholdBot - survive threshold = 0.5811666666666667
+2026-10-23 17:20:04,731 - ThresholdBot - survived bots:
+2026-10-23 17:20:04,731 - ThresholdBot - END
+2026-10-23 17:20:36,133 - ThresholdBot - START
+2026-10-23 17:20:36,134 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:20:36,134 - ThresholdBot - generation = 0
+2026-10-23 17:20:36,134 - ThresholdBot - volume = 10
+2026-10-23 17:20:36,134 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:20:36,134 - ThresholdBot - trsh mean = 3.6
+2026-10-23 17:20:36,134 - ThresholdBot - trsh median = 5.0
+2026-10-23 17:20:36,822 - ThresholdBot - volume after selection = 10
+2026-10-23 17:20:36,822 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:20:36,823 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:20:36,823 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:20:36,823 - ThresholdBot - generation = 1
+2026-10-23 17:20:36,823 - ThresholdBot - volume = 55
+2026-10-23 17:20:36,823 - ThresholdBot - survive threshold = 0.5205777777777778
+2026-10-23 17:20:36,823 - ThresholdBot - trsh mean = 3.7140331437021037
+2026-10-23 17:20:36,823 - ThresholdBot - trsh median = 4.6814946263526105
+2026-10-23 17:20:59,644 - ThresholdBot - volume after selection = 0
+2026-10-23 17:20:59,644 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:20:59,644 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:20:59,644 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:20:59,644 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:20:59,644 - ThresholdBot - number of survived = 0
+2026-10-23 17:20:59,644 - ThresholdBot - survive threshold = 0.5726355555555557
+2026-10-23 17:20:59,644 - ThresholdBot - survived bots:
+2026-10-23 17:20:59,644 - ThresholdBot - END
+2026-10-23 17:22:09,365 - ThresholdBot - START
+2026-10-23 17:22:09,365 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (-1, 7)}}
+2026-10-23 17:22:09,365 - ThresholdBot - generation = 0
+2026-10-23 17:22:09,365 - ThresholdBot - volume = 10
+2026-10-23 17:22:09,365 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:22:09,365 - ThresholdBot - trsh mean = 1.7
+2026-10-23 17:22:09,365 - ThresholdBot - trsh median = 1.0
+2026-10-23 17:22:10,083 - ThresholdBot - volume after selection = 10
+2026-10-23 17:22:10,084 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:22:10,084 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:22:10,084 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:22:10,084 - ThresholdBot - generation = 1
+2026-10-23 17:22:10,084 - ThresholdBot - volume = 55
+2026-10-23 17:22:10,084 - ThresholdBot - survive threshold = 0.5284444444444445
+2026-10-23 17:22:10,084 - ThresholdBot - trsh mean = 1.052685289345635
+2026-10-23 17:22:10,084 - ThresholdBot - trsh median = 0.889574863528552
+2026-10-23 17:22:34,207 - ThresholdBot - volume after selection = 1
+2026-10-23 17:22:34,208 - ThresholdBot - volume after crossing = 1
+2026-10-23 17:22:34,208 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:22:34,208 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:22:34,208 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:22:34,208 - ThresholdBot - number of survived = 1
+2026-10-23 17:22:34,208 - ThresholdBot - survive threshold = 0.583
+2026-10-23 17:22:34,208 - ThresholdBot - survived bots:
+2026-10-23 17:22:34,208 - ThresholdBot - {'_Bot__name': '1.43', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 5.010689701260907}
+2026-10-23 17:22:34,208 - ThresholdBot - END
+2026-10-23 17:25:44,213 - ThresholdBot - START
+2026-10-23 17:25:44,213 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:25:44,214 - ThresholdBot - generation = 0
+2026-10-23 17:25:44,214 - ThresholdBot - volume = 10
+2026-10-23 17:25:44,214 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:25:44,214 - ThresholdBot - trsh mean = 3.2
+2026-10-23 17:25:44,214 - ThresholdBot - trsh median = 3.5
+2026-10-23 17:25:44,896 - ThresholdBot - volume after selection = 10
+2026-10-23 17:25:44,896 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:25:44,896 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:25:44,896 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:25:44,896 - ThresholdBot - generation = 1
+2026-10-23 17:25:44,896 - ThresholdBot - volume = 55
+2026-10-23 17:25:44,896 - ThresholdBot - survive threshold = 0.5193111111111111
+2026-10-23 17:25:44,896 - ThresholdBot - trsh mean = 2.487204758743282
+2026-10-23 17:25:44,896 - ThresholdBot - trsh median = 2.9309499105388332
+2026-10-23 17:26:08,006 - ThresholdBot - volume after selection = 1
+2026-10-23 17:26:08,007 - ThresholdBot - volume after crossing = 1
+2026-10-23 17:26:08,007 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:26:08,007 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:26:08,007 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:26:08,007 - ThresholdBot - number of survived = 1
+2026-10-23 17:26:08,007 - ThresholdBot - survive threshold = 0.577
+2026-10-23 17:26:08,007 - ThresholdBot - survived bots:
+2026-10-23 17:26:08,007 - ThresholdBot - {'_Bot__name': '1.44', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 6}
+2026-10-23 17:26:08,007 - ThresholdBot - END
+2026-10-23 17:26:30,999 - ThresholdBot - START
+2026-10-23 17:26:30,999 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:26:30,999 - ThresholdBot - generation = 0
+2026-10-23 17:26:30,999 - ThresholdBot - volume = 10
+2026-10-23 17:26:30,999 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:26:30,999 - ThresholdBot - trsh mean = 2.7
+2026-10-23 17:26:30,999 - ThresholdBot - trsh median = 2.0
+2026-10-23 17:26:31,705 - ThresholdBot - volume after selection = 10
+2026-10-23 17:26:31,706 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:26:31,706 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:26:31,706 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:26:31,706 - ThresholdBot - generation = 1
+2026-10-23 17:26:31,706 - ThresholdBot - volume = 55
+2026-10-23 17:26:31,706 - ThresholdBot - survive threshold = 0.5242222222222223
+2026-10-23 17:26:31,706 - ThresholdBot - trsh mean = 2.86422132261231
+2026-10-23 17:26:31,706 - ThresholdBot - trsh median = 2.1327303086624476
+2026-10-23 17:26:54,867 - ThresholdBot - volume after selection = 55
+2026-10-23 17:26:54,869 - ThresholdBot - volume after crossing = 1540
+2026-10-23 17:26:54,870 - ThresholdBot - volume after mutation = 1540
+2026-10-23 17:26:54,870 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:26:54,870 - ThresholdBot - generation = 2
+2026-10-23 17:26:54,870 - ThresholdBot - volume = 1540
+2026-10-23 17:26:54,870 - ThresholdBot - survive threshold = 0.5362054176072235
+2026-10-23 17:26:54,870 - ThresholdBot - trsh mean = 2.0875292895516924
+2026-10-23 17:26:54,870 - ThresholdBot - trsh median = 1.0528671612207572
+2026-10-23 17:30:40,593 - ThresholdBot - START
+2026-10-23 17:30:40,593 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:30:40,593 - ThresholdBot - generation = 0
+2026-10-23 17:30:40,593 - ThresholdBot - volume = 2
+2026-10-23 17:30:40,593 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:30:40,593 - ThresholdBot - trsh mean = 2.5
+2026-10-23 17:30:40,593 - ThresholdBot - trsh median = 2.5
+2026-10-23 17:30:40,609 - ThresholdBot - volume after selection = 1
+2026-10-23 17:30:40,609 - ThresholdBot - volume after crossing = 1
+2026-10-23 17:30:40,609 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:30:40,609 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:30:40,609 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:30:40,609 - ThresholdBot - number of survived = 1
+2026-10-23 17:30:40,609 - ThresholdBot - survive threshold = 0.538
+2026-10-23 17:30:40,609 - ThresholdBot - survived bots:
+2026-10-23 17:30:40,609 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.624274255136877}
+2026-10-23 17:30:40,609 - ThresholdBot - END
+2026-10-23 17:30:49,299 - ThresholdBot - START
+2026-10-23 17:30:49,299 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:30:49,299 - ThresholdBot - generation = 0
+2026-10-23 17:30:49,299 - ThresholdBot - volume = 2
+2026-10-23 17:30:49,299 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:30:49,299 - ThresholdBot - trsh mean = 3.5
+2026-10-23 17:30:49,299 - ThresholdBot - trsh median = 3.5
+2026-10-23 17:30:49,314 - ThresholdBot - volume after selection = 1
+2026-10-23 17:30:49,314 - ThresholdBot - volume after crossing = 1
+2026-10-23 17:30:49,315 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:30:49,315 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:30:49,315 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:30:49,315 - ThresholdBot - number of survived = 1
+2026-10-23 17:30:49,315 - ThresholdBot - survive threshold = 0.503
+2026-10-23 17:30:49,315 - ThresholdBot - survived bots:
+2026-10-23 17:30:49,315 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 1.1435364309653}
+2026-10-23 17:30:49,315 - ThresholdBot - END
+2026-10-23 17:33:14,676 - ThresholdBot - START
+2026-10-23 17:33:14,676 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:33:14,676 - ThresholdBot - generation = 0
+2026-10-23 17:33:14,676 - ThresholdBot - volume = 2
+2026-10-23 17:33:14,676 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:33:14,676 - ThresholdBot - trsh mean = 2.5
+2026-10-23 17:33:14,676 - ThresholdBot - trsh median = 2.5
+2026-10-23 17:33:14,692 - ThresholdBot - volume after selection = 1
+2026-10-23 17:33:14,692 - ThresholdBot - volume after crossing = 1
+2026-10-23 17:33:14,692 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:33:14,692 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:33:14,692 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:33:14,692 - ThresholdBot - number of survived = 1
+2026-10-23 17:33:14,692 - ThresholdBot - survive threshold = 0.525
+2026-10-23 17:33:14,692 - ThresholdBot - survived bots:
+2026-10-23 17:33:14,692 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 1.7194417988784407}
+2026-10-23 17:33:14,692 - ThresholdBot - END
+2026-10-23 17:33:26,801 - ThresholdBot - START
+2026-10-23 17:33:26,801 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:33:26,801 - ThresholdBot - generation = 0
+2026-10-23 17:33:26,801 - ThresholdBot - volume = 2
+2026-10-23 17:33:26,801 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:33:26,801 - ThresholdBot - trsh mean = 5.0
+2026-10-23 17:33:26,801 - ThresholdBot - trsh median = 5.0
+2026-10-23 17:33:26,816 - ThresholdBot - volume after selection = 1
+2026-10-23 17:33:26,816 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:33:26,817 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:33:26,817 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:33:26,817 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:33:26,817 - ThresholdBot - number of survived = 0
+2026-10-23 17:33:26,817 - ThresholdBot - survive threshold = 0.528
+2026-10-23 17:33:26,817 - ThresholdBot - survived bots:
+2026-10-23 17:33:26,817 - ThresholdBot - END
+2026-10-23 17:33:28,703 - ThresholdBot - START
+2026-10-23 17:33:28,703 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:33:28,704 - ThresholdBot - generation = 0
+2026-10-23 17:33:28,704 - ThresholdBot - volume = 2
+2026-10-23 17:33:28,704 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:33:28,704 - ThresholdBot - trsh mean = 4.5
+2026-10-23 17:33:28,704 - ThresholdBot - trsh median = 4.5
+2026-10-23 17:33:28,719 - ThresholdBot - volume after selection = 1
+2026-10-23 17:33:28,719 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:33:28,719 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:33:28,719 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:33:28,719 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:33:28,719 - ThresholdBot - number of survived = 0
+2026-10-23 17:33:28,719 - ThresholdBot - survive threshold = 0.527
+2026-10-23 17:33:28,719 - ThresholdBot - survived bots:
+2026-10-23 17:33:28,719 - ThresholdBot - END
+2026-10-23 17:33:31,053 - ThresholdBot - START
+2026-10-23 17:33:31,053 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:33:31,053 - ThresholdBot - generation = 0
+2026-10-23 17:33:31,054 - ThresholdBot - volume = 2
+2026-10-23 17:33:31,054 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:33:31,054 - ThresholdBot - trsh mean = 0.5
+2026-10-23 17:33:31,054 - ThresholdBot - trsh median = 0.5
+2026-10-23 17:33:31,071 - ThresholdBot - volume after selection = 1
+2026-10-23 17:33:31,071 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:33:31,071 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:33:31,071 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:33:31,071 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:33:31,071 - ThresholdBot - number of survived = 0
+2026-10-23 17:33:31,071 - ThresholdBot - survive threshold = 0.547
+2026-10-23 17:33:31,071 - ThresholdBot - survived bots:
+2026-10-23 17:33:31,071 - ThresholdBot - END
+2026-10-23 17:34:13,263 - ThresholdBot - START
+2026-10-23 17:34:13,263 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 5, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:34:13,263 - ThresholdBot - generation = 0
+2026-10-23 17:34:13,263 - ThresholdBot - volume = 5
+2026-10-23 17:34:13,263 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:34:13,263 - ThresholdBot - trsh mean = 3.6
+2026-10-23 17:34:13,263 - ThresholdBot - trsh median = 5
+2026-10-23 17:34:13,415 - ThresholdBot - volume after selection = 5
+2026-10-23 17:34:13,415 - ThresholdBot - volume after crossing = 9
+2026-10-23 17:34:13,415 - ThresholdBot - volume after mutation = 9
+2026-10-23 17:34:13,415 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:34:13,415 - ThresholdBot - generation = 1
+2026-10-23 17:34:13,415 - ThresholdBot - volume = 9
+2026-10-23 17:34:13,415 - ThresholdBot - survive threshold = 0.5189
+2026-10-23 17:34:13,415 - ThresholdBot - trsh mean = 3.2744707410520237
+2026-10-23 17:34:13,415 - ThresholdBot - trsh median = 5.470236669468216
+2026-10-23 17:34:13,963 - ThresholdBot - volume after selection = 6
+2026-10-23 17:34:13,963 - ThresholdBot - volume after crossing = 18
+2026-10-23 17:34:13,963 - ThresholdBot - volume after mutation = 18
+2026-10-23 17:34:13,963 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:34:13,963 - ThresholdBot - generation = 2
+2026-10-23 17:34:13,964 - ThresholdBot - volume = 18
+2026-10-23 17:34:13,964 - ThresholdBot - survive threshold = 0.5348
+2026-10-23 17:34:13,964 - ThresholdBot - trsh mean = 5.754884430368273
+2026-10-23 17:34:13,964 - ThresholdBot - trsh median = 6.0
+2026-10-23 17:34:16,147 - ThresholdBot - volume after selection = 5
+2026-10-23 17:34:16,147 - ThresholdBot - volume after crossing = 5
+2026-10-23 17:34:16,147 - ThresholdBot - volume after mutation = 5
+2026-10-23 17:34:16,147 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:34:16,147 - ThresholdBot - generation = 3
+2026-10-23 17:34:16,147 - ThresholdBot - volume = 5
+2026-10-23 17:34:16,147 - ThresholdBot - survive threshold = 0.5445000000000001
+2026-10-23 17:34:16,147 - ThresholdBot - trsh mean = 4.612957543129785
+2026-10-23 17:34:16,147 - ThresholdBot - trsh median = 4.64731611465622
+2026-10-23 17:34:16,296 - ThresholdBot - volume after selection = 0
+2026-10-23 17:34:16,297 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:34:16,297 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:34:16,297 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:34:16,297 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:34:16,297 - ThresholdBot - number of survived = 0
+2026-10-23 17:34:16,297 - ThresholdBot - survive threshold = 0.5445000000000001
+2026-10-23 17:34:16,297 - ThresholdBot - survived bots:
+2026-10-23 17:34:16,297 - ThresholdBot - END
+2026-10-23 17:35:53,681 - ThresholdBot - START
+2026-10-23 17:35:53,681 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:35:53,681 - ThresholdBot - generation = 0
+2026-10-23 17:35:53,681 - ThresholdBot - volume = 10
+2026-10-23 17:35:53,681 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:35:53,681 - ThresholdBot - trsh mean = 2.9
+2026-10-23 17:35:53,682 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:35:54,388 - ThresholdBot - volume after selection = 10
+2026-10-23 17:35:54,388 - ThresholdBot - volume after crossing = 49
+2026-10-23 17:35:54,388 - ThresholdBot - volume after mutation = 49
+2026-10-23 17:35:54,388 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:35:54,388 - ThresholdBot - generation = 1
+2026-10-23 17:35:54,388 - ThresholdBot - volume = 49
+2026-10-23 17:35:54,388 - ThresholdBot - survive threshold = 0.5176888888888889
+2026-10-23 17:35:54,388 - ThresholdBot - trsh mean = 3.1133057496915018
+2026-10-23 17:35:54,388 - ThresholdBot - trsh median = 3.8874305438072114
+2026-10-23 17:36:13,188 - ThresholdBot - volume after selection = 49
+2026-10-23 17:36:13,189 - ThresholdBot - volume after crossing = 972
+2026-10-23 17:36:13,190 - ThresholdBot - volume after mutation = 972
+2026-10-23 17:36:13,190 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:36:13,190 - ThresholdBot - generation = 2
+2026-10-23 17:36:13,190 - ThresholdBot - volume = 972
+2026-10-23 17:36:13,190 - ThresholdBot - survive threshold = 0.5306331360946746
+2026-10-23 17:36:13,190 - ThresholdBot - trsh mean = 3.2034457364594964
+2026-10-23 17:36:13,190 - ThresholdBot - trsh median = 3.844630671009188
+2026-10-23 17:42:09,307 - ThresholdBot - START
+2026-10-23 17:42:09,307 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:42:09,307 - ThresholdBot - generation = 0
+2026-10-23 17:42:09,307 - ThresholdBot - volume = 10
+2026-10-23 17:42:09,307 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:42:09,307 - ThresholdBot - trsh mean = 3.6
+2026-10-23 17:42:09,307 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:42:10,002 - ThresholdBot - volume after selection = 10
+2026-10-23 17:42:10,002 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:42:10,002 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:42:10,002 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:42:10,002 - ThresholdBot - generation = 1
+2026-10-23 17:42:10,002 - ThresholdBot - volume = 55
+2026-10-23 17:42:10,002 - ThresholdBot - survive threshold = 0.551
+2026-10-23 17:42:10,002 - ThresholdBot - trsh mean = 3.405452510811714
+2026-10-23 17:42:10,002 - ThresholdBot - trsh median = 3.496523549724187
+2026-10-23 17:42:33,080 - ThresholdBot - volume after selection = 10
+2026-10-23 17:42:33,080 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:42:33,080 - ThresholdBot - volume after mutation = 55
+2026-10-23 17:42:33,080 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:42:33,080 - ThresholdBot - generation = 2
+2026-10-23 17:42:33,080 - ThresholdBot - volume = 55
+2026-10-23 17:42:33,080 - ThresholdBot - survive threshold = 0.585
+2026-10-23 17:42:33,080 - ThresholdBot - trsh mean = 3.429322824567139
+2026-10-23 17:42:33,081 - ThresholdBot - trsh median = 2.80951387369599
+2026-10-23 17:42:56,206 - ThresholdBot - volume after selection = 0
+2026-10-23 17:42:56,206 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:42:56,206 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:42:56,206 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:42:56,206 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:42:56,206 - ThresholdBot - number of survived = 0
+2026-10-23 17:42:56,206 - ThresholdBot - survive threshold = 0.585
+2026-10-23 17:42:56,206 - ThresholdBot - survived bots:
+2026-10-23 17:42:56,206 - ThresholdBot - END
+2026-10-23 17:47:16,790 - ThresholdBot - START
+2026-10-23 17:47:16,790 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:47:16,791 - ThresholdBot - generation = 0
+2026-10-23 17:47:16,791 - ThresholdBot - volume = 10
+2026-10-23 17:47:16,791 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:47:16,791 - ThresholdBot - trsh mean = 3.1
+2026-10-23 17:47:16,791 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:47:17,493 - ThresholdBot - volume after selection = 10
+2026-10-23 17:47:17,493 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:47:17,493 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:47:17,493 - ThresholdBot - generation = 1
+2026-10-23 17:47:17,493 - ThresholdBot - volume = 55
+2026-10-23 17:47:17,493 - ThresholdBot - survive threshold = 0.554
+2026-10-23 17:47:17,494 - ThresholdBot - trsh mean = 3.018181818181818
+2026-10-23 17:47:17,494 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:47:40,837 - ThresholdBot - volume after selection = 9
+2026-10-23 17:47:40,837 - ThresholdBot - volume after crossing = 45
+2026-10-23 17:47:40,837 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:47:40,837 - ThresholdBot - generation = 2
+2026-10-23 17:47:40,838 - ThresholdBot - volume = 45
+2026-10-23 17:47:40,838 - ThresholdBot - survive threshold = 0.587
+2026-10-23 17:47:40,838 - ThresholdBot - trsh mean = 1.9555555555555555
+2026-10-23 17:47:40,838 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:47:56,316 - ThresholdBot - volume after selection = 0
+2026-10-23 17:47:56,316 - ThresholdBot - volume after crossing = 0
+2026-10-23 17:47:56,316 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:47:56,316 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:47:56,316 - ThresholdBot - number of survived = 0
+2026-10-23 17:47:56,316 - ThresholdBot - survive threshold = 0.587
+2026-10-23 17:47:56,316 - ThresholdBot - survived bots:
+2026-10-23 17:47:56,316 - ThresholdBot - END
+2026-10-23 17:50:02,050 - ThresholdBot - START
+2026-10-23 17:50:02,050 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 0.85, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:50:02,050 - ThresholdBot - generation = 0
+2026-10-23 17:50:02,050 - ThresholdBot - volume = 10
+2026-10-23 17:50:02,050 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:50:02,050 - ThresholdBot - trsh mean = 3.6
+2026-10-23 17:50:02,050 - ThresholdBot - trsh median = 3.5
+2026-10-23 17:50:02,757 - ThresholdBot - volume after selection = 10
+2026-10-23 17:50:02,757 - ThresholdBot - volume after crossing = 55
+2026-10-23 17:50:02,757 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:50:02,757 - ThresholdBot - generation = 1
+2026-10-23 17:50:02,757 - ThresholdBot - volume = 55
+2026-10-23 17:50:02,757 - ThresholdBot - survive threshold = 0.46155
+2026-10-23 17:50:02,757 - ThresholdBot - trsh mean = 2.8727272727272726
+2026-10-23 17:50:02,757 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:50:26,547 - ThresholdBot - volume after selection = 55
+2026-10-23 17:50:26,549 - ThresholdBot - volume after crossing = 1540
+2026-10-23 17:50:26,549 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:50:26,549 - ThresholdBot - generation = 2
+2026-10-23 17:50:26,549 - ThresholdBot - volume = 1540
+2026-10-23 17:50:26,549 - ThresholdBot - survive threshold = 0.48364999999999997
+2026-10-23 17:50:26,549 - ThresholdBot - trsh mean = 2.6136363636363638
+2026-10-23 17:50:26,549 - ThresholdBot - trsh median = 2.0
+2026-10-23 17:51:18,371 - ThresholdBot - START
+2026-10-23 17:51:18,371 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 0.85, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:51:18,371 - ThresholdBot - generation = 0
+2026-10-23 17:51:18,371 - ThresholdBot - volume = 10
+2026-10-23 17:51:18,371 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:51:18,372 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:18,372 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:19,064 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:19,064 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:19,064 - ThresholdBot - generation = 1
+2026-10-23 17:51:19,064 - ThresholdBot - volume = 10
+2026-10-23 17:51:19,064 - ThresholdBot - survive threshold = 0.4785499999999999
+2026-10-23 17:51:19,064 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:19,064 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:19,748 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:19,748 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:19,749 - ThresholdBot - generation = 2
+2026-10-23 17:51:19,749 - ThresholdBot - volume = 10
+2026-10-23 17:51:19,749 - ThresholdBot - survive threshold = 0.4692
+2026-10-23 17:51:19,749 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:19,749 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:20,440 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:20,440 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:20,440 - ThresholdBot - generation = 3
+2026-10-23 17:51:20,440 - ThresholdBot - volume = 10
+2026-10-23 17:51:20,440 - ThresholdBot - survive threshold = 0.47515
+2026-10-23 17:51:20,440 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:20,440 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:21,127 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:21,127 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:21,127 - ThresholdBot - generation = 4
+2026-10-23 17:51:21,127 - ThresholdBot - volume = 10
+2026-10-23 17:51:21,127 - ThresholdBot - survive threshold = 0.47175
+2026-10-23 17:51:21,127 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:21,127 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:21,815 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:21,815 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:21,815 - ThresholdBot - generation = 5
+2026-10-23 17:51:21,815 - ThresholdBot - volume = 10
+2026-10-23 17:51:21,815 - ThresholdBot - survive threshold = 0.4777
+2026-10-23 17:51:21,815 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:21,815 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:22,503 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:22,504 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:22,504 - ThresholdBot - generation = 6
+2026-10-23 17:51:22,504 - ThresholdBot - volume = 10
+2026-10-23 17:51:22,504 - ThresholdBot - survive threshold = 0.47175
+2026-10-23 17:51:22,504 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:22,504 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:23,190 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:23,190 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:23,190 - ThresholdBot - generation = 7
+2026-10-23 17:51:23,190 - ThresholdBot - volume = 10
+2026-10-23 17:51:23,190 - ThresholdBot - survive threshold = 0.46240000000000003
+2026-10-23 17:51:23,190 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:23,190 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:23,872 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:23,872 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:23,872 - ThresholdBot - generation = 8
+2026-10-23 17:51:23,872 - ThresholdBot - volume = 10
+2026-10-23 17:51:23,872 - ThresholdBot - survive threshold = 0.46665
+2026-10-23 17:51:23,872 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:23,872 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:24,558 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:24,558 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:24,558 - ThresholdBot - generation = 9
+2026-10-23 17:51:24,558 - ThresholdBot - volume = 10
+2026-10-23 17:51:24,558 - ThresholdBot - survive threshold = 0.48024999999999995
+2026-10-23 17:51:24,558 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:24,558 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:25,241 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:25,241 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:25,241 - ThresholdBot - generation = 10
+2026-10-23 17:51:25,241 - ThresholdBot - volume = 10
+2026-10-23 17:51:25,242 - ThresholdBot - survive threshold = 0.45730000000000004
+2026-10-23 17:51:25,242 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:25,242 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:25,928 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:25,928 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:25,928 - ThresholdBot - generation = 11
+2026-10-23 17:51:25,928 - ThresholdBot - volume = 10
+2026-10-23 17:51:25,928 - ThresholdBot - survive threshold = 0.47600000000000003
+2026-10-23 17:51:25,928 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:25,928 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:26,613 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:26,613 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:26,613 - ThresholdBot - generation = 12
+2026-10-23 17:51:26,613 - ThresholdBot - volume = 10
+2026-10-23 17:51:26,613 - ThresholdBot - survive threshold = 0.4641
+2026-10-23 17:51:26,613 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:26,614 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:27,296 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:27,297 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:27,297 - ThresholdBot - generation = 13
+2026-10-23 17:51:27,297 - ThresholdBot - volume = 10
+2026-10-23 17:51:27,297 - ThresholdBot - survive threshold = 0.4785499999999999
+2026-10-23 17:51:27,297 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:27,297 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:27,981 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:27,981 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:27,981 - ThresholdBot - generation = 14
+2026-10-23 17:51:27,981 - ThresholdBot - volume = 10
+2026-10-23 17:51:27,981 - ThresholdBot - survive threshold = 0.45645
+2026-10-23 17:51:27,981 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:27,981 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:28,664 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:28,664 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:28,664 - ThresholdBot - generation = 15
+2026-10-23 17:51:28,665 - ThresholdBot - volume = 10
+2026-10-23 17:51:28,665 - ThresholdBot - survive threshold = 0.46580000000000005
+2026-10-23 17:51:28,665 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:28,665 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:29,348 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:29,348 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:29,348 - ThresholdBot - generation = 16
+2026-10-23 17:51:29,348 - ThresholdBot - volume = 10
+2026-10-23 17:51:29,349 - ThresholdBot - survive threshold = 0.4641
+2026-10-23 17:51:29,349 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:29,349 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:30,032 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:30,032 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:30,032 - ThresholdBot - generation = 17
+2026-10-23 17:51:30,032 - ThresholdBot - volume = 10
+2026-10-23 17:51:30,032 - ThresholdBot - survive threshold = 0.46325
+2026-10-23 17:51:30,032 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:30,032 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:30,721 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:30,721 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:30,721 - ThresholdBot - generation = 18
+2026-10-23 17:51:30,721 - ThresholdBot - volume = 10
+2026-10-23 17:51:30,721 - ThresholdBot - survive threshold = 0.46665
+2026-10-23 17:51:30,721 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:30,721 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:31,407 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:31,407 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:31,407 - ThresholdBot - generation = 19
+2026-10-23 17:51:31,407 - ThresholdBot - volume = 10
+2026-10-23 17:51:31,407 - ThresholdBot - survive threshold = 0.4692
+2026-10-23 17:51:31,407 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:31,407 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:32,088 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:32,089 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:32,089 - ThresholdBot - generation = 20
+2026-10-23 17:51:32,089 - ThresholdBot - volume = 10
+2026-10-23 17:51:32,089 - ThresholdBot - survive threshold = 0.47005
+2026-10-23 17:51:32,089 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:32,089 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:32,776 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:32,776 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:32,776 - ThresholdBot - generation = 21
+2026-10-23 17:51:32,776 - ThresholdBot - volume = 10
+2026-10-23 17:51:32,776 - ThresholdBot - survive threshold = 0.48874999999999996
+2026-10-23 17:51:32,776 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:32,776 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:33,471 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:33,471 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:33,471 - ThresholdBot - generation = 22
+2026-10-23 17:51:33,471 - ThresholdBot - volume = 10
+2026-10-23 17:51:33,471 - ThresholdBot - survive threshold = 0.4641
+2026-10-23 17:51:33,471 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:33,471 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:34,159 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:34,159 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:34,159 - ThresholdBot - generation = 23
+2026-10-23 17:51:34,159 - ThresholdBot - volume = 10
+2026-10-23 17:51:34,159 - ThresholdBot - survive threshold = 0.4675
+2026-10-23 17:51:34,159 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:34,159 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:34,844 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:34,844 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:34,844 - ThresholdBot - generation = 24
+2026-10-23 17:51:34,844 - ThresholdBot - volume = 10
+2026-10-23 17:51:34,844 - ThresholdBot - survive threshold = 0.4777
+2026-10-23 17:51:34,844 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:34,844 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:35,526 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:35,526 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:35,526 - ThresholdBot - generation = 25
+2026-10-23 17:51:35,526 - ThresholdBot - volume = 10
+2026-10-23 17:51:35,526 - ThresholdBot - survive threshold = 0.46240000000000003
+2026-10-23 17:51:35,526 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:35,526 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:36,212 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:36,212 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:36,212 - ThresholdBot - generation = 26
+2026-10-23 17:51:36,212 - ThresholdBot - volume = 10
+2026-10-23 17:51:36,212 - ThresholdBot - survive threshold = 0.48024999999999995
+2026-10-23 17:51:36,212 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:36,212 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:36,894 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:36,894 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:36,894 - ThresholdBot - generation = 27
+2026-10-23 17:51:36,895 - ThresholdBot - volume = 10
+2026-10-23 17:51:36,895 - ThresholdBot - survive threshold = 0.46580000000000005
+2026-10-23 17:51:36,895 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:36,895 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:37,579 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:37,579 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:37,579 - ThresholdBot - generation = 28
+2026-10-23 17:51:37,579 - ThresholdBot - volume = 10
+2026-10-23 17:51:37,579 - ThresholdBot - survive threshold = 0.47005
+2026-10-23 17:51:37,579 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:37,579 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:38,261 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:38,261 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:38,261 - ThresholdBot - generation = 29
+2026-10-23 17:51:38,262 - ThresholdBot - volume = 10
+2026-10-23 17:51:38,262 - ThresholdBot - survive threshold = 0.47345000000000004
+2026-10-23 17:51:38,262 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:38,262 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:38,950 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:38,951 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:38,951 - ThresholdBot - generation = 30
+2026-10-23 17:51:38,951 - ThresholdBot - volume = 10
+2026-10-23 17:51:38,951 - ThresholdBot - survive threshold = 0.46580000000000005
+2026-10-23 17:51:38,951 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:38,951 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:39,639 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:39,640 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:39,640 - ThresholdBot - generation = 31
+2026-10-23 17:51:39,640 - ThresholdBot - volume = 10
+2026-10-23 17:51:39,640 - ThresholdBot - survive threshold = 0.47939999999999994
+2026-10-23 17:51:39,640 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:39,640 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:40,332 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:40,333 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:40,333 - ThresholdBot - generation = 32
+2026-10-23 17:51:40,333 - ThresholdBot - volume = 10
+2026-10-23 17:51:40,333 - ThresholdBot - survive threshold = 0.47430000000000005
+2026-10-23 17:51:40,333 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:40,333 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:41,021 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:41,021 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:41,022 - ThresholdBot - generation = 33
+2026-10-23 17:51:41,022 - ThresholdBot - volume = 10
+2026-10-23 17:51:41,022 - ThresholdBot - survive threshold = 0.4675
+2026-10-23 17:51:41,022 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:41,022 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:41,711 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:41,711 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:41,711 - ThresholdBot - generation = 34
+2026-10-23 17:51:41,711 - ThresholdBot - volume = 10
+2026-10-23 17:51:41,711 - ThresholdBot - survive threshold = 0.46495000000000003
+2026-10-23 17:51:41,711 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:41,711 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:42,395 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:42,395 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:42,395 - ThresholdBot - generation = 35
+2026-10-23 17:51:42,395 - ThresholdBot - volume = 10
+2026-10-23 17:51:42,395 - ThresholdBot - survive threshold = 0.4895999999999999
+2026-10-23 17:51:42,395 - ThresholdBot - trsh mean = 3.8
+2026-10-23 17:51:42,395 - ThresholdBot - trsh median = 4.0
+2026-10-23 17:51:50,623 - ThresholdBot - START
+2026-10-23 17:51:50,624 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:51:50,624 - ThresholdBot - generation = 0
+2026-10-23 17:51:50,624 - ThresholdBot - volume = 10
+2026-10-23 17:51:50,624 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:51:50,624 - ThresholdBot - trsh mean = 2.6
+2026-10-23 17:51:50,624 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:51:51,331 - ThresholdBot - volume after selection = 10
+2026-10-23 17:51:51,331 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:51,332 - ThresholdBot - generation = 1
+2026-10-23 17:51:51,332 - ThresholdBot - volume = 10
+2026-10-23 17:51:51,332 - ThresholdBot - survive threshold = 0.554
+2026-10-23 17:51:51,332 - ThresholdBot - trsh mean = 2.6
+2026-10-23 17:51:51,332 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:51:52,031 - ThresholdBot - volume after selection = 3
+2026-10-23 17:51:52,031 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:52,031 - ThresholdBot - generation = 2
+2026-10-23 17:51:52,031 - ThresholdBot - volume = 3
+2026-10-23 17:51:52,031 - ThresholdBot - survive threshold = 0.563
+2026-10-23 17:51:52,031 - ThresholdBot - trsh mean = 4.333333333333333
+2026-10-23 17:51:52,031 - ThresholdBot - trsh median = 6
+2026-10-23 17:51:52,077 - ThresholdBot - volume after selection = 0
+2026-10-23 17:51:52,077 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:51:52,077 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:51:52,078 - ThresholdBot - number of survived = 0
+2026-10-23 17:51:52,078 - ThresholdBot - survive threshold = 0.563
+2026-10-23 17:51:52,078 - ThresholdBot - survived bots:
+2026-10-23 17:51:52,078 - ThresholdBot - END
+2026-10-23 17:52:05,391 - ThresholdBot - START
+2026-10-23 17:52:05,391 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 100, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:52:05,391 - ThresholdBot - generation = 0
+2026-10-23 17:52:05,391 - ThresholdBot - volume = 100
+2026-10-23 17:52:05,391 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:52:05,391 - ThresholdBot - trsh mean = 2.86
+2026-10-23 17:52:05,391 - ThresholdBot - trsh median = 3.0
+2026-10-23 17:52:25,936 - ThresholdBot - START
+2026-10-23 17:52:25,936 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 25, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': False, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:52:25,936 - ThresholdBot - generation = 0
+2026-10-23 17:52:25,936 - ThresholdBot - volume = 25
+2026-10-23 17:52:25,936 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:52:25,936 - ThresholdBot - trsh mean = 3.2
+2026-10-23 17:52:25,936 - ThresholdBot - trsh median = 3
+2026-10-23 17:52:30,665 - ThresholdBot - volume after selection = 25
+2026-10-23 17:52:30,665 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:52:30,665 - ThresholdBot - generation = 1
+2026-10-23 17:52:30,665 - ThresholdBot - volume = 25
+2026-10-23 17:52:30,665 - ThresholdBot - survive threshold = 0.564
+2026-10-23 17:52:30,665 - ThresholdBot - trsh mean = 3.2
+2026-10-23 17:52:30,665 - ThresholdBot - trsh median = 3
+2026-10-23 17:52:35,337 - ThresholdBot - volume after selection = 0
+2026-10-23 17:52:35,337 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:52:35,337 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:52:35,337 - ThresholdBot - number of survived = 0
+2026-10-23 17:52:35,337 - ThresholdBot - survive threshold = 0.564
+2026-10-23 17:52:35,337 - ThresholdBot - survived bots:
+2026-10-23 17:52:35,337 - ThresholdBot - END
+2026-10-23 17:53:14,434 - ThresholdBot - START
+2026-10-23 17:53:14,434 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 25, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:53:14,434 - ThresholdBot - generation = 0
+2026-10-23 17:53:14,434 - ThresholdBot - volume = 25
+2026-10-23 17:53:14,435 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:53:14,435 - ThresholdBot - trsh mean = 3.04
+2026-10-23 17:53:14,435 - ThresholdBot - trsh median = 3
+2026-10-23 17:53:19,108 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:19,108 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:19,108 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:19,108 - ThresholdBot - generation = 1
+2026-10-23 17:53:19,108 - ThresholdBot - volume = 25
+2026-10-23 17:53:19,108 - ThresholdBot - survive threshold = 0.566
+2026-10-23 17:53:19,108 - ThresholdBot - trsh mean = 3.057828090200727
+2026-10-23 17:53:19,108 - ThresholdBot - trsh median = 3.355565947194286
+2026-10-23 17:53:23,804 - ThresholdBot - volume after selection = 0
+2026-10-23 17:53:23,804 - ThresholdBot - volume after mutation = 0
+2026-10-23 17:53:23,804 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:23,804 - ThresholdBot - stop reason = популяция сократилась до 0
+2026-10-23 17:53:23,804 - ThresholdBot - number of survived = 0
+2026-10-23 17:53:23,804 - ThresholdBot - survive threshold = 0.566
+2026-10-23 17:53:23,804 - ThresholdBot - survived bots:
+2026-10-23 17:53:23,804 - ThresholdBot - END
+2026-10-23 17:53:33,186 - ThresholdBot - START
+2026-10-23 17:53:33,186 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 25, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 0.9, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:53:33,186 - ThresholdBot - generation = 0
+2026-10-23 17:53:33,186 - ThresholdBot - volume = 25
+2026-10-23 17:53:33,186 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:53:33,186 - ThresholdBot - trsh mean = 3.68
+2026-10-23 17:53:33,186 - ThresholdBot - trsh median = 4
+2026-10-23 17:53:37,808 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:37,808 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:37,808 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:37,809 - ThresholdBot - generation = 1
+2026-10-23 17:53:37,809 - ThresholdBot - volume = 25
+2026-10-23 17:53:37,809 - ThresholdBot - survive threshold = 0.5112
+2026-10-23 17:53:37,809 - ThresholdBot - trsh mean = 3.6153104777909864
+2026-10-23 17:53:37,809 - ThresholdBot - trsh median = 4.5675355277408975
+2026-10-23 17:53:42,416 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:42,416 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:42,416 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:42,416 - ThresholdBot - generation = 2
+2026-10-23 17:53:42,416 - ThresholdBot - volume = 25
+2026-10-23 17:53:42,416 - ThresholdBot - survive threshold = 0.5075999999999999
+2026-10-23 17:53:42,416 - ThresholdBot - trsh mean = 3.536874086578738
+2026-10-23 17:53:42,416 - ThresholdBot - trsh median = 4.247103152473016
+2026-10-23 17:53:47,052 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:47,052 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:47,053 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:47,053 - ThresholdBot - generation = 3
+2026-10-23 17:53:47,053 - ThresholdBot - volume = 25
+2026-10-23 17:53:47,053 - ThresholdBot - survive threshold = 0.5085
+2026-10-23 17:53:47,053 - ThresholdBot - trsh mean = 3.4786488361957155
+2026-10-23 17:53:47,053 - ThresholdBot - trsh median = 4.485316840240921
+2026-10-23 17:53:51,703 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:51,704 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:51,704 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:51,704 - ThresholdBot - generation = 4
+2026-10-23 17:53:51,704 - ThresholdBot - volume = 25
+2026-10-23 17:53:51,704 - ThresholdBot - survive threshold = 0.5049
+2026-10-23 17:53:51,704 - ThresholdBot - trsh mean = 3.501619020035099
+2026-10-23 17:53:51,704 - ThresholdBot - trsh median = 4.454496789440794
+2026-10-23 17:53:56,330 - ThresholdBot - volume after selection = 25
+2026-10-23 17:53:56,330 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:53:56,330 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:53:56,330 - ThresholdBot - generation = 5
+2026-10-23 17:53:56,330 - ThresholdBot - volume = 25
+2026-10-23 17:53:56,330 - ThresholdBot - survive threshold = 0.5075999999999999
+2026-10-23 17:53:56,331 - ThresholdBot - trsh mean = 3.475139216512097
+2026-10-23 17:53:56,331 - ThresholdBot - trsh median = 4.359209483024603
+2026-10-23 17:54:23,030 - ThresholdBot - START
+2026-10-23 17:54:23,030 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 25, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-23 17:54:23,030 - ThresholdBot - generation = 0
+2026-10-23 17:54:23,030 - ThresholdBot - volume = 25
+2026-10-23 17:54:23,030 - ThresholdBot - survive threshold = 0.0
+2026-10-23 17:54:23,030 - ThresholdBot - trsh mean = 3.0
+2026-10-23 17:54:23,030 - ThresholdBot - trsh median = 3
+2026-10-23 17:54:27,770 - ThresholdBot - volume after selection = 25
+2026-10-23 17:54:27,770 - ThresholdBot - volume after mutation = 25
+2026-10-23 17:54:27,770 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:54:27,770 - ThresholdBot - generation = 1
+2026-10-23 17:54:27,770 - ThresholdBot - volume = 25
+2026-10-23 17:54:27,770 - ThresholdBot - survive threshold = 0.558
+2026-10-23 17:54:27,770 - ThresholdBot - trsh mean = 2.92878097555546
+2026-10-23 17:54:27,770 - ThresholdBot - trsh median = 3.0047817366936713
+2026-10-23 17:54:32,571 - ThresholdBot - volume after selection = 1
+2026-10-23 17:54:32,571 - ThresholdBot - volume after mutation = 1
+2026-10-23 17:54:32,571 - ThresholdBot - --------------------------------------------------
+2026-10-23 17:54:32,571 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-23 17:54:32,571 - ThresholdBot - number of survived = 1
+2026-10-23 17:54:32,571 - ThresholdBot - survive threshold = 0.559
+2026-10-23 17:54:32,571 - ThresholdBot - survived bots:
+2026-10-23 17:54:32,571 - ThresholdBot - {'_Bot__name': '0.14', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 5.545242749766922}
+2026-10-23 17:54:32,571 - ThresholdBot - END

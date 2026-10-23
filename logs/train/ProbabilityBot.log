@@ -1,0 +1,129 @@
+2026-10-23 20:31:11,532 - ProbabilityBot - START
+2026-10-23 20:31:11,533 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 3, 'start_volume': 2, 'n_fights': 10000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:31:11,533 - ProbabilityBot - generation = 0
+2026-10-23 20:31:11,533 - ProbabilityBot - volume = 2
+2026-10-23 20:31:11,533 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:31:33,399 - ProbabilityBot - START
+2026-10-23 20:31:33,400 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 3, 'start_volume': 2, 'n_fights': 10000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:31:33,400 - ProbabilityBot - generation = 0
+2026-10-23 20:31:33,400 - ProbabilityBot - volume = 2
+2026-10-23 20:31:33,400 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:32:13,695 - ProbabilityBot - START
+2026-10-23 20:32:13,695 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 3, 'start_volume': 2, 'n_fights': 10000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:32:13,695 - ProbabilityBot - generation = 0
+2026-10-23 20:32:13,695 - ProbabilityBot - volume = 2
+2026-10-23 20:32:13,695 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:32:14,043 - ProbabilityBot - volume after selection = 1
+2026-10-23 20:32:14,043 - ProbabilityBot - volume after crossing = 1
+2026-10-23 20:32:14,043 - ProbabilityBot - volume after mutation = 1
+2026-10-23 20:32:14,043 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:32:14,043 - ProbabilityBot - stop reason = популяция сократилась до 1
+2026-10-23 20:32:14,043 - ProbabilityBot - number of survived = 1
+2026-10-23 20:32:14,043 - ProbabilityBot - survive threshold = 0.5165
+2026-10-23 20:32:14,043 - ProbabilityBot - survived bots:
+2026-10-23 20:32:14,043 - ProbabilityBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': None, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.5020698437241047, 0.7890683716688365, 0.7340506420480712, 0.6070118763297917, 0.7877357884147654, 0.17093092776882252, 0.06902135284456437, 0.03612108612122238, 0.4559727637992764, 0.1631867318463818, 0.49844225667735004, 0.8170461011885876, 0.002955804901151786, 0.2963834855372825, 0.2261480486810171, 0.11497314132485115, 0.0116536601580908, 1, 0.743646094911407, 0.5565188507123146, 0.7648897825473896, 0.7007198704543611, 0.6166367452792021, 0.8834238082319552, 0.25199308838735734, 0.47874459228860655, 0.42728565325512063, 0.13286134814718742, 0.691955102939702, 0.7418023682570581, 0.63103790515076, 0.3803759299305435, 0.5123879532418267, 0.6211534058743953, 0.6703789058517912, 0.046318164588823464, 0.5169354805192782, 0.1959072511287005, 0.6914237615293433, 0.8882804995523966, 0.20296970850594734]}
+2026-10-23 20:32:14,043 - ProbabilityBot - END
+2026-10-23 20:33:16,305 - ProbabilityBot - START
+2026-10-23 20:33:16,305 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 3, 'start_volume': 2, 'n_fights': 10000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:33:16,306 - ProbabilityBot - generation = 0
+2026-10-23 20:33:16,306 - ProbabilityBot - volume = 2
+2026-10-23 20:33:16,306 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:33:16,651 - ProbabilityBot - volume after selection = 1
+2026-10-23 20:33:16,651 - ProbabilityBot - volume after crossing = 1
+2026-10-23 20:33:16,651 - ProbabilityBot - volume after mutation = 1
+2026-10-23 20:33:16,651 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:33:16,651 - ProbabilityBot - stop reason = популяция сократилась до 1
+2026-10-23 20:33:16,651 - ProbabilityBot - number of survived = 1
+2026-10-23 20:33:16,651 - ProbabilityBot - survive threshold = 0.5021
+2026-10-23 20:33:16,651 - ProbabilityBot - survived bots:
+2026-10-23 20:33:16,651 - ProbabilityBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': None, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.07374773057954855, 0.9863418225558419, 0.4660572176549088, 1, 0.4539954786398485, 0.5315354556946877, 0.6715424605064713, 0.43261008396411377, 0.569972938432207, 0.34181111014205035, 0.16939274371374557, 0.9203461432864968, 1, 0.7001291828021708, 0.13772964698799844, 1, 0.09702195106671052, 0.38413684348154165, 0.582433877158078, 0.1417533399669301, 1, 0.10098873684105683, 0.49425291723665643, 0.45932239050057805, 0.36947884578488827, 0.3108556088587286, 0.6570048378590476, 0.31694194446992235, 0.6261324376230275, 0.4606772628229825, 0.13654207640474966, 0.05206159080953942, 0.56484100401775, 0.4424967035090106, 0.724439892996586, 0.4953930198441135, 0.29617981933792564, 0.6753809373743996, 0.8256757077037491, 0.5853654707896168, 0.35486322390884106]}
+2026-10-23 20:33:16,652 - ProbabilityBot - END
+2026-10-23 20:33:43,246 - ProbabilityBot - START
+2026-10-23 20:33:43,247 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 20, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:33:43,247 - ProbabilityBot - generation = 0
+2026-10-23 20:33:43,247 - ProbabilityBot - volume = 20
+2026-10-23 20:33:43,247 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:33:43,895 - ProbabilityBot - volume after selection = 20
+2026-10-23 20:33:43,896 - ProbabilityBot - volume after crossing = 210
+2026-10-23 20:33:43,897 - ProbabilityBot - volume after mutation = 210
+2026-10-23 20:33:43,897 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:33:43,897 - ProbabilityBot - generation = 1
+2026-10-23 20:33:43,897 - ProbabilityBot - volume = 210
+2026-10-23 20:33:43,898 - ProbabilityBot - survive threshold = 0.563
+2026-10-23 20:34:52,309 - ProbabilityBot - START
+2026-10-23 20:34:52,310 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 15, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:34:52,310 - ProbabilityBot - generation = 0
+2026-10-23 20:34:52,310 - ProbabilityBot - volume = 15
+2026-10-23 20:34:52,310 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:34:52,732 - ProbabilityBot - volume after selection = 15
+2026-10-23 20:34:52,733 - ProbabilityBot - volume after crossing = 120
+2026-10-23 20:34:52,734 - ProbabilityBot - volume after mutation = 120
+2026-10-23 20:34:52,734 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:34:52,734 - ProbabilityBot - generation = 1
+2026-10-23 20:34:52,734 - ProbabilityBot - volume = 120
+2026-10-23 20:34:52,734 - ProbabilityBot - survive threshold = 0.571
+2026-10-23 20:35:11,585 - ProbabilityBot - volume after selection = 18
+2026-10-23 20:35:11,586 - ProbabilityBot - volume after crossing = 171
+2026-10-23 20:35:11,587 - ProbabilityBot - volume after mutation = 171
+2026-10-23 20:35:11,587 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:35:11,587 - ProbabilityBot - generation = 2
+2026-10-23 20:35:11,587 - ProbabilityBot - volume = 171
+2026-10-23 20:35:11,587 - ProbabilityBot - survive threshold = 0.583
+2026-10-23 20:35:23,299 - ProbabilityBot - START
+2026-10-23 20:35:23,299 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:35:23,299 - ProbabilityBot - generation = 0
+2026-10-23 20:35:23,299 - ProbabilityBot - volume = 10
+2026-10-23 20:35:23,299 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:35:23,575 - ProbabilityBot - volume after selection = 9
+2026-10-23 20:35:23,575 - ProbabilityBot - volume after crossing = 45
+2026-10-23 20:35:23,576 - ProbabilityBot - volume after mutation = 45
+2026-10-23 20:35:23,576 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:35:23,576 - ProbabilityBot - generation = 1
+2026-10-23 20:35:23,576 - ProbabilityBot - volume = 45
+2026-10-23 20:35:23,576 - ProbabilityBot - survive threshold = 0.567
+2026-10-23 20:35:26,244 - ProbabilityBot - volume after selection = 4
+2026-10-23 20:35:26,245 - ProbabilityBot - volume after crossing = 10
+2026-10-23 20:35:26,245 - ProbabilityBot - volume after mutation = 10
+2026-10-23 20:35:26,245 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:35:26,245 - ProbabilityBot - generation = 2
+2026-10-23 20:35:26,245 - ProbabilityBot - volume = 10
+2026-10-23 20:35:26,245 - ProbabilityBot - survive threshold = 0.575
+2026-10-23 20:35:26,499 - ProbabilityBot - volume after selection = 1
+2026-10-23 20:35:26,499 - ProbabilityBot - volume after crossing = 1
+2026-10-23 20:35:26,499 - ProbabilityBot - volume after mutation = 1
+2026-10-23 20:35:26,499 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:35:26,499 - ProbabilityBot - stop reason = популяция сократилась до 1
+2026-10-23 20:35:26,499 - ProbabilityBot - number of survived = 1
+2026-10-23 20:35:26,499 - ProbabilityBot - survive threshold = 0.56
+2026-10-23 20:35:26,499 - ProbabilityBot - survived bots:
+2026-10-23 20:35:26,499 - ProbabilityBot - {'_Bot__name': '2.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': None, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.3342282898070752, 0.6784471528981466, 0.5978070005584111, 0.6566547561916868, 0.35104230970813743, 0.7317005630982257, 0.725000117252883, 0.8754982908740495, 0.5938431255093694, 0.1574896802701129, 1, 0.7752640624379565, 0.4058526106213022, 0.34195630681129163, 0.20397397125046526, 0.29624699385151626, 0.5224670636690136, 0.34691087811605326, 0.7171462381882202, 0.5886222438658828, 0.6225044410754517, 0.698942238567173, 0.9483078566317694, 0.37897741340012026, 0.5414362994155695, 0.3346048239134756, 0.837746634932496, 0.310287576749853, 0.34799471182554476, 0.5823061463509853, 0.6760738352029985, 0.3700175381569792, 0.3354191669892696, 0.1492533396803107, 0.6317542507136782, 0.42194522396623607, 0.20567892676341568, 0.4614110134241264, 0.42454739112786577, 0.8875260101876802, 0.42073788747861524]}
+2026-10-23 20:35:26,499 - ProbabilityBot - END
+2026-10-23 20:38:10,026 - ProbabilityBot - START
+2026-10-23 20:38:10,026 - ProbabilityBot - TRAIN_SETTINGS = {'n_generations': 100, 'start_volume': 10, 'n_fights': 1000, 'survive_threshold': 0.0, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'n_slots': 6}}
+2026-10-23 20:38:10,027 - ProbabilityBot - generation = 0
+2026-10-23 20:38:10,027 - ProbabilityBot - volume = 10
+2026-10-23 20:38:10,027 - ProbabilityBot - survive threshold = 0.0
+2026-10-23 20:38:10,295 - ProbabilityBot - volume after selection = 9
+2026-10-23 20:38:10,296 - ProbabilityBot - volume after crossing = 45
+2026-10-23 20:38:10,296 - ProbabilityBot - volume after mutation = 45
+2026-10-23 20:38:10,296 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:38:10,296 - ProbabilityBot - generation = 1
+2026-10-23 20:38:10,296 - ProbabilityBot - volume = 45
+2026-10-23 20:38:10,296 - ProbabilityBot - survive threshold = 0.553
+2026-10-23 20:38:12,967 - ProbabilityBot - volume after selection = 20
+2026-10-23 20:38:12,968 - ProbabilityBot - volume after crossing = 210
+2026-10-23 20:38:12,970 - ProbabilityBot - volume after mutation = 210
+2026-10-23 20:38:12,970 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:38:12,970 - ProbabilityBot - generation = 2
+2026-10-23 20:38:12,970 - ProbabilityBot - volume = 210
+2026-10-23 20:38:12,970 - ProbabilityBot - survive threshold = 0.576
+2026-10-23 20:39:11,611 - ProbabilityBot - volume after selection = 1
+2026-10-23 20:39:11,611 - ProbabilityBot - volume after crossing = 1
+2026-10-23 20:39:11,612 - ProbabilityBot - volume after mutation = 1
+2026-10-23 20:39:11,612 - ProbabilityBot - --------------------------------------------------
+2026-10-23 20:39:11,612 - ProbabilityBot - stop reason = популяция сократилась до 1
+2026-10-23 20:39:11,612 - ProbabilityBot - number of survived = 1
+2026-10-23 20:39:11,612 - ProbabilityBot - survive threshold = 0.575
+2026-10-23 20:39:11,612 - ProbabilityBot - survived bots:
+2026-10-23 20:39:11,612 - ProbabilityBot - {'_Bot__name': '2.12', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': None, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.4185478268921187, 0.7455516744430214, 0.8408586542202624, 0.3532215232690814, 0.6103112019611341, 0.3511231271935957, 0.3409706152630562, 0.44914211368300017, 0.4313287392108611, 0.5082800733584025, 0.2429346159344374, 0.32672971257072614, 0.5146509978127706, 0.6989829255010938, 0.7920422344951276, 0.3970790824245649, 0.34081339452669723, 0.833061797180818, 0.33890478675192376, 0.4131365923557873, 0.395970812938607, 0.3819871633359201, 0.5903554213507699, 0.710343360293204, 0.6254775984794106, 0.3839006770120489, 0.25104291472343504, 0.6801866710257445, 0.4738272240228625, 0.5010675708527752, 0.4391742257088504, 0.3301954118949278, 0.5201427616860754, 0.4665467328084169, 0.18066660350595076, 0.6339815299607019, 0.46683947717937657, 0.30393091170036735, 0.5286746807755188, 0.3541038935349009, 0.4986136540667118]}
+2026-10-23 20:39:11,612 - ProbabilityBot - END

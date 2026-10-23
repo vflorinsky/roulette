@@ -15,7 +15,7 @@ TRAIN_SETTINGS = {'n_generations': 100,
                   'start_volume': 20,
                   'n_fights': 1000,
                   'survive_threshold': 0.5,  # выживают те, что выше порога
-                  'attenuation_coefficient': 1,  # коэффициент понижения порога выживаемости
+                  'attenuation_coefficient': 1.0,  # коэффициент понижения порога выживаемости
                   'mutation': {'use': True,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
@@ -57,12 +57,11 @@ def init_population(n_individuals: int,
     return population
 
 
-# Отдельная функция для обработки одной пары.
-# Она должна быть на уровне модуля (не внутри другой функции), чтобы Python мог её пиклировать (pickle) для отправки в процессы.
-def _run_single_fight(pair_keys, population_data, pistol, n_fights):
+def _run_single_fight(pair_keys,
+                      population_data: dict,
+                      pistol: Gun,
+                      n_fights: int):
     k1, k2 = pair_keys
-    # Если RouletteCore мутирует объекты, здесь безопасно использовать deepcopy,
-    # так как это происходит изолированно в отдельном процессе.
     sim = RouletteCore(
         gun=pistol,
         players=[deepcopy(population_data[k1]), deepcopy(population_data[k2])],
@@ -78,56 +77,39 @@ def selection(population: dict,
               max_workers: int = None) -> tuple[dict, float]:
     pairs = list(combinations(population.keys(), 2))
     if not pairs:
-        # Если в популяции изначально < 2 особей, возвращаем её как есть
         return deepcopy(population), survive_threshold * attenuation_coefficient
-
     new_population = {}
     population_probs = []
-
-    # Переменные для отслеживания абсолютно лучшей особи раунда
     absolute_best_winner = None
     absolute_max_prob = -1.0
-
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures = [
             executor.submit(_run_single_fight, pair, population, pistol, TRAIN_SETTINGS['n_fights'])
             for pair in pairs
         ]
-
         for future in futures:
             result = future.result()
             if not result:
                 continue
-
             winner, max_probability = max(result.items(), key=lambda item: item[1])
-
-            # Обновляем данные об абсолютном лидере раунда
             if max_probability > absolute_max_prob:
                 absolute_max_prob = max_probability
                 absolute_best_winner = winner
-
-            # Стандартная фильтрация по порогу
             if max_probability > survive_threshold:
                 if winner not in new_population:
                     winner_copy = deepcopy(population[winner])
                     winner_copy.reset()
                     new_population[winner] = winner_copy
-
                 population_probs.append(max_probability)
-
-    # ГАРАНТИЯ НАЛИЧИЯ ОСОБИ: если никто не прошел порог, берем абсолютного лидера
     if not new_population and absolute_best_winner is not None:
         winner_copy = deepcopy(population[absolute_best_winner])
         winner_copy.reset()
         new_population[absolute_best_winner] = winner_copy
         population_probs.append(absolute_max_prob)
-
-    # Расчет нового порога
     if population_probs:
         new_survive_threshold = attenuation_coefficient * max(population_probs)
     else:
         new_survive_threshold = survive_threshold * attenuation_coefficient
-
     return new_population, new_survive_threshold
 
 
