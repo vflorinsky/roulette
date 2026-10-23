@@ -29,7 +29,6 @@ LOG_SETTINGS = {'path': Path('logs') / 'train',
 def mutation(population: dict, force: float) -> dict:
     population_ = dict()
     for k, v in population.items():
-        population_[k] = v
         population_[f"{k}.m"] = v
         new_probs = population_[f"{k}.m"].probabilites()
         for i in range(len(new_probs)):
@@ -137,13 +136,13 @@ if __name__ == "__main__":
                               generation=generation + 1,
                               n_slots=TRAIN_SETTINGS['bot']['n_rotations'])
         logger.info(f"volume after crossing = {len(population)}")
-        #
-        # # Мутация
-        # if TRAIN_SETTINGS['mutation']['use']:
-        #     population = mutation(population=population,
-        #                           force=float(TRAIN_SETTINGS['mutation']['force']))
-        #     logger.info(f"volume after mutation = {len(population)}")
-        #
+
+        # Мутация
+        if TRAIN_SETTINGS['mutation']['use']:
+            population = mutation(population=population,
+                                  force=float(TRAIN_SETTINGS['mutation']['force']))
+            logger.info(f"volume after mutation = {len(population)}")
+
         # # Отбор
         # population = selection(population=population, pistol=pistol)
         # logger.info(f"volume after selection = {len(population)}")
