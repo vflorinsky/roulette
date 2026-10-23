@@ -33,17 +33,14 @@ def mutation(x: float) -> float:
 
 def init_population(n_individuals: int,
                     n_rotations: int,
-                    threshold_interval: tuple,
                     max_slots: int) -> dict:
     """{имя_бота: бот}"""
     population = {}
     for i in range(n_individuals):
         name = f"0.{i}"  # "номер_поколения.номер_бота"
         population[name] = ProbabilityBot(name=name,
-                                        n_rotations=n_rotations,
-                                        threshold=randint(threshold_interval[0],
-                                                          threshold_interval[1]))
-        population[name].max_slots(value=max_slots)
+                                          n_rotations=n_rotations,
+                                          n_slots=max_slots)
     return population
 
 
@@ -71,7 +68,10 @@ def selection(population: dict, pistol: Gun) -> dict:
     return new_population
 
 
-def crossing(population: dict, n_rotations: int, generation: int) -> dict:
+def crossing(population: dict,
+             n_rotations: int,
+             generation: int,
+             n_slots: int) -> dict:
     gen = pair_generator(population)
     new_population = dict()
     bid = 0
@@ -79,22 +79,18 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         # name = f"{pair[0].name}+{pair[1].name}"
         name = f"{generation}.{bid}"
         bid += 1
-        # Значение __threshold у потомка
-        thrsh = 0.5 * (pair[0].threshold() + pair[1].threshold())
-        # thrsh = max(pair[0].threshold(), pair[1].threshold())
+        # Значение __rotation_probs у потомка
+        spring_probs = []
+        for a, b in zip(pair[0].probabilites(), pair[1].probabilites()):
+            spring_probs.append(0.5 * (a + b))
         # Если нужно - потомок мутирует
         if TRAIN_SETTINGS['mutation']['use']:
             thrsh = mutation(thrsh)
         # Инициализируем потомка
-        new_population[name] = ThresholdBot(name=name,
-                                            n_rotations=n_rotations,
-                                            threshold=thrsh)
-        # Устанавливаем максивальное число слотов как у первого родителя
-        # через сеттер, потому что в конструкторе оно None.
-        new_population[name].max_slots(value=pair[0].max_slots())
-        # Установка нового значения порога происходит через сеттер,
-        # чтобы избежать выхода порога за допустимый диапазон.
-        new_population[name].threshold(value=thrsh)
+        new_population[name] = ProbabilityBot(name=name,
+                                              n_rotations=n_rotations,
+                                              n_slots=n_slots)
+        new_population[name].probabilites(value=spring_probs)
     # В новое поколение добавляем половину предков.
     # Нужно для сохранения разнообразия и чтобы размер каждого поколения
     # был степенью двойки.
@@ -132,28 +128,28 @@ if __name__ == "__main__":
     # Начальная популяция
     population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
                                  n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
-                                 threshold_interval=TRAIN_SETTINGS['bot']['threshold_interval'],
                                  max_slots=pistol.n_slots)
 
     for generation in range(TRAIN_SETTINGS['n_generations']):
         logger.info(f"generation = {generation}")
         logger.info(f"volume = {len(population)}")
 
-        trsh = [v.threshold() for _, v in population.items()]
-
-        logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
-        logger.info(f"trsh median = {median(trsh)}")
+        # trsh = [v.threshold() for _, v in population.items()]
+        #
+        # logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
+        # logger.info(f"trsh median = {median(trsh)}")
 
         # Скрещивание, мутация
         population = crossing(population=population,
                               n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
-                              generation=generation + 1)
+                              generation=generation + 1,
+                              n_slots=TRAIN_SETTINGS['bot']['n_rotations'])
         logger.info(f"volume after crossing = {len(population)}")
 
         # Отбор
         population = selection(population=population, pistol=pistol)
-        logger.info(f"volume after selection = {len(population)}")
-        logger.info('-' * 50)
+        # logger.info(f"volume after selection = {len(population)}")
+        # logger.info('-' * 50)
 
         if len(population) < 2:
             break
