@@ -157,7 +157,7 @@ if __name__ == "__main__":
         population = crossing(population=population,
                               n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
                               generation=generation + 1,
-                              n_slots=TRAIN_SETTINGS['bot']['n_rotations'])
+                              n_slots=TRAIN_SETTINGS['bot']['n_slots'])
         logger.info(f"volume after crossing = {len(population)}")
 
         # Мутация
