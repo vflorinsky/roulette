@@ -4,6 +4,8 @@ from random import choice, random
 class ShotIsImpossible(Exception):
     pass
 
+# ===========================================================================================
+
 
 class Bot:
     """Базовый класс"""
@@ -82,6 +84,8 @@ class Bot:
     def n_rotations(self):
         return self._n_rotations
 
+# ===========================================================================================
+
 
 class RandomBot(Bot):
     """
@@ -95,6 +99,8 @@ class RandomBot(Bot):
         else:
             return 1
 
+# ===========================================================================================
+
 
 class ThresholdBot(Bot):
     """
@@ -102,8 +108,11 @@ class ThresholdBot(Bot):
     иначе - стреляет.
     """
 
-    def __init__(self, name: str, n_rotations: int, threshold: float):
-        super().__init__(name=name, n_rotations=n_rotations)
+    def __init__(self, name: str,
+                 n_rotations: int,
+                 threshold: float,
+                 verbose: bool = False):
+        super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
         self.__threshold = threshold
 
     def _select_action(self, gun) -> int:
@@ -123,6 +132,8 @@ class ThresholdBot(Bot):
             self.__threshold = x
         return self.__threshold
 
+# ===========================================================================================
+
 
 class ProbabilityBot(Bot):
     """
@@ -132,8 +143,9 @@ class ProbabilityBot(Bot):
     def __init__(self, name: str,
                  n_rotations: int,
                  n_slots: int,
-                 probs: list = None):
-        super().__init__(name=name, n_rotations=n_rotations)
+                 probs: list = None,
+                 verbose: bool = False):
+        super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
         self.__current_round = -1  # счетчик раундов включается после первого вызова _select_action
         if probs is None:
             self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
@@ -143,6 +155,7 @@ class ProbabilityBot(Bot):
             self.__length = len(probs)
             self.__rotation_probs = probs
             self.probabilites(value=probs)
+
     def _select_action(self, gun) -> int:
         self.__current_round += 1
         if self._n_rotations > 0:
@@ -161,6 +174,7 @@ class ProbabilityBot(Bot):
     def reset(self):
         super().reset()
         self.__current_round = 0
+
 
 
 

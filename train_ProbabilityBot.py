@@ -1,6 +1,6 @@
 import logging
 from logging.handlers import RotatingFileHandler
-from random import sample, uniform
+from random import uniform
 from pathlib import Path
 from bot import ProbabilityBot
 from gun import Gun
