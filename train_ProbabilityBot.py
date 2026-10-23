@@ -1,18 +1,17 @@
 import logging
 from logging.handlers import RotatingFileHandler
-from random import randint, choice, sample
+from random import sample, uniform
 from pathlib import Path
 from bot import ProbabilityBot
 from gun import Gun
 from copy import deepcopy
-from statistics import median
 from core import RouletteCore
 
 
-TRAIN_SETTINGS = {'n_generations': 50,
-                  'start_volume': 4,
+TRAIN_SETTINGS = {'n_generations': 3,
+                  'start_volume': 2,
                   'n_fights': 10000,
-                  'mutation': {'use': False,
+                  'mutation': {'use': True,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
                   'gun': {'n_slots': 6},
@@ -27,8 +26,16 @@ LOG_SETTINGS = {'path': Path('logs') / 'train',
                 'backupCount': 3}
 
 
-def mutation(x: float) -> float:
-    return choice([-1, 1]) * 0.01 * TRAIN_SETTINGS['mutation']['force'] * x
+def mutation(population: dict, force: float) -> dict:
+    population_ = dict()
+    for k, v in population.items():
+        population_[k] = v
+        population_[f"{k}.m"] = v
+        new_probs = population_[f"{k}.m"].probabilites()
+        for i in range(len(new_probs)):
+            new_probs[i] += uniform(-0.01 * force * new_probs[i], 0.01 * force * new_probs[i])
+        population_[f"{k}.m"].probabilites(value=new_probs)
+    return population_
 
 
 def init_population(n_individuals: int,
@@ -72,32 +79,22 @@ def crossing(population: dict,
              n_rotations: int,
              generation: int,
              n_slots: int) -> dict:
-    gen = pair_generator(population)
     new_population = dict()
     bid = 0
-    for pair in gen:
-        # name = f"{pair[0].name}+{pair[1].name}"
-        name = f"{generation}.{bid}"
-        bid += 1
-        # Значение __rotation_probs у потомка
-        spring_probs = []
-        for a, b in zip(pair[0].probabilites(), pair[1].probabilites()):
-            spring_probs.append(0.5 * (a + b))
-        # Если нужно - потомок мутирует
-        if TRAIN_SETTINGS['mutation']['use']:
-            thrsh = mutation(thrsh)
-        # Инициализируем потомка
-        new_population[name] = ProbabilityBot(name=name,
-                                              n_rotations=n_rotations,
-                                              n_slots=n_slots)
-        new_population[name].probabilites(value=spring_probs)
-    # В новое поколение добавляем половину предков.
-    # Нужно для сохранения разнообразия и чтобы размер каждого поколения
-    # был степенью двойки.
-    for p in sample(list(population.values()), len(new_population)):
-        new_population[p.name] = p
-    for name in new_population.keys():
-        new_population[name].reset()
+    for k1 in population.keys():
+        for k2 in population.keys():
+            spring_probs = [0.5 * (a + b) for a, b in zip(population[k1].probabilites(), population[k2].probabilites())]
+            name = f"{generation}.{bid}"
+            bid += 1
+            new_population[name] = ProbabilityBot(name=name,
+                                                  n_rotations=n_rotations,
+                                                  n_slots=n_slots)
+            new_population[name].probabilites(value=spring_probs)
+            new_population[name].reset()
+            for k in [k1, k2]:
+                if k not in new_population.keys():
+                    new_population[k] = deepcopy(population[k])
+                    new_population[k].reset()
     return new_population
 
 
@@ -134,25 +131,26 @@ if __name__ == "__main__":
         logger.info(f"generation = {generation}")
         logger.info(f"volume = {len(population)}")
 
-        # trsh = [v.threshold() for _, v in population.items()]
-        #
-        # logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
-        # logger.info(f"trsh median = {median(trsh)}")
-
-        # Скрещивание, мутация
+        # Скрещивание
         population = crossing(population=population,
                               n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
                               generation=generation + 1,
                               n_slots=TRAIN_SETTINGS['bot']['n_rotations'])
         logger.info(f"volume after crossing = {len(population)}")
-
-        # Отбор
-        population = selection(population=population, pistol=pistol)
+        #
+        # # Мутация
+        # if TRAIN_SETTINGS['mutation']['use']:
+        #     population = mutation(population=population,
+        #                           force=float(TRAIN_SETTINGS['mutation']['force']))
+        #     logger.info(f"volume after mutation = {len(population)}")
+        #
+        # # Отбор
+        # population = selection(population=population, pistol=pistol)
         # logger.info(f"volume after selection = {len(population)}")
-        # logger.info('-' * 50)
-
-        if len(population) < 2:
-            break
+        logger.info('-' * 50)
+        #
+        # if len(population) < 2:
+        #     break
 
     logger.info(f"survive = {len(population)}")
     for v in population.values():
