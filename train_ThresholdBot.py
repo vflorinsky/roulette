@@ -1,6 +1,8 @@
 import logging
+from itertools import combinations
+from concurrent.futures import ProcessPoolExecutor
 from logging.handlers import RotatingFileHandler
-from random import randint, choice, sample, uniform
+from random import randint, uniform
 from pathlib import Path
 from bot import ThresholdBot
 from gun import Gun
@@ -9,17 +11,17 @@ from statistics import median
 from core import RouletteCore
 
 
-TRAIN_SETTINGS = {'n_generations': 3,
-                  'start_volume': 2,
-                  'n_fights': 10000,
-                  'survive_threshold': 0.0,  # выживают те, что выше порога
-                  'attenuation_coefficient': 0.65,  # коэффициент понижения порога выживаемости
+TRAIN_SETTINGS = {'n_generations': 100,
+                  'start_volume': 20,
+                  'n_fights': 1000,
+                  'survive_threshold': 0.5,  # выживают те, что выше порога
+                  'attenuation_coefficient': 1,  # коэффициент понижения порога выживаемости
                   'mutation': {'use': True,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
                   'gun': {'n_slots': 6},
                   'bot': {'n_rotations': 3,
-                          'threshold_interval': (3, 6)}
+                          'threshold_interval': (0, 6)}
                   }
 
 LOG_SETTINGS = {'path': Path('logs') / 'train',
@@ -55,51 +57,85 @@ def init_population(n_individuals: int,
     return population
 
 
-def pair_generator(d: dict):
-    iterator = iter(d.values())
-    for item in iterator:
-        yield item, next(iterator)
+# Отдельная функция для обработки одной пары.
+# Она должна быть на уровне модуля (не внутри другой функции), чтобы Python мог её пиклировать (pickle) для отправки в процессы.
+def _run_single_fight(pair_keys, population_data, pistol, n_fights):
+    k1, k2 = pair_keys
+    # Если RouletteCore мутирует объекты, здесь безопасно использовать deepcopy,
+    # так как это происходит изолированно в отдельном процессе.
+    sim = RouletteCore(
+        gun=pistol,
+        players=[deepcopy(population_data[k1]), deepcopy(population_data[k2])],
+        n_fights=n_fights
+    )
+    return sim.fight()
 
 
 def selection(population: dict,
               pistol: Gun,
               survive_threshold: float,
-              attenuation_coefficient: float) -> tuple[dict, float]:
-    """
-    :param population:
-    :param pistol:
-    :param survive_threshold:
-    :param attenuation_coefficient:
-    :return: (популяция, порог_выживаемости)
-    """
-    new_population, survive_probs, fighted, population_probs = dict(), dict(), [], []
-    for k1 in population.keys():
-        if k1 not in fighted:
-            fighted.append(k1)
-        for k2 in population.keys():
-            if k2 in fighted:
+              attenuation_coefficient: float,
+              max_workers: int = None) -> tuple[dict, float]:
+    pairs = list(combinations(population.keys(), 2))
+    if not pairs:
+        # Если в популяции изначально < 2 особей, возвращаем её как есть
+        return deepcopy(population), survive_threshold * attenuation_coefficient
+
+    new_population = {}
+    population_probs = []
+
+    # Переменные для отслеживания абсолютно лучшей особи раунда
+    absolute_best_winner = None
+    absolute_max_prob = -1.0
+
+    with ProcessPoolExecutor(max_workers=max_workers) as executor:
+        futures = [
+            executor.submit(_run_single_fight, pair, population, pistol, TRAIN_SETTINGS['n_fights'])
+            for pair in pairs
+        ]
+
+        for future in futures:
+            result = future.result()
+            if not result:
                 continue
-            sim = RouletteCore(gun=pistol,
-                               players=[deepcopy(population[k1]), deepcopy(population[k2])],
-                               n_fights=TRAIN_SETTINGS['n_fights'])
-            result = sim.fight()
-            max_probability, winner = survive_threshold * attenuation_coefficient, None
-            for k, v in result.items():
-                if v > max_probability:
-                    max_probability = v
-                    winner = k
-            if winner is not None:
-                new_population[winner] = deepcopy(population[winner])
-                new_population[winner].reset()
+
+            winner, max_probability = max(result.items(), key=lambda item: item[1])
+
+            # Обновляем данные об абсолютном лидере раунда
+            if max_probability > absolute_max_prob:
+                absolute_max_prob = max_probability
+                absolute_best_winner = winner
+
+            # Стандартная фильтрация по порогу
+            if max_probability > survive_threshold:
+                if winner not in new_population:
+                    winner_copy = deepcopy(population[winner])
+                    winner_copy.reset()
+                    new_population[winner] = winner_copy
+
                 population_probs.append(max_probability)
-    return (new_population,
-            sum(population_probs) / len(population_probs)) if len(
-        population_probs) > 0 else survive_threshold * attenuation_coefficient
+
+    # ГАРАНТИЯ НАЛИЧИЯ ОСОБИ: если никто не прошел порог, берем абсолютного лидера
+    if not new_population and absolute_best_winner is not None:
+        winner_copy = deepcopy(population[absolute_best_winner])
+        winner_copy.reset()
+        new_population[absolute_best_winner] = winner_copy
+        population_probs.append(absolute_max_prob)
+
+    # Расчет нового порога
+    if population_probs:
+        new_survive_threshold = attenuation_coefficient * max(population_probs)
+    else:
+        new_survive_threshold = survive_threshold * attenuation_coefficient
+
+    return new_population, new_survive_threshold
 
 
 def crossing(population: dict, n_rotations: int, generation: int) -> dict:
     new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
+        # if random() < 0.5:
+        #     continue
         if k1 not in crossed:
             crossed.append(k1)
             new_population[k1] = deepcopy(population[k1])
@@ -107,7 +143,7 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         for k2 in population.keys():
             if k2 in crossed:
                 continue
-            thrsh = 0.5 * (population[k1].threshold() + population[k1].threshold())
+            thrsh = 0.5 * (population[k1].threshold() + population[k2].threshold())
             name = f"{generation}.{bid}"
             bid += 1
             new_population[name] = ThresholdBot(name=name,
@@ -153,11 +189,19 @@ if __name__ == "__main__":
     for generation in range(TRAIN_SETTINGS['n_generations']):
         logger.info(f"generation = {generation}")
         logger.info(f"volume = {len(population)}")
+        logger.info(f"survive threshold = {survive_threshold}")
 
         trsh = [v.threshold() for _, v in population.items()]
 
         logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
         logger.info(f"trsh median = {median(trsh)}")
+
+        # Отбор
+        population, survive_threshold = selection(population=population,
+                                                  pistol=pistol,
+                                                  survive_threshold=survive_threshold,
+                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'])
+        logger.info(f"volume after selection = {len(population)}")
 
         # Скрещивание
         population = crossing(population=population,
@@ -170,17 +214,10 @@ if __name__ == "__main__":
             population = mutation(population=population,
                                   force=float(TRAIN_SETTINGS['mutation']['force']))
             logger.info(f"volume after mutation = {len(population)}")
-
-        # Отбор
-        population, survive_threshold = selection(population=population,
-                                                  pistol=pistol,
-                                                  survive_threshold=survive_threshold,
-                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'])
-        logger.info(f"volume after selection = {len(population)}")
         logger.info('-' * 50)
 
         if len(population) < 2:
-            stop_message = "популяция сократилась до одной особи"
+            stop_message = f"популяция сократилась до {len(population)}"
             break
 
     logger.info(f"stop reason = {stop_message}")

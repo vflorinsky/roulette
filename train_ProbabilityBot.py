@@ -89,8 +89,9 @@ def selection(population: dict,
                 new_population[winner] = deepcopy(population[winner])
                 new_population[winner].reset()
                 population_probs.append(max_probability)
-    return (new_population,
-            sum(population_probs) / len(population_probs)) if len(population_probs) > 0 else survive_threshold * attenuation_coefficient
+    new_survive_threshold = sum(population_probs) / len(population_probs) if len(
+        population_probs) > 0 else survive_threshold * attenuation_coefficient
+    return new_population, new_survive_threshold
 
 
 def crossing(population: dict,
@@ -175,7 +176,7 @@ if __name__ == "__main__":
         logger.info('-' * 50)
 
         if len(population) < 2:
-            stop_message = "популяция сократилась до одной особи"
+            stop_message = f"популяция сократилась до {len(population)}"
             break
 
     logger.info(f"stop reason = {stop_message}")
