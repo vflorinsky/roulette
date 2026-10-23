@@ -11,6 +11,8 @@ from core import RouletteCore
 TRAIN_SETTINGS = {'n_generations': 3,
                   'start_volume': 2,
                   'n_fights': 10000,
+                  'survive_threshold': 0.0,  # выживают те, что выше порога
+                  'attenuation_coefficient': 0.65,  # коэффициент понижения порога выживаемости
                   'mutation': {'use': True,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
@@ -56,8 +58,18 @@ def init_population(n_individuals: int,
     return population
 
 
-def selection(population: dict, pistol: Gun) -> dict:
-    new_population, survive_probs, fighted = dict(), dict(), []
+def selection(population: dict,
+              pistol: Gun,
+              survive_threshold: float,
+              attenuation_coefficient: float) -> tuple[dict, float]:
+    """
+    :param population:
+    :param pistol:
+    :param survive_threshold:
+    :param attenuation_coefficient:
+    :return: (популяция, порог_выживаемости)
+    """
+    new_population, survive_probs, fighted, population_probs = dict(), dict(), [], []
     for k1 in population.keys():
         if k1 not in fighted:
             fighted.append(k1)
@@ -68,14 +80,17 @@ def selection(population: dict, pistol: Gun) -> dict:
                                players=[deepcopy(population[k1]), deepcopy(population[k2])],
                                n_fights=TRAIN_SETTINGS['n_fights'])
             result = sim.fight()
-            max_probability, winner = 0, None
+            max_probability, winner = survive_threshold * attenuation_coefficient, None
             for k, v in result.items():
                 if v > max_probability:
                     max_probability = v
                     winner = k
-            new_population[winner] = deepcopy(population[winner])
-            new_population[winner].reset()
-    return new_population
+            if winner is not None:
+                new_population[winner] = deepcopy(population[winner])
+                new_population[winner].reset()
+                population_probs.append(max_probability)
+    return (new_population,
+            sum(population_probs) / len(population_probs)) if len(population_probs) > 0 else survive_threshold * attenuation_coefficient
 
 
 def crossing(population: dict,
@@ -130,10 +145,13 @@ if __name__ == "__main__":
     population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
                                  n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
                                  max_slots=pistol.n_slots)
+    survive_threshold = TRAIN_SETTINGS['survive_threshold']
+    stop_message = "достигнуто максимальное число поколений"
 
     for generation in range(TRAIN_SETTINGS['n_generations']):
         logger.info(f"generation = {generation}")
         logger.info(f"volume = {len(population)}")
+        logger.info(f"survive threshold = {survive_threshold}")
 
         # Скрещивание
         population = crossing(population=population,
@@ -149,15 +167,21 @@ if __name__ == "__main__":
             logger.info(f"volume after mutation = {len(population)}")
 
         # Отбор
-        population = selection(population=population, pistol=pistol)
+        population, survive_threshold = selection(population=population,
+                                                  pistol=pistol,
+                                                  survive_threshold=survive_threshold,
+                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'])
         logger.info(f"volume after selection = {len(population)}")
         logger.info('-' * 50)
 
         if len(population) < 2:
+            stop_message = "популяция сократилась до одной особи"
             break
 
-    logger.info(f"survive = {len(population)}")
-    for v in population.values():
-        bot = v
-    logger.info(f"winner = {bot.__dict__.__str__()}")
+    logger.info(f"stop reason = {stop_message}")
+    logger.info(f"number of survived = {len(population)}")
+    logger.info(f"survive threshold = {survive_threshold}")
+    logger.info(f"survived bots:")
+    for bot in population.values():
+        logger.info(f"{bot.__dict__.__str__()}")
     logger.info("END")

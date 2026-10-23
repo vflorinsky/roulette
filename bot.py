@@ -129,13 +129,20 @@ class ProbabilityBot(Bot):
     Оценивает число раундов и для каждого устанавливает вероятность вращения.
     """
 
-    def __init__(self, name: str, n_rotations: int, n_slots: int):
+    def __init__(self, name: str,
+                 n_rotations: int,
+                 n_slots: int,
+                 probs: list = None):
         super().__init__(name=name, n_rotations=n_rotations)
-        self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
         self.__current_round = -1  # счетчик раундов включается после первого вызова _select_action
-        self.__rotation_probs = [random() for _ in range(self.__length)]
-        self.probabilites()
-
+        if probs is None:
+            self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
+            self.__rotation_probs = [random() for _ in range(self.__length)]
+            self.probabilites()
+        else:
+            self.__length = len(probs)
+            self.__rotation_probs = probs
+            self.probabilites(value=probs)
     def _select_action(self, gun) -> int:
         self.__current_round += 1
         if self._n_rotations > 0:

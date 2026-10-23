@@ -10,7 +10,9 @@ TEST_SETTINGS = {'n_fights': 10,
                  'bots': {# 'ThresholdBot_1': {'threshold': 1, 'n_rotations': 3},
                           # 'ThresholdBot_2': {'threshold': 0, 'n_rotations': 3},
                           'RandomBot': {'n_rotations': 3},
-                          'ProbabilityBot': {'n_rotations': 3, 'n_slots': 6},
+                          'ProbabilityBot': {'n_rotations': 3,
+                                             'n_slots': 6,
+                                             'probs': [0.4178687111973717, 0.013624500473614859, 1, 0.5220252893473505, 0.41890325551401386, 0.4171216742168011, 0.9101932150881249, 0.8787717998419473, 0.07867651903534859, 0.2702861431254712, 0.08568612501846179, 0.3885546116369757, 0.9144354705059612, 0.10890457330871745, 0.11180504461988214, 0.14325939008942615, 0.6689663371913013]},
                           }
                  }
 BOTS = {'RandomBot': RandomBot,
