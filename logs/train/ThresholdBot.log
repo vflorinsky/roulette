@@ -545,3 +545,300 @@
 2026-10-26 14:58:58,338 - ThresholdBot - survived bots:
 2026-10-26 14:58:58,338 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 1.1191839548785072}
 2026-10-26 14:58:58,338 - ThresholdBot - END
+2026-10-26 15:27:08,758 - ThresholdBot - Неверный тип бота: ThresholdBotjh. Доступные типы: ThresholdBot, ProbabilityBot. Процесс остановлен.
+2026-10-26 15:27:08,758 - ThresholdBot - END
+2026-10-26 16:57:09,775 - ThresholdBot - START
+2026-10-26 16:57:09,776 - ThresholdBot - TRAINING_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'training_bot_type': 'ThresholdBot', 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 2, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 16:57:09,776 - ThresholdBot - generation = 0
+2026-10-26 16:57:09,776 - ThresholdBot - volume = 2
+2026-10-26 16:57:09,776 - ThresholdBot - survive threshold = 0.5
+2026-10-26 16:57:09,841 - ThresholdBot - volume after selection = 1
+2026-10-26 16:57:09,841 - ThresholdBot - generation = 1
+2026-10-26 16:57:09,841 - ThresholdBot - volume = 1
+2026-10-26 16:57:09,841 - ThresholdBot - survive threshold = 0.521
+2026-10-26 16:57:09,841 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:00,022 - ThresholdBot - START
+2026-10-26 17:00:00,022 - ThresholdBot - TRAINING_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'training_bot_type': 'ThresholdBot', 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 3, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 17:00:00,022 - ThresholdBot - generation = 0
+2026-10-26 17:00:00,022 - ThresholdBot - volume = 2
+2026-10-26 17:00:00,022 - ThresholdBot - survive threshold = 0.5
+2026-10-26 17:00:00,088 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:00,088 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:00,088 - ThresholdBot - generation = 1
+2026-10-26 17:00:00,088 - ThresholdBot - volume = 1
+2026-10-26 17:00:00,088 - ThresholdBot - survive threshold = 0.508
+2026-10-26 17:00:00,088 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:00,088 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:33,979 - ThresholdBot - START
+2026-10-26 17:00:33,980 - ThresholdBot - TRAINING_SETTINGS = {'n_generations': 20, 'start_volume': 4, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'training_bot_type': 'ThresholdBot', 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 2, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 17:00:33,980 - ThresholdBot - generation = 0
+2026-10-26 17:00:33,980 - ThresholdBot - volume = 4
+2026-10-26 17:00:33,980 - ThresholdBot - survive threshold = 0.5
+2026-10-26 17:00:34,072 - ThresholdBot - volume after selection = 3
+2026-10-26 17:00:34,072 - ThresholdBot - volume after crossing = 6
+2026-10-26 17:00:34,073 - ThresholdBot - generation = 1
+2026-10-26 17:00:34,073 - ThresholdBot - volume = 6
+2026-10-26 17:00:34,073 - ThresholdBot - survive threshold = 0.519
+2026-10-26 17:00:34,199 - ThresholdBot - volume after selection = 2
+2026-10-26 17:00:34,199 - ThresholdBot - volume after crossing = 3
+2026-10-26 17:00:34,199 - ThresholdBot - generation = 2
+2026-10-26 17:00:34,199 - ThresholdBot - volume = 3
+2026-10-26 17:00:34,199 - ThresholdBot - survive threshold = 0.525
+2026-10-26 17:00:34,272 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,272 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,272 - ThresholdBot - generation = 3
+2026-10-26 17:00:34,272 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,272 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,272 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,272 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,272 - ThresholdBot - generation = 4
+2026-10-26 17:00:34,272 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,272 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,272 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,272 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,272 - ThresholdBot - generation = 5
+2026-10-26 17:00:34,273 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,273 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,273 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,273 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,273 - ThresholdBot - generation = 6
+2026-10-26 17:00:34,273 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,273 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,273 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,273 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,273 - ThresholdBot - generation = 7
+2026-10-26 17:00:34,273 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,273 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,273 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,273 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,273 - ThresholdBot - generation = 8
+2026-10-26 17:00:34,273 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,273 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,273 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,273 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,274 - ThresholdBot - generation = 9
+2026-10-26 17:00:34,274 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,274 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,274 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,274 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,274 - ThresholdBot - generation = 10
+2026-10-26 17:00:34,274 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,274 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,274 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,274 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,274 - ThresholdBot - generation = 11
+2026-10-26 17:00:34,274 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,274 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,274 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,274 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,274 - ThresholdBot - generation = 12
+2026-10-26 17:00:34,274 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,274 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,274 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,275 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,275 - ThresholdBot - generation = 13
+2026-10-26 17:00:34,275 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,275 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,275 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,275 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,275 - ThresholdBot - generation = 14
+2026-10-26 17:00:34,275 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,275 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,275 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,275 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,275 - ThresholdBot - generation = 15
+2026-10-26 17:00:34,275 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,275 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,275 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,276 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,276 - ThresholdBot - generation = 16
+2026-10-26 17:00:34,276 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,276 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,276 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,276 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,276 - ThresholdBot - generation = 17
+2026-10-26 17:00:34,276 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,276 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,276 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,276 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,276 - ThresholdBot - generation = 18
+2026-10-26 17:00:34,276 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,276 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,276 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,276 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:00:34,276 - ThresholdBot - generation = 19
+2026-10-26 17:00:34,277 - ThresholdBot - volume = 1
+2026-10-26 17:00:34,277 - ThresholdBot - survive threshold = 0.511
+2026-10-26 17:00:34,277 - ThresholdBot - volume after selection = 1
+2026-10-26 17:00:34,277 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:41,898 - ThresholdBot - START
+2026-10-26 17:07:41,898 - ThresholdBot - TRAINING_SETTINGS = {'n_generations': 20, 'start_volume': 4, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'training_bot_type': 'ThresholdBot', 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 4, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 17:07:41,898 - ThresholdBot - generation = 0
+2026-10-26 17:07:41,899 - ThresholdBot - volume = 4
+2026-10-26 17:07:41,899 - ThresholdBot - survive threshold = 0.5
+2026-10-26 17:07:41,992 - ThresholdBot - volume after selection = 3
+2026-10-26 17:07:41,992 - ThresholdBot - volume after crossing = 6
+2026-10-26 17:07:41,992 - ThresholdBot - volume after mutation = 6
+2026-10-26 17:07:41,992 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:41,992 - ThresholdBot - generation = 1
+2026-10-26 17:07:41,992 - ThresholdBot - volume = 6
+2026-10-26 17:07:41,992 - ThresholdBot - survive threshold = 0.527
+2026-10-26 17:07:42,115 - ThresholdBot - volume after selection = 3
+2026-10-26 17:07:42,115 - ThresholdBot - volume after crossing = 6
+2026-10-26 17:07:42,115 - ThresholdBot - volume after mutation = 6
+2026-10-26 17:07:42,115 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,115 - ThresholdBot - generation = 2
+2026-10-26 17:07:42,115 - ThresholdBot - volume = 6
+2026-10-26 17:07:42,115 - ThresholdBot - survive threshold = 0.545
+2026-10-26 17:07:42,242 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,242 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,243 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,243 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,243 - ThresholdBot - generation = 3
+2026-10-26 17:07:42,243 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,243 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,243 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,243 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,243 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,243 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,243 - ThresholdBot - generation = 4
+2026-10-26 17:07:42,243 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,243 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,243 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,243 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,243 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,243 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,243 - ThresholdBot - generation = 5
+2026-10-26 17:07:42,243 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,244 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,244 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,244 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,244 - ThresholdBot - generation = 6
+2026-10-26 17:07:42,244 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,244 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,244 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,244 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,244 - ThresholdBot - generation = 7
+2026-10-26 17:07:42,244 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,244 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,244 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,244 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,244 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,244 - ThresholdBot - generation = 8
+2026-10-26 17:07:42,245 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,245 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,245 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,245 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,245 - ThresholdBot - generation = 9
+2026-10-26 17:07:42,245 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,245 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,245 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,245 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,245 - ThresholdBot - generation = 10
+2026-10-26 17:07:42,245 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,245 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,245 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,245 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,245 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,245 - ThresholdBot - generation = 11
+2026-10-26 17:07:42,246 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,246 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,246 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,246 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,246 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,246 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,246 - ThresholdBot - generation = 12
+2026-10-26 17:07:42,246 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,246 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,246 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,246 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,246 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,246 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,246 - ThresholdBot - generation = 13
+2026-10-26 17:07:42,246 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,246 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,246 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,247 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,247 - ThresholdBot - generation = 14
+2026-10-26 17:07:42,247 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,247 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,247 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,247 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,247 - ThresholdBot - generation = 15
+2026-10-26 17:07:42,247 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,247 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,247 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,247 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,247 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,247 - ThresholdBot - generation = 16
+2026-10-26 17:07:42,247 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,247 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,248 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,248 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,248 - ThresholdBot - generation = 17
+2026-10-26 17:07:42,248 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,248 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,248 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,248 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,248 - ThresholdBot - generation = 18
+2026-10-26 17:07:42,248 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,248 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,248 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,248 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,248 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:07:42,248 - ThresholdBot - generation = 19
+2026-10-26 17:07:42,248 - ThresholdBot - volume = 1
+2026-10-26 17:07:42,248 - ThresholdBot - survive threshold = 0.534
+2026-10-26 17:07:42,249 - ThresholdBot - volume after selection = 1
+2026-10-26 17:07:42,249 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:07:42,249 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:07:42,249 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:08:29,118 - ThresholdBot - START
+2026-10-26 17:08:29,119 - ThresholdBot - TRAINING_SETTINGS = {'n_generations': 20, 'start_volume': 4, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'training_bot_type': 'ThresholdBot', 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 0, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 17:08:29,119 - ThresholdBot - generation = 0
+2026-10-26 17:08:29,119 - ThresholdBot - volume = 4
+2026-10-26 17:08:29,119 - ThresholdBot - survive threshold = 0.5
+2026-10-26 17:08:29,214 - ThresholdBot - volume after selection = 4
+2026-10-26 17:08:29,214 - ThresholdBot - volume after crossing = 10
+2026-10-26 17:08:29,214 - ThresholdBot - volume after mutation = 10
+2026-10-26 17:08:29,214 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:08:29,214 - ThresholdBot - generation = 1
+2026-10-26 17:08:29,214 - ThresholdBot - volume = 10
+2026-10-26 17:08:29,214 - ThresholdBot - survive threshold = 0.531
+2026-10-26 17:08:29,417 - ThresholdBot - volume after selection = 2
+2026-10-26 17:08:29,417 - ThresholdBot - volume after crossing = 3
+2026-10-26 17:08:29,417 - ThresholdBot - volume after mutation = 3
+2026-10-26 17:08:29,417 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:08:29,417 - ThresholdBot - generation = 2
+2026-10-26 17:08:29,417 - ThresholdBot - volume = 3
+2026-10-26 17:08:29,417 - ThresholdBot - survive threshold = 0.562
+2026-10-26 17:08:29,487 - ThresholdBot - volume after selection = 1
+2026-10-26 17:08:29,488 - ThresholdBot - volume after crossing = 1
+2026-10-26 17:08:29,488 - ThresholdBot - volume after mutation = 1
+2026-10-26 17:08:29,488 - ThresholdBot - --------------------------------------------------
+2026-10-26 17:08:29,488 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 17:08:29,488 - ThresholdBot - number of survived = 1
+2026-10-26 17:08:29,488 - ThresholdBot - survive threshold = 0.508
+2026-10-26 17:08:29,488 - ThresholdBot - survived bots:
+2026-10-26 17:08:29,488 - ThresholdBot - {'_Bot__name': '2.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 0.0}
+2026-10-26 17:08:29,488 - ThresholdBot - END
