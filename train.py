@@ -8,9 +8,10 @@ from bot import ThresholdBot, ProbabilityBot
 from gun import Gun
 from copy import deepcopy
 from core import RouletteCore
+from trainer import Logger
 
 
-TRAIN_SETTINGS = {'n_generations': 2,
+TRAINING_SETTINGS = {'n_generations': 2,
                   'start_volume': 2,
                   'n_fights': 1000,
                   'survive_threshold': 0.5,  # выживают те, что выше порога
@@ -19,6 +20,7 @@ TRAIN_SETTINGS = {'n_generations': 2,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
                   'gun': {'n_slots': 6},
+                  'training_bot_type': 'ThresholdBot',  # ProbabilityBot
                   'bot': {'ThresholdBot': {'n_rotations': 3,
                                            'threshold': randint(0, 6),
                                            'max_slots': 6},
@@ -28,10 +30,11 @@ TRAIN_SETTINGS = {'n_generations': 2,
                           }
                   }
 
-LOG_SETTINGS = {'path': Path('logs') / 'train',
-                'format': '%(asctime)s - %(name)s - %(message)s',
-                'maxBytes': 5 * 1024 * 1024,
-                'backupCount': 3}
+LOG_SETTINGS = {'name': TRAINING_SETTINGS['training_bot_type'],
+                'path': f"{Path('logs') / 'train'}",
+                'log_format': '%(asctime)s - %(name)s - %(message)s',
+                'max_bytes': 5 * 1024 * 1024,
+                'backup_count': 3}
 
 BOTS = {'ThresholdBot': ThresholdBot,
         'ProbabilityBot': ProbabilityBot}
@@ -140,74 +143,56 @@ def crossing(population: dict, generation: int) -> dict:
 
 if __name__ == "__main__":
 
-    # bot_type = 'ProbabilityBot'
-    bot_type = 'ThresholdBot'
+    logger = Logger(**LOG_SETTINGS)
 
-    logger = logging.getLogger(bot_type)
-    logger.setLevel(logging.DEBUG)
-    formatter = logging.Formatter(LOG_SETTINGS['format'])
-    file_handler = RotatingFileHandler(
-        filename=f"{LOG_SETTINGS['path'] / bot_type}.log",
-        maxBytes=LOG_SETTINGS['maxBytes'],
-        backupCount=LOG_SETTINGS['backupCount'],
-        encoding='utf-8'
-    )
-    file_handler.setLevel(logging.DEBUG)
-    file_handler.setFormatter(formatter)
-    console_handler = logging.StreamHandler()
-    console_handler.setLevel(logging.DEBUG)
-    console_handler.setFormatter(formatter)
-    logger.addHandler(file_handler)
-    logger.addHandler(console_handler)
+    logger.write("START")
+    logger.write(f"TRAINING_SETTINGS = {TRAINING_SETTINGS.__str__()}")
 
-    logger.info("START")
-    logger.info(f"TRAIN_SETTINGS = {TRAIN_SETTINGS.__str__()}")
-
-    pistol = Gun(n_slots=TRAIN_SETTINGS['gun']['n_slots'])
+    pistol = Gun(n_slots=TRAINING_SETTINGS['gun']['n_slots'])
 
     # Начальная популяция
-    population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
-                                 bot_type=bot_type,
-                                 **TRAIN_SETTINGS['bot'][bot_type]
+    population = init_population(n_individuals=TRAINING_SETTINGS['start_volume'],
+                                 bot_type=TRAINING_SETTINGS['training_bot_type'],
+                                 **TRAINING_SETTINGS['bot'][TRAINING_SETTINGS['training_bot_type']]
                                  )
     if population is None:
         exit(0)
-    survive_threshold = TRAIN_SETTINGS['survive_threshold']
+    survive_threshold = TRAINING_SETTINGS['survive_threshold']
     stop_message = "достигнуто максимальное число поколений"
 
-    for generation in range(TRAIN_SETTINGS['n_generations']):
-        logger.info(f"generation = {generation}")
-        logger.info(f"volume = {len(population)}")
-        logger.info(f"survive threshold = {survive_threshold}")
+    for generation in range(TRAINING_SETTINGS['n_generations']):
+        logger.write(f"generation = {generation}")
+        logger.write(f"volume = {len(population)}")
+        logger.write(f"survive threshold = {survive_threshold}")
 
         # Отбор
         population, survive_threshold = selection(population=population,
                                                   pistol=pistol,
                                                   survive_threshold=survive_threshold,
-                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'],
-                                                  n_fights=TRAIN_SETTINGS['n_fights'])
-        logger.info(f"volume after selection = {len(population)}")
+                                                  attenuation_coefficient=TRAINING_SETTINGS['attenuation_coefficient'],
+                                                  n_fights=TRAINING_SETTINGS['n_fights'])
+        logger.write(f"volume after selection = {len(population)}")
 
         # Скрещивание
         population = crossing(population=population,
                               generation=generation + 1)
-        logger.info(f"volume after crossing = {len(population)}")
+        logger.write(f"volume after crossing = {len(population)}")
 
         # Мутация
-        if TRAIN_SETTINGS['mutation']['use']:
+        if TRAINING_SETTINGS['mutation']['use']:
             population = mutation(population=population,
-                                  force=float(TRAIN_SETTINGS['mutation']['force']))
-            logger.info(f"volume after mutation = {len(population)}")
-        logger.info('-' * 50)
+                                  force=float(TRAINING_SETTINGS['mutation']['force']))
+            logger.write(f"volume after mutation = {len(population)}")
+        logger.write('-' * 50)
 
         if len(population) < 2:
             stop_message = f"популяция сократилась до {len(population)}"
             break
 
-    logger.info(f"stop reason = {stop_message}")
-    logger.info(f"number of survived = {len(population)}")
-    logger.info(f"survive threshold = {survive_threshold}")
-    logger.info(f"survived bots:")
+    logger.write(f"stop reason = {stop_message}")
+    logger.write(f"number of survived = {len(population)}")
+    logger.write(f"survive threshold = {survive_threshold}")
+    logger.write(f"survived bots:")
     for bot in population.values():
-        logger.info(f"{bot.__dict__.__str__()}")
-    logger.info("END")
+        logger.write(f"{bot.__dict__.__str__()}")
+    logger.write("END")
