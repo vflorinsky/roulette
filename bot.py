@@ -1,4 +1,4 @@
-from random import choice, random, randint
+from random import choice, random, randint, uniform
 
 
 class ShotIsImpossible(Exception):
@@ -135,6 +135,11 @@ class ThresholdBot(Bot):
                             threshold=spring_threshold,
                             verbose=self._verbose)
 
+    def mutate(self, force: float):
+        new_threshold = self.accessor()
+        new_threshold += uniform(-0.01 * force * new_threshold, 0.01 * force * new_threshold)
+        self.accessor(value=new_threshold)
+
     def accessor(self, value: float = None) -> float or None:
         if value is not None:
             if value < 0:
@@ -157,9 +162,10 @@ class ProbabilityBot(Bot):
     def __init__(self, name: str,
                  n_rotations: int,
                  n_slots: int,
+                 max_slots: int = None,
                  probs: list = None,
                  verbose: bool = False):
-        super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
+        super().__init__(name=name, n_rotations=n_rotations, max_slots=max_slots, verbose=verbose)
         self.__current_round = -1  # счетчик раундов включается после первого вызова _select_action
         self.__n_slots = n_slots
         if probs is None:
@@ -188,6 +194,12 @@ class ProbabilityBot(Bot):
                               n_slots=self.__n_slots,
                               probs=probs,
                               verbose=self._verbose)
+
+    def mutate(self, force: float):
+        new_probs = self.accessor()
+        for i in range(len(new_probs)):
+            new_probs[i] += uniform(-0.01 * force * new_probs[i], 0.01 * force * new_probs[i])
+        self.accessor(value=new_probs)
 
     def accessor(self, value: list = None) -> list or None:
         if value is not None and len(value) == self.__length:

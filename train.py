@@ -1,62 +1,65 @@
 import logging
+from itertools import combinations
+from concurrent.futures import ProcessPoolExecutor
 from logging.handlers import RotatingFileHandler
-from random import uniform
+from random import randint
 from pathlib import Path
-from bot import ProbabilityBot
+from bot import ThresholdBot, ProbabilityBot
 from gun import Gun
 from copy import deepcopy
 from core import RouletteCore
-from itertools import combinations
-from concurrent.futures import ProcessPoolExecutor
 
 
 TRAIN_SETTINGS = {'n_generations': 2,
                   'start_volume': 2,
                   'n_fights': 1000,
-                  'survive_threshold': 0.0,  # выживают те, что выше порога
+                  'survive_threshold': 0.5,  # выживают те, что выше порога
                   'attenuation_coefficient': 1.0,  # коэффициент понижения порога выживаемости
                   'mutation': {'use': True,
                                'force': 15  # уровень шума в процентах от зашумляемого значения
                                },
                   'gun': {'n_slots': 6},
-                  'bot': {'n_rotations': 3,
-                          'n_slots': 6}
+                  'bot': {'ThresholdBot': {'n_rotations': 3,
+                                           'threshold': randint(0, 6),
+                                           'max_slots': 6},
+                          'ProbabilityBot': {'n_rotations': 3,
+                                             'max_slots': 6,
+                                             'n_slots': 6}
+                          }
                   }
 
 LOG_SETTINGS = {'path': Path('logs') / 'train',
-                'name': 'ProbabilityBot',
                 'format': '%(asctime)s - %(name)s - %(message)s',
                 'maxBytes': 5 * 1024 * 1024,
                 'backupCount': 3}
+
+BOTS = {'ThresholdBot': ThresholdBot,
+        'ProbabilityBot': ProbabilityBot}
 
 
 def mutation(population: dict, force: float) -> dict:
     population_ = dict()
     for k, v in population.items():
         population_[k] = v
-        new_probs = population_[k].accessor()
-        for i in range(len(new_probs)):
-            new_probs[i] += uniform(-0.01 * force * new_probs[i], 0.01 * force * new_probs[i])
-            if new_probs[i] > 1:
-                new_probs[i] = 1
-            elif new_probs[i] < 0:
-                new_probs[i] = 0
-            else:
-                pass
-        population_[k].accessor(value=new_probs)
+        population_[k].mutate(force=force)
     return population_
 
 
 def init_population(n_individuals: int,
-                    n_rotations: int,
-                    max_slots: int) -> dict:
+                    bot_type: str,
+                    **bot_args
+                    ) -> dict or None:
     """{имя_бота: бот}"""
+    if bot_type not in BOTS.keys():
+        logger.info(f"Неверный тип бота: {bot_type}. "
+                    f"Доступные типы: {', '.join(list(BOTS.keys()))}. "
+                    f"Процесс остановлен.")
+        logger.info('END')
+        return
     population = {}
     for i in range(n_individuals):
         name = f"0.{i}"  # "номер_поколения.номер_бота"
-        population[name] = ProbabilityBot(name=name,
-                                          n_rotations=n_rotations,
-                                          n_slots=max_slots)
+        population[name] = BOTS[bot_type](name=name, **bot_args)
     return population
 
 
@@ -117,8 +120,7 @@ def selection(population: dict,
     return new_population, new_survive_threshold
 
 
-def crossing(population: dict,
-             generation: int) -> dict:
+def crossing(population: dict, generation: int) -> dict:
     new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
         if k1 not in crossed:
@@ -132,17 +134,20 @@ def crossing(population: dict,
             bid += 1
             new_population[name] = population[k1].cross_with(individual=population[k2],
                                                              spring_name=name)
-            new_population[name].reset()
+            new_population[name].max_slots(value=population[k1].max_slots())
     return new_population
 
 
 if __name__ == "__main__":
 
-    logger = logging.getLogger(LOG_SETTINGS['name'])
+    # bot_type = 'ProbabilityBot'
+    bot_type = 'ThresholdBot'
+
+    logger = logging.getLogger(bot_type)
     logger.setLevel(logging.DEBUG)
     formatter = logging.Formatter(LOG_SETTINGS['format'])
     file_handler = RotatingFileHandler(
-        filename=f"{LOG_SETTINGS['path'] / LOG_SETTINGS['name']}.log",
+        filename=f"{LOG_SETTINGS['path'] / bot_type}.log",
         maxBytes=LOG_SETTINGS['maxBytes'],
         backupCount=LOG_SETTINGS['backupCount'],
         encoding='utf-8'
@@ -162,8 +167,11 @@ if __name__ == "__main__":
 
     # Начальная популяция
     population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
-                                 n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
-                                 max_slots=pistol.n_slots)
+                                 bot_type=bot_type,
+                                 **TRAIN_SETTINGS['bot'][bot_type]
+                                 )
+    if population is None:
+        exit(0)
     survive_threshold = TRAIN_SETTINGS['survive_threshold']
     stop_message = "достигнуто максимальное число поколений"
 

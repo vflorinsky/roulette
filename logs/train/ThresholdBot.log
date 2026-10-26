@@ -186,3 +186,316 @@
 2026-10-26 12:14:13,333 - ThresholdBot - survived bots:
 2026-10-26 12:14:13,333 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 1.866102134092323}
 2026-10-26 12:14:13,333 - ThresholdBot - END
+2026-10-26 12:27:36,849 - ThresholdBot - START
+2026-10-26 12:27:36,849 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:28:05,743 - ThresholdBot - START
+2026-10-26 12:28:05,743 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:28:05,743 - ThresholdBot - Неверный тип бота: ololo
+Доступные типы: ThresholdBot, ProbabilityBot
+Процесс остановлен
+2026-10-26 12:28:05,743 - ThresholdBot - generation = 0
+2026-10-26 12:28:05,743 - ThresholdBot - volume = 2
+2026-10-26 12:28:05,744 - ThresholdBot - survive threshold = 0.5
+2026-10-26 12:28:05,744 - ThresholdBot - trsh mean = 4.0
+2026-10-26 12:28:05,744 - ThresholdBot - trsh median = 4.0
+2026-10-26 12:28:05,812 - ThresholdBot - volume after selection = 1
+2026-10-26 12:28:05,812 - ThresholdBot - volume after crossing = 1
+2026-10-26 12:28:05,812 - ThresholdBot - volume after mutation = 1
+2026-10-26 12:28:05,812 - ThresholdBot - --------------------------------------------------
+2026-10-26 12:28:05,812 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 12:28:05,812 - ThresholdBot - number of survived = 1
+2026-10-26 12:28:05,812 - ThresholdBot - survive threshold = 0.512
+2026-10-26 12:28:05,812 - ThresholdBot - survived bots:
+2026-10-26 12:28:05,812 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 3.2445013715753133}
+2026-10-26 12:28:05,812 - ThresholdBot - END
+2026-10-26 12:29:01,983 - ThresholdBot - START
+2026-10-26 12:29:01,983 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:29:01,983 - ThresholdBot - Неверный тип бота: ololo
+Доступные типы: ThresholdBot, ProbabilityBot
+Процесс остановлен
+2026-10-26 12:29:01,983 - ThresholdBot - generation = 0
+2026-10-26 12:29:59,663 - ThresholdBot - START
+2026-10-26 12:29:59,663 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:29:59,663 - ThresholdBot - Неверный тип бота: ololo
+Доступные типы: ThresholdBot, ProbabilityBot
+Процесс остановлен
+2026-10-26 12:30:46,869 - ThresholdBot - START
+2026-10-26 12:30:46,869 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:30:46,869 - ThresholdBot - Неверный тип бота: ololo. Доступные типы: ThresholdBot, ProbabilityBot. Процесс остановлен.
+2026-10-26 12:31:20,235 - ThresholdBot - START
+2026-10-26 12:31:20,235 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:31:20,236 - ThresholdBot - Неверный тип бота: ololo. Доступные типы: ThresholdBot, ProbabilityBot. Процесс остановлен.
+2026-10-26 12:31:20,236 - ThresholdBot - END
+2026-10-26 12:32:04,700 - ThresholdBot - START
+2026-10-26 12:32:04,701 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:32:04,701 - ThresholdBot - Неверный тип бота: ololo. Доступные типы: ThresholdBot, ProbabilityBot. Процесс остановлен.
+2026-10-26 12:32:04,701 - ThresholdBot - END
+2026-10-26 12:32:33,270 - ThresholdBot - START
+2026-10-26 12:32:33,270 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 12:33:53,789 - ThresholdBot - START
+2026-10-26 12:33:53,789 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:17:37,502 - ThresholdBot - START
+2026-10-26 13:17:37,502 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:17:57,051 - ThresholdBot - START
+2026-10-26 13:17:57,051 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:17:57,051 - ThresholdBot - generation = 0
+2026-10-26 13:17:57,051 - ThresholdBot - volume = 2
+2026-10-26 13:17:57,051 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:18:30,605 - ThresholdBot - START
+2026-10-26 13:18:30,605 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:18:30,605 - ThresholdBot - generation = 0
+2026-10-26 13:18:30,605 - ThresholdBot - volume = 2
+2026-10-26 13:18:30,605 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:18:30,687 - ThresholdBot - volume after selection = 1
+2026-10-26 13:18:30,687 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:19:00,215 - ThresholdBot - START
+2026-10-26 13:19:00,216 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:19:15,006 - ThresholdBot - START
+2026-10-26 13:19:15,006 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:19:15,006 - ThresholdBot - generation = 0
+2026-10-26 13:19:15,006 - ThresholdBot - volume = 2
+2026-10-26 13:19:15,006 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:19:15,076 - ThresholdBot - volume after selection = 1
+2026-10-26 13:19:15,076 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:19:15,076 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:19:15,076 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:19:15,076 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:19:15,076 - ThresholdBot - number of survived = 1
+2026-10-26 13:19:15,076 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:19:15,076 - ThresholdBot - survived bots:
+2026-10-26 13:19:15,076 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 0.0}
+2026-10-26 13:19:15,076 - ThresholdBot - END
+2026-10-26 13:20:15,278 - ThresholdBot - START
+2026-10-26 13:20:15,278 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:20:15,278 - ThresholdBot - generation = 0
+2026-10-26 13:20:15,278 - ThresholdBot - volume = 2
+2026-10-26 13:20:15,278 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:20:15,362 - ThresholdBot - volume after selection = 1
+2026-10-26 13:20:15,362 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:24:06,820 - ThresholdBot - START
+2026-10-26 13:24:06,820 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:24:06,820 - ThresholdBot - generation = 0
+2026-10-26 13:24:06,820 - ThresholdBot - volume = 2
+2026-10-26 13:24:06,820 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:24:06,902 - ThresholdBot - volume after selection = 1
+2026-10-26 13:24:06,902 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:24:25,960 - ThresholdBot - START
+2026-10-26 13:24:25,960 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:24:35,630 - ThresholdBot - START
+2026-10-26 13:24:35,631 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:24:35,631 - ThresholdBot - generation = 0
+2026-10-26 13:24:35,631 - ThresholdBot - volume = 2
+2026-10-26 13:24:35,631 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:24:35,699 - ThresholdBot - volume after selection = 1
+2026-10-26 13:24:35,700 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:24:35,700 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:24:35,700 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:24:35,700 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:24:35,700 - ThresholdBot - number of survived = 1
+2026-10-26 13:24:35,700 - ThresholdBot - survive threshold = 0.528
+2026-10-26 13:24:35,700 - ThresholdBot - survived bots:
+2026-10-26 13:24:35,700 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.626655471295005}
+2026-10-26 13:24:35,700 - ThresholdBot - END
+2026-10-26 13:30:12,315 - ThresholdBot - START
+2026-10-26 13:30:12,315 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:30:12,315 - ThresholdBot - generation = 0
+2026-10-26 13:30:12,315 - ThresholdBot - volume = 2
+2026-10-26 13:30:12,315 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:30:12,383 - ThresholdBot - volume after selection = 1
+2026-10-26 13:30:12,383 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:30:12,383 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:30:12,384 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:30:12,384 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:30:12,384 - ThresholdBot - number of survived = 1
+2026-10-26 13:30:12,384 - ThresholdBot - survive threshold = 0.518
+2026-10-26 13:30:12,384 - ThresholdBot - survived bots:
+2026-10-26 13:30:12,384 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.134988034861574}
+2026-10-26 13:30:12,384 - ThresholdBot - END
+2026-10-26 13:30:30,033 - ThresholdBot - START
+2026-10-26 13:30:30,034 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:30:30,034 - ThresholdBot - generation = 0
+2026-10-26 13:30:30,034 - ThresholdBot - volume = 2
+2026-10-26 13:30:30,034 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:30:30,117 - ThresholdBot - volume after selection = 1
+2026-10-26 13:30:30,117 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:30:30,117 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:30:30,117 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:30:30,117 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:30:30,117 - ThresholdBot - number of survived = 1
+2026-10-26 13:30:30,117 - ThresholdBot - survive threshold = 0.51
+2026-10-26 13:30:30,117 - ThresholdBot - survived bots:
+2026-10-26 13:30:30,117 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__n_slots': 6, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.19528476739628528, 0.6719155538658032, 0.9825501950910672, 0.2808063215732639, 0.8694109823908976, 0.3598645210680476, 0.6278717296322414, 0.49390621772677845, 0.6729721589855144, 0.07759886554438632, 0.7852833458567294, 0.511546651509363, 0.8491756559215551, 0.08190737808177137, 0.7693787715344395, 0.08736764758009928, 0.5068441383639462, 0.2940047067373099, 0.5912646142809594, 0.02087645515381063, 0.44650287672703365, 0.39223056486883795, 0.7555939818990397, 0.3620942729461246, 0.23012005433861796, 0.39548040550948466, 0.5012252635839833, 0.718764692706236, 0.6839514376315556, 0.9634123470919274, 0.989247420077794, 0.43513762146004953, 0.6581269669552242, 0.017589269217586787, 0.8229771481852056, 0.04529654097748173, 0.9139884684415108, 0.7581328707825038, 0.4063817555928606, 0.4382513018746339, 0.8987147485874564]}
+2026-10-26 13:30:30,117 - ThresholdBot - END
+2026-10-26 13:34:16,121 - ThresholdBot - START
+2026-10-26 13:34:16,121 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:34:16,121 - ThresholdBot - generation = 0
+2026-10-26 13:34:16,122 - ThresholdBot - volume = 2
+2026-10-26 13:34:16,122 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:34:16,204 - ThresholdBot - volume after selection = 1
+2026-10-26 13:34:16,204 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:34:16,204 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:34:16,204 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:34:16,204 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:34:16,204 - ThresholdBot - number of survived = 1
+2026-10-26 13:34:16,204 - ThresholdBot - survive threshold = 0.547
+2026-10-26 13:34:16,204 - ThresholdBot - survived bots:
+2026-10-26 13:34:16,204 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__n_slots': 6, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.7340466917917728, 0.730084513811464, 0.750150033592357, 0.2741752248306919, 0.7922557628252337, 1.0555425824529543, 0.12410464228409765, 0.4343260496379266, 0.45909489334762493, 0.5052074636244861, 0.42829337044728466, 0.617315723742644, 0.5541428623160038, 0.3294168568890998, 0.22460259824596943, 0.8046983320248561, 0.4350067867516881, 0.4124184717563583, 0.5267408977470402, 0.7392048299333802, 0.5741446614229568, 0.2952964536064049, 0.6094379238232561, 0.752177141080188, 0.749991140642572, 0.28437399854998613, 0.7402583056963685, 0.22292998408455272, 0.016218328747111155, 0.056662895676842406, 0.15353775893847604, 0.7976226176667262, 1.0790998236693692, 0.04561125081117018, 0.48734915995306494, 0.9585036539822755, 0.35258681262396513, 0.9096828304412137, 0.3439931405926781, 0.646903652444, 0.7522562568548126]}
+2026-10-26 13:34:16,205 - ThresholdBot - END
+2026-10-26 13:34:41,558 - ThresholdBot - START
+2026-10-26 13:34:41,558 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}
+2026-10-26 13:34:41,558 - ThresholdBot - generation = 0
+2026-10-26 13:34:41,558 - ThresholdBot - volume = 2
+2026-10-26 13:34:41,558 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:34:41,625 - ThresholdBot - volume after selection = 1
+2026-10-26 13:34:41,626 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:34:41,626 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:34:41,626 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:34:41,626 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:34:41,626 - ThresholdBot - number of survived = 1
+2026-10-26 13:34:41,626 - ThresholdBot - survive threshold = 0.514
+2026-10-26 13:34:41,626 - ThresholdBot - survived bots:
+2026-10-26 13:34:41,626 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.195644134848217}
+2026-10-26 13:34:41,626 - ThresholdBot - END
+2026-10-26 13:39:36,111 - ThresholdBot - START
+2026-10-26 13:39:36,111 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}}
+2026-10-26 13:39:53,664 - ThresholdBot - START
+2026-10-26 13:39:53,664 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold_interval': (0, 6)}}}
+2026-10-26 13:39:53,664 - ThresholdBot - generation = 0
+2026-10-26 13:39:53,664 - ThresholdBot - volume = 2
+2026-10-26 13:39:53,664 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:39:53,731 - ThresholdBot - volume after selection = 1
+2026-10-26 13:39:53,732 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:39:53,732 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:39:53,732 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:39:53,732 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:39:53,732 - ThresholdBot - number of survived = 1
+2026-10-26 13:39:53,732 - ThresholdBot - survive threshold = 0.532
+2026-10-26 13:39:53,732 - ThresholdBot - survived bots:
+2026-10-26 13:39:53,732 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.6642670188905475}
+2026-10-26 13:39:53,732 - ThresholdBot - END
+2026-10-26 13:41:10,992 - ThresholdBot - START
+2026-10-26 13:41:10,993 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold_interval': (0, 6), 'max_slots': 6}}}
+2026-10-26 13:41:10,993 - ThresholdBot - generation = 0
+2026-10-26 13:41:10,993 - ThresholdBot - volume = 2
+2026-10-26 13:41:10,993 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:41:11,061 - ThresholdBot - volume after selection = 1
+2026-10-26 13:41:11,061 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:41:11,061 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:41:11,061 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:41:11,061 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:41:11,061 - ThresholdBot - number of survived = 1
+2026-10-26 13:41:11,061 - ThresholdBot - survive threshold = 0.526
+2026-10-26 13:41:11,061 - ThresholdBot - survived bots:
+2026-10-26 13:41:11,061 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 6}
+2026-10-26 13:41:11,062 - ThresholdBot - END
+2026-10-26 13:42:12,279 - ThresholdBot - START
+2026-10-26 13:42:12,280 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold_interval': (0, 6), 'max_slots': 6}}}
+2026-10-26 13:44:21,783 - ThresholdBot - START
+2026-10-26 13:44:21,783 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'interval': 2, 'max_slots': 6}}}
+2026-10-26 13:44:35,840 - ThresholdBot - START
+2026-10-26 13:44:35,840 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'interval': 5, 'max_slots': 6}}}
+2026-10-26 13:45:09,775 - ThresholdBot - START
+2026-10-26 13:45:09,775 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 6, 'max_slots': 6}}}
+2026-10-26 13:45:09,775 - ThresholdBot - generation = 0
+2026-10-26 13:45:09,775 - ThresholdBot - volume = 2
+2026-10-26 13:45:09,775 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:45:09,842 - ThresholdBot - volume after selection = 1
+2026-10-26 13:45:09,842 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:45:09,842 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:45:09,843 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:45:09,843 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:45:09,843 - ThresholdBot - number of survived = 1
+2026-10-26 13:45:09,843 - ThresholdBot - survive threshold = 0.517
+2026-10-26 13:45:09,843 - ThresholdBot - survived bots:
+2026-10-26 13:45:09,843 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 5.878496481269287}
+2026-10-26 13:45:09,843 - ThresholdBot - END
+2026-10-26 13:59:44,737 - ThresholdBot - START
+2026-10-26 13:59:44,737 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 4, 'max_slots': 6}}}
+2026-10-26 13:59:44,737 - ThresholdBot - generation = 0
+2026-10-26 13:59:44,737 - ThresholdBot - volume = 2
+2026-10-26 13:59:44,737 - ThresholdBot - survive threshold = 0.5
+2026-10-26 13:59:44,806 - ThresholdBot - volume after selection = 1
+2026-10-26 13:59:44,806 - ThresholdBot - volume after crossing = 1
+2026-10-26 13:59:44,807 - ThresholdBot - volume after mutation = 1
+2026-10-26 13:59:44,807 - ThresholdBot - --------------------------------------------------
+2026-10-26 13:59:44,807 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 13:59:44,807 - ThresholdBot - number of survived = 1
+2026-10-26 13:59:44,807 - ThresholdBot - survive threshold = 0.518
+2026-10-26 13:59:44,807 - ThresholdBot - survived bots:
+2026-10-26 13:59:44,807 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.24228512881045}
+2026-10-26 13:59:44,807 - ThresholdBot - END
+2026-10-26 14:01:41,376 - ThresholdBot - START
+2026-10-26 14:01:41,377 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 1, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 14:01:41,377 - ThresholdBot - generation = 0
+2026-10-26 14:01:41,377 - ThresholdBot - volume = 2
+2026-10-26 14:01:41,377 - ThresholdBot - survive threshold = 0.5
+2026-10-26 14:01:41,463 - ThresholdBot - volume after selection = 1
+2026-10-26 14:01:41,463 - ThresholdBot - volume after crossing = 1
+2026-10-26 14:01:41,463 - ThresholdBot - volume after mutation = 1
+2026-10-26 14:01:41,463 - ThresholdBot - --------------------------------------------------
+2026-10-26 14:01:41,463 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 14:01:41,463 - ThresholdBot - number of survived = 1
+2026-10-26 14:01:41,463 - ThresholdBot - survive threshold = 0.535
+2026-10-26 14:01:41,463 - ThresholdBot - survived bots:
+2026-10-26 14:01:41,463 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ProbabilityBot__current_round': 0, '_ProbabilityBot__n_slots': 6, '_ProbabilityBot__length': 41, '_ProbabilityBot__rotation_probs': [0.8355333191643618, 0.6033360167890831, 1.0113422241546162, 0.831690961457307, 0.09143706111419561, 0.5838096311752465, 1.1007289925029327, 0.7946515378917994, 0.6126032885146826, 0.028013132370914528, 0.48999555898587, 0.4088457244500817, 0.32113774192473216, 1.0793952327643062, 0.24050538447988357, 0.32391849886358465, 0.7874656873490955, 0.12893424284113253, 0.9185408230314573, 0.042413017318488955, 0.09345303115604607, 0.1922786057397883, 0.5386043670238497, 0.8334121293407561, 0.6721134648767996, 0.2095470667344287, 0.43768739133336665, 0.5191064713260639, 0.3302724392262284, 0.560380868038554, 0.44196307356418385, 0.40035073410069566, 0.5437834120295633, 0.18350143702391858, 0.32351725017414334, 0.416796274730494, 0.7790617259711252, 0.7268787538835941, 0.49301650008299214, 0.7459254813632695, 0.007418006149401984]}
+2026-10-26 14:01:41,463 - ThresholdBot - END
+2026-10-26 14:01:55,901 - ThresholdBot - START
+2026-10-26 14:01:55,902 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 5, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 14:01:55,902 - ThresholdBot - generation = 0
+2026-10-26 14:01:55,902 - ThresholdBot - volume = 2
+2026-10-26 14:01:55,902 - ThresholdBot - survive threshold = 0.5
+2026-10-26 14:01:55,969 - ThresholdBot - volume after selection = 1
+2026-10-26 14:01:55,969 - ThresholdBot - volume after crossing = 1
+2026-10-26 14:01:55,969 - ThresholdBot - volume after mutation = 1
+2026-10-26 14:01:55,970 - ThresholdBot - --------------------------------------------------
+2026-10-26 14:01:55,970 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 14:01:55,970 - ThresholdBot - number of survived = 1
+2026-10-26 14:01:55,970 - ThresholdBot - survive threshold = 0.502
+2026-10-26 14:01:55,970 - ThresholdBot - survived bots:
+2026-10-26 14:01:55,970 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.739679222843197}
+2026-10-26 14:01:55,970 - ThresholdBot - END
+2026-10-26 14:04:12,421 - ThresholdBot - START
+2026-10-26 14:04:12,421 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 5, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 14:04:12,421 - ThresholdBot - generation = 0
+2026-10-26 14:04:12,421 - ThresholdBot - volume = 2
+2026-10-26 14:04:12,421 - ThresholdBot - survive threshold = 0.5
+2026-10-26 14:04:12,488 - ThresholdBot - volume after selection = 1
+2026-10-26 14:04:12,488 - ThresholdBot - volume after crossing = 1
+2026-10-26 14:04:12,489 - ThresholdBot - volume after mutation = 1
+2026-10-26 14:04:12,489 - ThresholdBot - --------------------------------------------------
+2026-10-26 14:04:12,489 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 14:04:12,489 - ThresholdBot - number of survived = 1
+2026-10-26 14:04:12,489 - ThresholdBot - survive threshold = 0.503
+2026-10-26 14:04:12,489 - ThresholdBot - survived bots:
+2026-10-26 14:04:12,489 - ThresholdBot - {'_Bot__name': '0.1', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 4.3116604950296855}
+2026-10-26 14:04:12,489 - ThresholdBot - END
+2026-10-26 14:13:49,902 - ThresholdBot - START
+2026-10-26 14:13:49,902 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 2, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 14:13:49,902 - ThresholdBot - generation = 0
+2026-10-26 14:13:49,902 - ThresholdBot - volume = 2
+2026-10-26 14:13:49,902 - ThresholdBot - survive threshold = 0.5
+2026-10-26 14:13:49,971 - ThresholdBot - volume after selection = 1
+2026-10-26 14:13:49,971 - ThresholdBot - volume after crossing = 1
+2026-10-26 14:13:49,971 - ThresholdBot - volume after mutation = 1
+2026-10-26 14:13:49,971 - ThresholdBot - --------------------------------------------------
+2026-10-26 14:13:49,972 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 14:13:49,972 - ThresholdBot - number of survived = 1
+2026-10-26 14:13:49,972 - ThresholdBot - survive threshold = 0.508
+2026-10-26 14:13:49,972 - ThresholdBot - survived bots:
+2026-10-26 14:13:49,972 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 1.8578715096993574}
+2026-10-26 14:13:49,972 - ThresholdBot - END
+2026-10-26 14:14:50,929 - ThresholdBot - START
+2026-10-26 14:14:50,929 - ThresholdBot - TRAIN_SETTINGS = {'n_generations': 2, 'start_volume': 2, 'n_fights': 1000, 'survive_threshold': 0.5, 'attenuation_coefficient': 1.0, 'mutation': {'use': True, 'force': 15}, 'gun': {'n_slots': 6}, 'bot': {'ThresholdBot': {'n_rotations': 3, 'threshold': 5, 'max_slots': 6}, 'ProbabilityBot': {'n_rotations': 3, 'max_slots': 6, 'n_slots': 6}}}
+2026-10-26 14:14:50,929 - ThresholdBot - generation = 0
+2026-10-26 14:14:50,929 - ThresholdBot - volume = 2
+2026-10-26 14:14:50,929 - ThresholdBot - survive threshold = 0.5
+2026-10-26 14:14:50,995 - ThresholdBot - volume after selection = 1
+2026-10-26 14:14:50,995 - ThresholdBot - volume after crossing = 1
+2026-10-26 14:14:50,995 - ThresholdBot - volume after mutation = 1
+2026-10-26 14:14:50,995 - ThresholdBot - --------------------------------------------------
+2026-10-26 14:14:50,995 - ThresholdBot - stop reason = популяция сократилась до 1
+2026-10-26 14:14:50,995 - ThresholdBot - number of survived = 1
+2026-10-26 14:14:50,995 - ThresholdBot - survive threshold = 0.502
+2026-10-26 14:14:50,995 - ThresholdBot - survived bots:
+2026-10-26 14:14:50,995 - ThresholdBot - {'_Bot__name': '0.0', '_n_rotations': 3, '_n_rotations_backup': 3, '_blocked_slots': [], '_max_slots': 6, '_verbose': False, '_ThresholdBot__threshold': 5.74662157306919}
+2026-10-26 14:14:50,995 - ThresholdBot - END
