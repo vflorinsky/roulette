@@ -11,8 +11,8 @@ from statistics import median
 from core import RouletteCore
 
 
-TRAIN_SETTINGS = {'n_generations': 100,
-                  'start_volume': 20,
+TRAIN_SETTINGS = {'n_generations': 2,
+                  'start_volume': 2,
                   'n_fights': 1000,
                   'survive_threshold': 0.5,  # выживают те, что выше порога
                   'attenuation_coefficient': 1.0,  # коэффициент понижения порога выживаемости
@@ -35,9 +35,9 @@ def mutation(population: dict, force: float) -> dict:
     population_ = dict()
     for k, v in population.items():
         population_[k] = v
-        new_threshold = population_[k].threshold()
+        new_threshold = population_[k].accessor()
         new_threshold += uniform(-0.01 * force * new_threshold, 0.01 * force * new_threshold)
-        population_[k].threshold(value=new_threshold)
+        population_[k].accessor(value=new_threshold)
     return population_
 
 
@@ -125,14 +125,14 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         for k2 in population.keys():
             if k2 in crossed:
                 continue
-            thrsh = 0.5 * (population[k1].threshold() + population[k2].threshold())
+            thrsh = 0.5 * (population[k1].accessor() + population[k2].accessor())
             name = f"{generation}.{bid}"
             bid += 1
             new_population[name] = ThresholdBot(name=name,
                                                 n_rotations=n_rotations,
                                                 threshold=thrsh)
             new_population[name].max_slots(value=population[k1].max_slots())
-            new_population[name].threshold(value=thrsh)
+            new_population[name].accessor(value=thrsh)
     return new_population
 
 
@@ -173,7 +173,7 @@ if __name__ == "__main__":
         logger.info(f"volume = {len(population)}")
         logger.info(f"survive threshold = {survive_threshold}")
 
-        trsh = [v.threshold() for _, v in population.items()]
+        trsh = [v.accessor() for _, v in population.items()]
 
         logger.info(f"trsh mean = {sum(trsh) / len(trsh)}")
         logger.info(f"trsh median = {median(trsh)}")

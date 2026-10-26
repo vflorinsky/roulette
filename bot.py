@@ -121,7 +121,7 @@ class ThresholdBot(Bot):
         else:
             return 1  # стрелять
 
-    def threshold(self, value: float = None) -> float or None:
+    def accessor(self, value: float = None) -> float or None:
         if value is not None:
             if value < 0:
                 x = 0
@@ -150,11 +150,11 @@ class ProbabilityBot(Bot):
         if probs is None:
             self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
             self.__rotation_probs = [random() for _ in range(self.__length)]
-            self.probabilites()
+            self.accessor()
         else:
             self.__length = len(probs)
             self.__rotation_probs = probs
-            self.probabilites(value=probs)
+            self.accessor(value=probs)
 
     def _select_action(self, gun) -> int:
         self.__current_round += 1
@@ -166,7 +166,7 @@ class ProbabilityBot(Bot):
         else:
             return 1
 
-    def probabilites(self, value: list = None) -> list or None:
+    def accessor(self, value: list = None) -> list or None:
         if value is not None and len(value) == self.__length:
             self.__rotation_probs = value
         return self.__rotation_probs

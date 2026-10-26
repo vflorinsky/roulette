@@ -10,8 +10,8 @@ from itertools import combinations
 from concurrent.futures import ProcessPoolExecutor
 
 
-TRAIN_SETTINGS = {'n_generations': 100,
-                  'start_volume': 10,
+TRAIN_SETTINGS = {'n_generations': 2,
+                  'start_volume': 2,
                   'n_fights': 1000,
                   'survive_threshold': 0.0,  # выживают те, что выше порога
                   'attenuation_coefficient': 1.0,  # коэффициент понижения порога выживаемости
@@ -34,7 +34,7 @@ def mutation(population: dict, force: float) -> dict:
     population_ = dict()
     for k, v in population.items():
         population_[k] = v
-        new_probs = population_[k].probabilites()
+        new_probs = population_[k].accessor()
         for i in range(len(new_probs)):
             new_probs[i] += uniform(-0.01 * force * new_probs[i], 0.01 * force * new_probs[i])
             if new_probs[i] > 1:
@@ -43,7 +43,7 @@ def mutation(population: dict, force: float) -> dict:
                 new_probs[i] = 0
             else:
                 pass
-        population_[k].probabilites(value=new_probs)
+        population_[k].accessor(value=new_probs)
     return population_
 
 
@@ -126,13 +126,13 @@ def crossing(population: dict,
         for k2 in population.keys():
             if k2 in crossed:
                 continue
-            spring_probs = [0.5 * (a + b) for a, b in zip(population[k1].probabilites(), population[k2].probabilites())]
+            spring_probs = [0.5 * (a + b) for a, b in zip(population[k1].accessor(), population[k2].accessor())]
             name = f"{generation}.{bid}"
             bid += 1
             new_population[name] = ProbabilityBot(name=name,
                                                   n_rotations=n_rotations,
                                                   n_slots=n_slots)
-            new_population[name].probabilites(value=spring_probs)
+            new_population[name].accessor(value=spring_probs)
             new_population[name].reset()
     return new_population
 
