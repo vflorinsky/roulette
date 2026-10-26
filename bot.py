@@ -114,7 +114,6 @@ class ThresholdBot(Bot):
                  verbose: bool = False):
         super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
         self.__threshold = threshold
-        self.__verbose = verbose
 
     def _select_action(self, gun) -> int:
         if len(self._blocked_slots) >= self.__threshold and self._n_rotations > 0:
@@ -127,7 +126,7 @@ class ThresholdBot(Bot):
         return ThresholdBot(name=spring_name,
                             n_rotations=self.n_rotations,
                             threshold=spring_threshold,
-                            verbose=self.__verbose)
+                            verbose=self._verbose)
 
     def accessor(self, value: float = None) -> float or None:
         if value is not None:
@@ -155,6 +154,7 @@ class ProbabilityBot(Bot):
                  verbose: bool = False):
         super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
         self.__current_round = -1  # счетчик раундов включается после первого вызова _select_action
+        self.__n_slots = n_slots
         if probs is None:
             self.__length = 2 * (n_slots - 1) * (n_rotations + 1) + 1
             self.__rotation_probs = [random() for _ in range(self.__length)]
@@ -173,6 +173,14 @@ class ProbabilityBot(Bot):
                 return 1  # стрелять
         else:
             return 1
+
+    def cross_with(self, individual, spring_name):
+        probs = [0.5 * (a + b) for a, b in zip(self.__rotation_probs, individual.accessor())]
+        return ProbabilityBot(name=spring_name,
+                              n_rotations=self.n_rotations,
+                              n_slots=self.__n_slots,
+                              probs=probs,
+                              verbose=self._verbose)
 
     def accessor(self, value: list = None) -> list or None:
         if value is not None and len(value) == self.__length:

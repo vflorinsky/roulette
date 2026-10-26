@@ -114,9 +114,7 @@ def selection(population: dict,
 
 
 def crossing(population: dict,
-             n_rotations: int,
-             generation: int,
-             n_slots: int) -> dict:
+             generation: int) -> dict:
     new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
         if k1 not in crossed:
@@ -126,13 +124,11 @@ def crossing(population: dict,
         for k2 in population.keys():
             if k2 in crossed:
                 continue
-            spring_probs = [0.5 * (a + b) for a, b in zip(population[k1].accessor(), population[k2].accessor())]
             name = f"{generation}.{bid}"
             bid += 1
-            new_population[name] = ProbabilityBot(name=name,
-                                                  n_rotations=n_rotations,
-                                                  n_slots=n_slots)
-            new_population[name].accessor(value=spring_probs)
+            new_population[name] = population[k1].cross_with(individual=population[k2],
+                                                             spring_name=name)
+            # new_population[name].accessor(value=spring_probs)
             new_population[name].reset()
     return new_population
 

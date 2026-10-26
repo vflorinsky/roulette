@@ -113,7 +113,7 @@ def selection(population: dict,
     return new_population, new_survive_threshold
 
 
-def crossing(population: dict, n_rotations: int, generation: int) -> dict:
+def crossing(population: dict, generation: int) -> dict:
     new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
         if k1 not in crossed:
