@@ -114,12 +114,20 @@ class ThresholdBot(Bot):
                  verbose: bool = False):
         super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
         self.__threshold = threshold
+        self.__verbose = verbose
 
     def _select_action(self, gun) -> int:
         if len(self._blocked_slots) >= self.__threshold and self._n_rotations > 0:
             return 2  # вращать
         else:
             return 1  # стрелять
+
+    def cross_with(self, individual, spring_name):
+        spring_threshold = 0.5 * (self.__threshold + individual.accessor())
+        return ThresholdBot(name=spring_name,
+                            n_rotations=self.n_rotations,
+                            threshold=spring_threshold,
+                            verbose=self.__verbose)
 
     def accessor(self, value: float = None) -> float or None:
         if value is not None:

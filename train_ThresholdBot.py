@@ -116,8 +116,6 @@ def selection(population: dict,
 def crossing(population: dict, n_rotations: int, generation: int) -> dict:
     new_population, bid, crossed = dict(), 0, []
     for k1 in population.keys():
-        # if random() < 0.5:
-        #     continue
         if k1 not in crossed:
             crossed.append(k1)
             new_population[k1] = deepcopy(population[k1])
@@ -125,14 +123,11 @@ def crossing(population: dict, n_rotations: int, generation: int) -> dict:
         for k2 in population.keys():
             if k2 in crossed:
                 continue
-            thrsh = 0.5 * (population[k1].accessor() + population[k2].accessor())
             name = f"{generation}.{bid}"
             bid += 1
-            new_population[name] = ThresholdBot(name=name,
-                                                n_rotations=n_rotations,
-                                                threshold=thrsh)
+            new_population[name] = population[k1].cross_with(individual=population[k2],
+                                                             spring_name=name)
             new_population[name].max_slots(value=population[k1].max_slots())
-            new_population[name].accessor(value=thrsh)
     return new_population
 
 
