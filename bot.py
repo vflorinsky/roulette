@@ -1,4 +1,4 @@
-from random import choice, random
+from random import choice, random, randint
 
 
 class ShotIsImpossible(Exception):
@@ -10,12 +10,15 @@ class ShotIsImpossible(Exception):
 class Bot:
     """Базовый класс"""
 
-    def __init__(self, name: str, n_rotations: int, verbose: bool = False):
+    def __init__(self, name: str,
+                 n_rotations: int,
+                 max_slots: int = None,
+                 verbose: bool = False):
         self.__name = name
         self._n_rotations = n_rotations
         self._n_rotations_backup = n_rotations
         self._blocked_slots = []
-        self._max_slots = None
+        self._max_slots = max_slots
         self._verbose = verbose
 
     def action(self, gun):
@@ -110,10 +113,14 @@ class ThresholdBot(Bot):
 
     def __init__(self, name: str,
                  n_rotations: int,
-                 threshold: float,
+                 max_slots: int = None,
+                 threshold: float = None,
                  verbose: bool = False):
-        super().__init__(name=name, n_rotations=n_rotations, verbose=verbose)
-        self.__threshold = threshold
+        super().__init__(name=name, n_rotations=n_rotations, max_slots=max_slots, verbose=verbose)
+        if threshold is None:
+            self.__threshold = randint(0, 6)
+        else:
+            self.__threshold = threshold
 
     def _select_action(self, gun) -> int:
         if len(self._blocked_slots) >= self.__threshold and self._n_rotations > 0:

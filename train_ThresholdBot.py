@@ -43,7 +43,6 @@ def mutation(population: dict, force: float) -> dict:
 
 def init_population(n_individuals: int,
                     n_rotations: int,
-                    threshold_interval: tuple,
                     max_slots: int) -> dict:
     """{имя_бота: бот}"""
     population = {}
@@ -51,9 +50,7 @@ def init_population(n_individuals: int,
         name = f"0.{i}"  # "номер_поколения.номер_бота"
         population[name] = ThresholdBot(name=name,
                                         n_rotations=n_rotations,
-                                        threshold=randint(threshold_interval[0],
-                                                          threshold_interval[1]))
-        population[name].max_slots(value=max_slots)
+                                        max_slots=max_slots)
     return population
 
 
@@ -74,6 +71,7 @@ def selection(population: dict,
               pistol: Gun,
               survive_threshold: float,
               attenuation_coefficient: float,
+              n_fights: int,
               max_workers: int = None) -> tuple[dict, float]:
     pairs = list(combinations(population.keys(), 2))
     if not pairs:
@@ -84,7 +82,7 @@ def selection(population: dict,
     absolute_max_prob = -1.0
     with ProcessPoolExecutor(max_workers=max_workers) as executor:
         futures = [
-            executor.submit(_run_single_fight, pair, population, pistol, TRAIN_SETTINGS['n_fights'])
+            executor.submit(_run_single_fight, pair, population, pistol, n_fights)
             for pair in pairs
         ]
         for future in futures:
@@ -158,7 +156,6 @@ if __name__ == "__main__":
     # Начальная популяция
     population = init_population(n_individuals=TRAIN_SETTINGS['start_volume'],
                                  n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
-                                 threshold_interval=TRAIN_SETTINGS['bot']['threshold_interval'],
                                  max_slots=pistol.n_slots)
     survive_threshold = TRAIN_SETTINGS['survive_threshold']
     stop_message = "достигнуто максимальное число поколений"
@@ -177,12 +174,12 @@ if __name__ == "__main__":
         population, survive_threshold = selection(population=population,
                                                   pistol=pistol,
                                                   survive_threshold=survive_threshold,
-                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'])
+                                                  attenuation_coefficient=TRAIN_SETTINGS['attenuation_coefficient'],
+                                                  n_fights=TRAIN_SETTINGS['n_fights'])
         logger.info(f"volume after selection = {len(population)}")
 
         # Скрещивание
         population = crossing(population=population,
-                              n_rotations=TRAIN_SETTINGS['bot']['n_rotations'],
                               generation=generation + 1)
         logger.info(f"volume after crossing = {len(population)}")
 
